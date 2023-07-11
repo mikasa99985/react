@@ -2,5 +2,4 @@ Team registration page
 
 @ Registered Members Name
 
-    0. test name
-    1. Soubhik Mukherjee    
+    1. Soubhik Mukherjee
