@@ -3,3 +3,4 @@ Team registration page
 @ Registered Members Name
 
     1. Soubhik Mukherjee
+    2. Debjit Roy
