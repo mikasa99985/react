@@ -5,3 +5,4 @@ Team registration page
     1. Soubhik Mukherjee
     2. Debjit Roy
     3. Akash Debnath
+    4. Soumyadipta
