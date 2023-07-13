@@ -1,5 +1,7 @@
 import React, { useEffect } from 'react'
 import { database, db } from '../../firebase.config';
+import Nav from '../components/nav';
+
 
 const Home = () => {
   useEffect(() => {
@@ -17,10 +19,7 @@ const Home = () => {
 
   return (
     <>
-      <div className="container mt-4">
-        <h1>Test text</h1>
-        <button className='btn btn-danger'>Test button</button>
-      </div>
+      <Nav/>
     </>
   )
 }
