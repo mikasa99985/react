@@ -1,87 +1,57 @@
-.navbar-brand:hover:before {
-    display: inline-block;
-      background-color: #2dc419;
-      color: white;
-      text-align: center;
-      font-size: 20px;
-      padding: 15px 30px;
-      cursor: pointer;
-      border-radius: 50px;
-      text-decoration: none;
-      transition-duration: 0.4s;
-      box-shadow: 0px 8px 16px 0px rgba(0,0,0,0.2);
-      position: relative;
-      overflow: hidden;
-      
-      
+.navbar-brand {
+  padding: var(--bs-navbar-brand-padding-y) var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: rgb(66, 4, 14);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.3s;
+  border: 1px solid rgba(127, 0, 0, 0.12);
+  border-radius: 5px;
+}
 
-    }
-    .navbar-brand {
-        padding-top: var(--bs-navbar-brand-padding-y);
-        padding-bottom: var(--bs-navbar-brand-padding-y);
-        margin-right: var(--bs-navbar-brand-margin-end);
-        font-size: var(--bs-navbar-brand-font-size);
-        color: rgb(66, 4, 14);
-        text-decoration: none;
-        white-space: nowrap;
-        transition: 0.3s;
-        border-style: solid;
-        border-color: rgba(127, 0, 0, 0.120);
-        border-width: 1px;
-        border-radius: 5px;
-    }
-    
-    .navbar-brand:hover:before {
-      content: "";
-      position: absolute;
-      top: -50%;
-      left: -50%;
-      width: 200%;
-      height: 200%;
-      background-color: rgba(255, 0, 140, 0.452);
-      transform: rotate(-30deg);
-      transition-duration: 0.6s;
-      z-index: -1;
-      
-    }
-    
-    .navbar-brand:hover:after {
-      content: "";
-      position: absolute;
-      top: 50%;
-      left: 50%;
-      width: 0%;
-      height: 0%;
-      background-color: rgba(255, 255, 255, 0.2);
-      transform: translate(-50%, -50%);
-      transition-duration: 0.6s;
-      
-      z-index: -1;
-      
-    }
-    
-    .navbar-brand:hover {
-      background-color: #ff000085;
-      border-radius: 20px;
-      color: white;
-      
-      
-    }
-    
-    .navbar-brand:active {
-      background-color: rgb(0, 225, 255);
-      box-shadow: 0px 5px 10px 0px rgba(0,0,0,0.2);
-      transform: translateY(2px);
-      border-width: 1px;
-      border-style: solid;
-      border-color: rgba(127, 0, 0, 0.240);
-    }
-    
-    .navbar-brand:disabled {
-      background-color: #bbb;
-      cursor: not-allowed;
-    }
-    
-    .navbar-brand:disabled:hover {
-      background-color: #bbb;
-    }
+.navbar-brand:hover {
+  background-color: rgba(255, 0, 0, 0.76);
+  border-radius: 20px;
+  color: white;
+  animation: coolHoverAnimation 1s linear;
+}
+
+@keyframes coolHoverAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2) rotate(360deg);
+  }
+}
+
+.navbar-brand:active {
+  background-color: rgb(0, 225, 255);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+  border: 1px solid rgba(127, 0, 0, 0.24);
+  animation: coolClickAnimation 0.3s;
+}
+
+@keyframes coolClickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.navbar-brand:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.navbar-brand:disabled:hover {
+  background-color: #bbb;
+}
