@@ -38,7 +38,7 @@
       left: -50%;
       width: 200%;
       height: 200%;
-      background-color: rgba(255, 0, 140, 0.534);
+      background-color: rgba(255, 0, 140, 0.452);
       transform: rotate(-30deg);
       transition-duration: 0.6s;
       z-index: -1;
@@ -84,4 +84,4 @@
     
     .navbar-brand:disabled:hover {
       background-color: #bbb;
-      
+    }
