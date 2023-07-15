@@ -1,0 +1,57 @@
+.navbar-brand {
+  padding: var(--bs-navbar-brand-padding-y) var(--bs-navbar-brand-margin-end);
+  font-size: var(--bs-navbar-brand-font-size);
+  color: rgb(66, 4, 14);
+  text-decoration: none;
+  white-space: nowrap;
+  transition: 0.3s;
+  border: 1px solid rgba(127, 0, 0, 0.12);
+  border-radius: 5px;
+}
+
+.navbar-brand:hover {
+  background-color: rgba(255, 0, 0, 0.76);
+  border-radius: 20px;
+  color: white;
+  animation: coolHoverAnimation 1s linear;
+}
+
+@keyframes coolHoverAnimation {
+  0% {
+    opacity: 0;
+    transform: scale(0.8) rotate(0deg);
+  }
+  100% {
+    opacity: 1;
+    transform: scale(1.2) rotate(360deg);
+  }
+}
+
+.navbar-brand:active {
+  background-color: rgb(0, 225, 255);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+  border: 1px solid rgba(127, 0, 0, 0.24);
+  animation: coolClickAnimation 0.3s;
+}
+
+@keyframes coolClickAnimation {
+  0% {
+    transform: scale(1);
+  }
+  50% {
+    transform: scale(0.9);
+  }
+  100% {
+    transform: scale(1);
+  }
+}
+
+.navbar-brand:disabled {
+  background-color: #bbb;
+  cursor: not-allowed;
+}
+
+.navbar-brand:disabled:hover {
+  background-color: #bbb;
+}
