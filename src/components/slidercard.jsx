@@ -1,4 +1,5 @@
 import React from 'react'
+import Card from './card'
 
 export default function Slidercard() {
   return (
@@ -6,90 +7,33 @@ export default function Slidercard() {
 
       <div id="carouselExampleControls" className="carousel carousel-dark slide" data-bs-ride="carousel">
         <div className="carousel-inner">
+
           <div className="carousel-item active">
-            <div className="card-wrapper container-sm d-flex  justify-content-around">
+            <div className="card-wrapper container-sm d-flex justify-content-around">
 
-              <div className="card" style={{width: "18rem"}} >
-                <img src="https://source.unsplash.com/collection/190727/1600x900" className="card-img-top" alt="..."/>
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-                  </div>
-              </div>
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
 
-              <div className="card" style={{width: "18rem"}}>
-                <img src="https://source.unsplash.com/collection/190727/1600x900" className="card-img-top"
-                  alt="..."/>
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-
-                  </div>
-              </div>
-              <div className="card" style={{width: "18rem"}}>
-                <img src="https://source.unsplash.com/collection/190727/1600x900" className="card-img-top"
-                  alt="..."/>
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-
-                  </div>
-              </div>
             </div>
           </div>
 
           <div className="carousel-item">
-            <div className="card-wrapper container-sm d-flex   justify-content-around">
-              <div className="card " style={{width: "18rem"}}>
-                <img src="https://source.unsplash.com/collection/190727/1600x900" className="card-img-top"
-                  alt="..."/>
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-
-                  </div>
-              </div>
-              <div className="card" style={{width: "18rem"}}>
-                <img src="https://source.unsplash.com/collection/190727/1600x900" className="card-img-top"
-                  alt="..."/>
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-
-                  </div>
-              </div>
-              <div className="card" style={{width: "18rem"}}>
-                <img src="https://source.unsplash.com/collection/190727/1600x900" className="card-img-top"
-                  alt="..."/>
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-
-                  </div>
-              </div>
+            <div className="card-wrapper container-sm d-flex justify-content-around">
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
             </div>
           </div>
 
           <div className="carousel-item">
-            <div className="card-wrapper container-sm d-flex  justify-content-around">
-              <div className="card " style={{width: "18rem"}}>
-                <img src="https://source.unsplash.com/collection/190727/1600x900" className="card-img-top"
-                  alt="..."/>
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-
-                  </div>
-              </div>
-              <div className="card" style={{width: "18rem"}}>
-                <img src="https://source.unsplash.com/collection/190727/1600x900" className="card-img-top"
-                  alt="..."/>
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-
-                  </div>
-              </div>
-              <div className="card" style={{width: "18rem"}}>
-                <img src="https://source.unsplash.com/collection/190727/1600x900" className="card-img-top"
-                  alt="..."/>
-                  <div className="card-body">
-                    <h5 className="card-title">Card title</h5>
-
-                  </div>
-              </div>
+            <div className="card-wrapper container-sm d-flex justify-content-around">
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
+              <Card img="https://source.unsplash.com/collection/190727/1600x900" />
             </div>
           </div>
 
