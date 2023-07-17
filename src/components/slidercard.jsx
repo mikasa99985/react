@@ -55,14 +55,14 @@ export default function Slidercard() {
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
             data-bs-slide="prev">
             {/* <span className="carousel-control-prev-icon" aria-hidden="true"></span> */}
-            <img src={icon} width={40} style={{rotate: '180deg'}} alt="" />
+            <img src={icon} width={40} style={{rotate: '180deg' , position: 'absolute' , left: '130%' }} alt="" />
             <span className="visually-hidden">Previous</span>
           </button>
 
           <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
             data-bs-slide="next">
             {/* <span className="carousel-control-next-icon" aria-hidden="true"></span> */}
-            <img src={icon} width={40} style={{rotate: '0deg'}} alt="" />
+            <img src={icon} width={40} style={{rotate: '0deg', position:'absolute' , right: '156%'}} alt="" />
             <span className="visually-hidden">Next</span>
           </button>
         </div>
