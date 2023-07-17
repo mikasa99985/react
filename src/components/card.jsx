@@ -1,13 +1,14 @@
 import React from 'react'
+import '../utility/css/cardStyle.css'
 
 export default function Card(props) {
   return (
     <>
-      <div className="card" style={{ width: "18rem" }} >
-        <img src={props.img} className="card-img-top" alt="..." />
-        <div className="card-body">
-          <h5 className="card-title">This title</h5>
-          <h5 className="card-title">sub title</h5>
+      <div className="card" style={{ width: "13rem" }} >
+        <img src={props.img} className="card-img" alt="..." />
+        <div className="card-t">
+          <h4>Game Title</h4>
+          <h5 className='mb-3'>Game type</h5>
         </div>
       </div>
     </>
