@@ -1,6 +1,5 @@
 import React from 'react'
 import '../utility/css/Bigcard.css';
-
 import Anthem from '../assets/Anthem.jpg'
 export default function Bigcard() {
 
