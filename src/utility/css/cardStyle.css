@@ -38,3 +38,36 @@
 .pp{
     translate: -95px;
 }
+
+.img-btn-left{
+    rotate: 180deg;
+    position: absolute;
+    left: 130%; 
+    transition: 200ms;
+}
+
+.img-btn-left:hover{
+    transform: scale(1.24);
+}
+
+.img-btn-right{
+    rotate: 0deg;
+    position:absolute;
+    right: 156%;
+    transition: 200ms;
+}
+
+.img-btn-right:hover{
+    transform: scale(1.24);
+}
+
+@media only screen and (max-width: 600px) {
+    .img-btn-left{
+        position: relative;
+        left: 0%; 
+    }
+    .img-btn-right{
+        position: relative;
+        right: 0%;
+    }
+  }
