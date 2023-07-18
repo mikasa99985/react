@@ -14,7 +14,7 @@ const Home = () => {
       <Nav/>
       <Slidercard/>
       <Card/>
-      {/* <Bigcard/> */}
+      <Bigcard/>
       <div className="container mt-4">
         <h1>Test text</h1>
         <button className='btn btn-success'>Add datas</button>
