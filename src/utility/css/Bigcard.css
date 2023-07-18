@@ -1,6 +1,6 @@
 
 
-.card{
+.big-card{
     width: 240px;
     height:400px;
     margin: 10px;
@@ -14,14 +14,17 @@
 }
 
 
-h5 {
+.big-card h5 {
     font-style: italic;
     text-align: center;
 }
 
-p{
+.big-card p{
     text-align: center;
     color: red;
 }
 
+.big-card img{
+    width: 100%;
+}
 
