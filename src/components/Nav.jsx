@@ -1,4 +1,5 @@
 import React from "react";
+import {Link} from 'react-router-dom'
 import '../utility/css/Style.css';
 
 const Nav = () => {
@@ -6,9 +7,15 @@ const Nav = () => {
     <>
       <nav className="navbar navbar-expand-lg bg-body-tertiary">
         <div className="container-fluid">
-          <a className="navbar-brand" href="#">
+          <Link className="navbar-brand" to="/">
             Navbar
-          </a>
+          </Link>
+          <Link className="navbar-brand" to="/sign_up">
+            Sign Up
+          </Link>
+          <Link className="navbar-brand" to="/sign_in">
+            Sign In
+          </Link>
         </div>
       </nav>
     </>
