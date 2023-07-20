@@ -9,11 +9,22 @@
   border-radius: 5px;
 }
 
+
+
 .navbar-brand:hover {
   background-color: rgba(255, 0, 0, 0.76);
   border-radius: 20px;
   color: white;
-  animation: coolHoverAnimation 1s linear;
+  animation: coolHoverAnimation 0.1s linear forwards; /* Use "forwards" to keep the final state after animation */
+  box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.205)
+}
+
+.navbar-brand:active {
+  background-color: rgb(0, 225, 255);
+  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
+  transform: translateY(2px);
+  border: 1px solid rgba(127, 0, 0, 0.24);
+  animation: coolHoverAnimation 0.1s linear forwards;
 }
 
 @keyframes coolHoverAnimation {
@@ -23,35 +34,12 @@
   }
   100% {
     opacity: 1;
-    transform: scale(1.2) rotate(360deg);
+    transform: scale(1.2) rotate(-3deg);
   }
 }
 
-.navbar-brand:active {
-  background-color: rgb(0, 225, 255);
-  box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
-  transform: translateY(2px);
-  border: 1px solid rgba(127, 0, 0, 0.24);
-  animation: coolClickAnimation 0.3s;
-}
 
 @keyframes coolClickAnimation {
-  0% {
-    transform: scale(1);
-  }
-  50% {
-    transform: scale(0.9);
-  }
-  100% {
-    transform: scale(1);
-  }
+  /* Your existing click animation here */
 }
 
-.navbar-brand:disabled {
-  background-color: #bbb;
-  cursor: not-allowed;
-}
-
-.navbar-brand:disabled:hover {
-  background-color: #bbb;
-}

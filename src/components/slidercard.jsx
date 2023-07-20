@@ -1,6 +1,7 @@
 import React from 'react'
 import Card from './card'
 import icon from '../assets/right-arrow.png'
+import '../utility/css/cardStyle.css'
 
 export default function Slidercard() {
   return (
@@ -55,14 +56,14 @@ export default function Slidercard() {
           <button className="carousel-control-prev" type="button" data-bs-target="#carouselExampleControls"
             data-bs-slide="prev">
             {/* <span className="carousel-control-prev-icon" aria-hidden="true"></span> */}
-            <img src={icon} width={40} style={{rotate: '180deg' , position: 'absolute' , left: '130%' }} alt="" />
+            <img src={icon} className='img-btn-left' width={40} alt="btn" />
             <span className="visually-hidden">Previous</span>
           </button>
 
           <button className="carousel-control-next" type="button" data-bs-target="#carouselExampleControls"
             data-bs-slide="next">
             {/* <span className="carousel-control-next-icon" aria-hidden="true"></span> */}
-            <img src={icon} width={40} style={{rotate: '0deg', position:'absolute' , right: '156%'}} alt="" />
+            <img src={icon} className='img-btn-right' width={40} alt="btn" />
             <span className="visually-hidden">Next</span>
           </button>
         </div>
