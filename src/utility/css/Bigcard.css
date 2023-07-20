@@ -10,6 +10,19 @@
     transition: 200ms;
 }
 
+
+@media (min-width: 40rem) {
+    .big-card {
+      width: 50%;
+    }
+  }
+  
+  @media (min-width: 56rem) {
+    .big-card {
+      width: 33.3333%;
+    }
+  }
+
 .big-card:hover {
     transform: scale(1.08);
     box-shadow: 0px 0px 15px rgb(177, 177, 177);
@@ -17,16 +30,27 @@
 
 
 .big-card h5 {
+    position: absolute;
+  top: 40%;
+  left: 50%;
+  transform: translate(-50%, -50%);
     font-style: italic;
     text-align: center;
+    color: violet;
 }
 
 .big-card p{
+    position: absolute;
+  top: 60%;
+  left: 50%;
+  transform: translate(-50%, -50%);
     text-align: center;
     color: red;
 }
 
 .big-card img{
     width: 100%;
-}
+       
+      }
+
 
