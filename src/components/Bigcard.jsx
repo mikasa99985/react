@@ -22,6 +22,7 @@ export default function Bigcard() {
                         <h3 className='mt-3'>Asphault</h3>
                         <h4>Racing Game</h4>
                     </div>
+
                 </div>
 
                 <div className="big-card">
