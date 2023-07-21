@@ -2,7 +2,7 @@
 
 .big-card{
     width: 240px;
-    height:400px;
+    height:350px;
     margin: 10px;
     border-radius: 8px;
     
@@ -53,4 +53,21 @@
        
       }
 
+
+.features h4 {
+color: blue;
+text-align: center;
+margin-top: 80px;
+height: 120px;
+}
+
+.feature-card{
+  width: 240px;
+    height:350px;
+    margin: 10px;
+   text-align: justify;
+   padding-left: 100px
+  
+  
+}
 
