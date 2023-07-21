@@ -13,7 +13,6 @@ const Home = () => {
     
       <Nav/>
       <Slidercard/>
-      <Card/>
       <Bigcard/>
       <div className="container mt-4">
         <h1>Test text</h1>

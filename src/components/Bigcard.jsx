@@ -2,39 +2,39 @@ import React from 'react'
 import '../utility/css/Bigcard.css';
 import Anthem from '../assets/Anthem.jpg'
 export default function Bigcard() {
-
-
     return (
+        <>
+            <div class="big-card-div">
 
-        <div>
-            <div class="d-flex flex-row">
-                <div className="card-deck">
-                    <div className="big-card"style={{ width: "20rem" }}>
-                        <h5>Asphault</h5>
-                        <p>Racing Game</p>
-                        <img src={Anthem } alt="..." />
+                <div className="big-card mr-5">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/vibrant-games.appspot.com/o/GameCollectionImg%2F1689866524816?alt=media&token=f5944b75-7705-4834-bc38-bbd110540d43" alt="..." />
+                    <div className="black-scr"></div>
+                    <div className="big-card-text">
+                        <h3 className='mt-3'>Asphault</h3>
+                        <h4>Racing Game</h4>
                     </div>
                 </div>
 
-                <div class="d-flex flex-row">
-                    <div className="big-card" style={{ width: "20rem" }} >
-                         <h5>Anthem</h5>
-                        <p>Online Multiplayer</p>
-                        <img src={Anthem} alt="..." />
-                    </div>
-
-                    <div class="d-flex flex-row">
-                        <div className="big-card"style={{ width: "20rem" }}>
-                        <h5>HITMAN III</h5>
-                        <p>Stealth Game</p>
-                            <img src={Anthem} alt="..." />
-                        </div>
-
-                       
+                <div className="big-card mr-5">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/vibrant-games.appspot.com/o/GameCollectionImg%2F1689866524816?alt=media&token=f5944b75-7705-4834-bc38-bbd110540d43" alt="..." />
+                    <div className="black-scr"></div>
+                    <div className="big-card-text">
+                        <h3 className='mt-3'>Asphault</h3>
+                        <h4>Racing Game</h4>
                     </div>
                 </div>
+
+                <div className="big-card">
+                    <img src="https://firebasestorage.googleapis.com/v0/b/vibrant-games.appspot.com/o/GameCollectionImg%2F1689866524816?alt=media&token=f5944b75-7705-4834-bc38-bbd110540d43" alt="..." />
+                    <div className="black-scr"></div>
+                    <div className="big-card-text">
+                        <h3 className='mt-3'>Asphault</h3>
+                        <h4>Racing Game</h4>
+                    </div>
+                </div>
+
             </div>
-        </div>
+        </>
     )
 
 }
