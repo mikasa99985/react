@@ -1,18 +1,21 @@
 .navbar-brand {
   padding: var(--bs-navbar-brand-padding-y) var(--bs-navbar-brand-margin-end);
   font-size: var(--bs-navbar-brand-font-size);
-  color: rgb(66, 4, 14);
+  color: rgb(255, 255, 255);
   text-decoration: none;
   white-space: nowrap;
   transition: 0.3s;
-  border: 1px solid rgba(127, 0, 0, 0.12);
-  border-radius: 5px;
+  border: 1px solid rgba(255, 255, 255, 0.473);
+  border-radius: 15px;
 }
 
-
+.container-fluid{
+  background-color: rgb(0, 0, 0);
+  border-radius: 2px;
+}
 
 .navbar-brand:hover {
-  background-color: rgba(255, 0, 0, 0.76);
+  background-color: rgba(255, 0, 0, 0.514);
   border-radius: 20px;
   color: white;
   animation: coolHoverAnimation 0.1s linear forwards; /* Use "forwards" to keep the final state after animation */
