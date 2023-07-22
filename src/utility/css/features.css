@@ -10,5 +10,15 @@
     height: 350px;
     margin: 10px;
     text-align: justify;
-    padding-left: 100px
+    padding-left: 70px;
+}
+
+.feature-card h5{
+  color: whitesmoke;
+  text-align: center;
+    }
+
+.feature-card p{
+  
+    margin-top: 100px;
 }
