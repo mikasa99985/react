@@ -12,7 +12,7 @@ const Home = () => {
       <Nav />
       <Slidercard />
       <Bigcard />
-      <Features />
+      {/* <Features /> */}
     </>
   );
 };

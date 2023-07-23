@@ -2,54 +2,59 @@ import React from 'react'
 import Card from './card'
 import icon from '../assets/right-arrow.png'
 import '../utility/css/cardStyle.css'
+import '../utility/css/btn_glow.css'
 
 export default function Slidercard() {
   return (
     <>
 
-      <div id="carouselExampleControls" className="carousel carousel-dark slide mt-5 mb-5 " data-bs-ride="carousel">
-        <div className="carousel-inner" style={{paddingTop: '52px', paddingBottom: '52px'}}>
+      <div className="d-flex justify-content-center mt-5">
+        <h1 className='fw-bolder'>EXPLORE MORE GAMES</h1>
+      </div>
+
+      <div id="carouselExampleControls" className="carousel carousel-dark slide" data-bs-ride="carousel">
+        <div className="carousel-inner" style={{ paddingTop: '52px', paddingBottom: '52px' }}>
 
           <div className="carousel-item active">
-            <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{translate: '-95px'}}>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?product"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?vidoe game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?laptop"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?codeing"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
+            <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{ translate: '-95px' }}>
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?product" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?vidoe game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?laptop" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?codeing" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
 
             </div>
           </div>
 
           <div className="carousel-item">
-            <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{translate: '-95px'}}>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?product"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?vidoe game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?laptop"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?codeing"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
+            <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{ translate: '-95px' }}>
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?product" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?vidoe game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?laptop" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?codeing" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
             </div>
           </div>
 
           <div className="carousel-item">
-            <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{translate: '-95px'}}>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?product"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?vidoe game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?laptop"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?codeing"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game"/>
+            <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{ translate: '-95px' }}>
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?product" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?vidoe game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?laptop" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?codeing" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
             </div>
           </div>
 
@@ -67,6 +72,11 @@ export default function Slidercard() {
             <span className="visually-hidden">Next</span>
           </button>
         </div>
+      </div>
+
+      <div className="d-flex justify-content-center mb-5">
+        <button class="btn-cus btn-blue-glow">VIEW ALL GAMES</button>
+        {/* <button class="btn-cus btn-pink-glow">VIEW ALL GAMES</button> */}
       </div>
     </>
 

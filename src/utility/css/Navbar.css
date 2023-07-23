@@ -1,4 +1,4 @@
-.navbar-brand {
+/* .navbar-brand {
   padding: var(--bs-navbar-brand-padding-y) var(--bs-navbar-brand-margin-end);
   font-size: var(--bs-navbar-brand-font-size);
   color: rgb(255, 255, 255);
@@ -7,28 +7,44 @@
   transition: 0.3s;
   border: 1px solid rgba(255, 255, 255, 0.473);
   border-radius: 15px;
+} */
+
+.navbar-brand, .nav-item{
+  transition: 300ms;
 }
+
+.navbar-brand:hover, .nav-item:hover{
+  transform: scale(1.2);
+}
+
 
 .container-fluid{
-  /* background-color: rgb(0, 0, 0); */
-  border-radius: 2px;
+  margin: 0px 45px;
 }
 
-.navbar-brand:hover {
+.anima-icon{
+  transition: 200ms;
+}
+
+.anima-icon:hover{
+  transform: scale(1.2) rotate(-5deg);
+}
+
+/* .navbar-brand:hover {
   background-color: rgba(255, 0, 0, 0.514);
   border-radius: 20px;
   color: white;
-  animation: coolHoverAnimation 0.1s linear forwards; /* Use "forwards" to keep the final state after animation */
+  animation: coolHoverAnimation 0.1s linear forwards;
   box-shadow: 5px 5px 5px rgba(0, 0, 0, 0.205)
-}
+} */
 
-.navbar-brand:active {
+/* .navbar-brand:active {
   background-color: rgb(0, 225, 255);
   box-shadow: 0px 5px 10px 0px rgba(0, 0, 0, 0.2);
   transform: translateY(2px);
   border: 1px solid rgba(127, 0, 0, 0.24);
   animation: coolHoverAnimation 0.1s linear forwards;
-}
+} */
 
 @keyframes coolHoverAnimation {
   0% {
@@ -46,3 +62,12 @@
   /* Your existing click animation here */
 }
 
+.floating-shadow{
+  box-shadow: 0px 0px 10px gray;
+}
+
+@media only screen and (max-width: 600px){
+  .container-fluid{
+    margin: 0px 0px;
+  }
+}

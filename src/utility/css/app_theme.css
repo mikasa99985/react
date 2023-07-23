@@ -1,0 +1,11 @@
+.theme{
+    background-color: #fff;
+}
+
+@media (prefers-color-scheme: dark) {
+    .theme {
+      background: #2b3035;
+      color: #fff;
+      /* outline: 5px dashed #000; */
+    }
+  }
