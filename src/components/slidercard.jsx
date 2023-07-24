@@ -86,8 +86,8 @@ export default function Slidercard() {
       </div>
 
       <div className="d-flex justify-content-center mb-5">
-        <button class="btn-cus btn-blue-glow">VIEW ALL GAMES</button>
-        {/* <button class="btn-cus btn-pink-glow">VIEW ALL GAMES</button> */}
+        <button className="btn-cus btn-blue-glow">VIEW ALL GAMES</button>
+        {/* <button className="btn-cus btn-pink-glow">VIEW ALL GAMES</button> */}
       </div>
     </>
 
