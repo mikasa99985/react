@@ -2,7 +2,7 @@
     color: blue;
     text-align: center;
     margin-top: 80px;
-    height: 120px;
+    height: 90px;
 }
 
 .feature-card {
@@ -16,9 +16,20 @@
 .feature-card h5{
   color: whitesmoke;
   text-align: center;
+  
+
     }
 
 .feature-card p{
   
-    margin-top: 100px;
+    margin-top: 30px;
+
+}
+.feature-card img{ 
+ 
+    width: 15%;
+  
+    
+
+    
 }
