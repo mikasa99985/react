@@ -12,7 +12,7 @@ function App() {
   };
 
   return (
-    <div className='theme'>
+    <div className='theme' style={{backgroundColor:'black'}}>
       <Router>
         <Switch>
           <Route exact path="/">

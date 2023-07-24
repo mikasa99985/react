@@ -3,13 +3,24 @@ import Card from './card'
 import icon from '../assets/right-arrow.png'
 import '../utility/css/cardStyle.css'
 import '../utility/css/btn_glow.css'
+import { useState } from 'react' ;
 
 export default function Slidercard() {
+  const [isHovering, setIsHovering] = useState(false);
+  const handleMouseEnter = () => {
+    setIsHovering(true);
+  };
+
+  const handleMouseLeave = () => {
+    setIsHovering(false);
+  };
+
   return (
     <>
 
       <div className="d-flex justify-content-center mt-5">
-        <h1 className='fw-bolder'>EXPLORE MORE GAMES</h1>
+        <h1 className='fw-bolder' style={{color:'white', transform:isHovering?'scale(1.2)': 'scale(1)' , transition:isHovering?'0.5s': {transition:'0.5s'} } }  onMouseEnter={handleMouseEnter}
+          onMouseLeave={handleMouseLeave}>EXPLORE MORE GAMES</h1>
       </div>
 
       <div id="carouselExampleControls" className="carousel carousel-dark slide" data-bs-ride="carousel">
