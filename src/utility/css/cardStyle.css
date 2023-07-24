@@ -1,4 +1,4 @@
-.card{
+.pop-card{
     border: none;
     /* box-shadow: 0px 0px 11px #b9b9b9; */
     position: relative;
@@ -6,12 +6,12 @@
     transition: 200ms;
 }
 
-.card:hover {
+.pop-card:hover {
     transform: scale(1.2);
     z-index: 10;
 }
 
-.card:hover > img{
+.pop-card:hover > img{
     box-shadow: 0px 0px 25px #b9b9b9;
     border: 2px solid white;
 }
