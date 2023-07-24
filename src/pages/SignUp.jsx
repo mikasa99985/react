@@ -1,11 +1,12 @@
-import React from 'react'
-import Nav from '../components/Nav';
+import React from "react";
+import Nav from "../components/Nav";
+
 
 const SignUp = () => {
-    return (
-        <>
-            <Nav />
-            <form
+  return (
+    <>
+      <Nav />
+      <form
         style={{
           backgroundColor: "black",
           display: "flex",
@@ -31,12 +32,9 @@ const SignUp = () => {
           </div>
         </div>
 
-
-        
-
         <div class="mb-3" style={{ width: "16%", color: "white" }}>
           <label for="exampleInputPassword1" class="form-label">
-           Username
+            Username
           </label>
           <input
             type="text"
@@ -48,20 +46,6 @@ const SignUp = () => {
           </div>
         </div>
 
-
-
-
-
-
-
-
-
-
-
-
-
-
-
         <div class="mb-3" style={{ width: "16%", color: "white" }}>
           <label for="exampleInputPassword1" class="form-label">
             Password
@@ -70,13 +54,14 @@ const SignUp = () => {
             type="password"
             class="form-control"
             id="exampleInputPassword1"
-          ></input>
+          >
+            
+          </input>
         </div>
-
 
         <div class="mb-3" style={{ width: "16%", color: "white" }}>
           <label for="exampleInputPassword1" class="form-label">
-           Re-enter Password
+            Re-enter Password
           </label>
           <input
             type="password"
@@ -84,15 +69,6 @@ const SignUp = () => {
             id="exampleInputPassword1"
           ></input>
         </div>
-
-
-
-
-        
-
-
-
-
 
         <div class="mb-3 form-check" style={{ color: "white" }}>
           <input
@@ -105,11 +81,6 @@ const SignUp = () => {
           </label>
         </div>
 
-
-
-
-
-
         <button
           type="submit"
           class="btn btn-primary"
@@ -118,8 +89,8 @@ const SignUp = () => {
           Sign In
         </button>
       </form>
-        </>
-    )
-}
+    </>
+  );
+};
 
-export default SignUp
+export default SignUp;
