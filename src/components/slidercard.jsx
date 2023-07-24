@@ -15,6 +15,21 @@ export default function Slidercard() {
     setIsHovering(false);
   };
 
+
+  const [isHoveringongames , mouseishovering] = useState() ;
+  const mouseenter = () => {
+    mouseishovering(true) ;
+  };
+  
+  const mousequit = () => {
+    mouseishovering(false);
+  };
+
+
+
+
+
+
   return (
     <>
 
@@ -85,8 +100,9 @@ export default function Slidercard() {
         </div>
       </div>
 
-      <div className="d-flex justify-content-center mb-5">
-        <button className="btn-cus btn-blue-glow">VIEW ALL GAMES</button>
+      <div className="d-flex justify-content-center mb-5" >
+        <button className="btn-cus btn-blue-glow" style={{color:'white', transform:isHoveringongames?'scale(1.2)': 'scale(1)' , transition:isHoveringongames?'0.5s': {transition:'0.5s'} } }  onMouseEnter={mouseenter}
+          onMouseLeave={mousequit}  >VIEW ALL GAMES</button>
         {/* <button className="btn-cus btn-pink-glow">VIEW ALL GAMES</button> */}
       </div>
     </>
