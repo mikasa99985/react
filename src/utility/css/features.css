@@ -27,9 +27,13 @@
 }
 .feature-card img{ 
  
-    width: 15%;
-  
-    
+    width: 15%;    
+}
 
-    
+.feature-pop{
+    transition: 200ms;
+}
+
+.feature-pop:hover{
+    transform: scale(1.06);
 }

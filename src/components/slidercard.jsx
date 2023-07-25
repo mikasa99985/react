@@ -6,36 +6,31 @@ import '../utility/css/btn_glow.css'
 import { useState } from 'react' ;
 
 export default function Slidercard() {
-  const [isHovering, setIsHovering] = useState(false);
-  const handleMouseEnter = () => {
-    setIsHovering(true);
-  };
 
-  const handleMouseLeave = () => {
-    setIsHovering(false);
-  };
+  // const [isHovering, setIsHovering] = useState(false);
+  // const handleMouseEnter = () => {
+  //   setIsHovering(true);
+  // };
+
+  // const handleMouseLeave = () => {
+  //   setIsHovering(false);
+  // };
 
 
-  const [isHoveringongames , mouseishovering] = useState() ;
-  const mouseenter = () => {
-    mouseishovering(true) ;
-  };
+  // const [isHoveringongames , mouseishovering] = useState() ;
+  // const mouseenter = () => {
+  //   mouseishovering(true) ;
+  // };
   
-  const mousequit = () => {
-    mouseishovering(false);
-  };
-
-
-
-
-
+  // const mousequit = () => {
+  //   mouseishovering(false);
+  // };
 
   return (
     <>
 
       <div className="d-flex justify-content-center mt-5">
-        <h1 className='fw-bolder' style={{color:'white', transform:isHovering?'scale(1.2)': 'scale(1)' , transition:isHovering?'0.5s': {transition:'0.5s'} } }  onMouseEnter={handleMouseEnter}
-          onMouseLeave={handleMouseLeave}>EXPLORE MORE GAMES</h1>
+        <h1 className='fw-bolder'>EXPLORE MORE GAMES</h1>
       </div>
 
       <div id="carouselExampleControls" className="carousel carousel-dark slide" data-bs-ride="carousel">
@@ -101,8 +96,7 @@ export default function Slidercard() {
       </div>
 
       <div className="d-flex justify-content-center mb-5" >
-        <button className="btn-cus btn-blue-glow" style={{color:'white', transform:isHoveringongames?'scale(1.2)': 'scale(1)' , transition:isHoveringongames?'0.5s': {transition:'0.5s'} } }  onMouseEnter={mouseenter}
-          onMouseLeave={mousequit}  >VIEW ALL GAMES</button>
+        <button className="btn-cus btn-blue-glow" >VIEW ALL GAMES</button>
         {/* <button className="btn-cus btn-pink-glow">VIEW ALL GAMES</button> */}
       </div>
     </>

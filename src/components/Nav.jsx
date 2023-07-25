@@ -13,40 +13,22 @@ const Nav = () => {
         style={{ backgroundColor: "rgb(0 0 0)" }}
       >
         <div className="container-fluid">
-          <button
-            className="navbar-toggler"
-            type="button"
-            data-bs-toggle="collapse"
-            data-bs-target="#navbarSupportedContent"
-            aria-controls="navbarSupportedContent"
-            aria-expanded="false"
-            aria-label="Toggle navigation"
-          >
-            {/* <span className="navbar-toggler-icon"></span> */}
-            <svg
-              xmlns="http://www.w3.org/2000/svg"
-              width="24"
-              height="24"
-              fill="white"
-              className="bi bi-three-dots-vertical"
-              viewBox="0 0 16 16"
-            >
+
+          {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" className="bi bi-three-dots-vertical" viewBox="0 0 16 16">
+              <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
+            </svg>
+          </button> */}
+
+          <button className="navbar-toggler" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">
+            <svg xmlns="http://www.w3.org/2000/svg" width="24" height="24" fill="white" className="bi bi-three-dots-vertical" viewBox="0 0 16 16">
               <path d="M9.5 13a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0zm0-5a1.5 1.5 0 1 1-3 0 1.5 1.5 0 0 1 3 0z" />
             </svg>
           </button>
 
-          <div className="d-flex m-auto" style={{ cursor: "pointer" }}>
-            <img
-              className="anima-icon "
-              src={icon}
-              style={{ width: "40px" }}
-              alt=""
-            />
-            <Link
-              className="navbar-brand ms-3 fw-bolder"
-              style={{ color: "white" }}
-              to="/"
-            >
+          <div className="d-flex m-auto" style={{cursor:'pointer'}}>
+            <img className="anima-icon " src={icon} style={{ width: '40px' }} alt="" />
+            <Link className="navbar-brand ms-3 fw-bolder" style={{ color: 'white' }} to="/">
               VIBRANT
             </Link>
           </div>
@@ -129,21 +111,8 @@ const Nav = () => {
           </div>
 
           <div className="dropdown dropstart">
-            <div
-              className="ms-4 me-3"
-              data-bs-toggle="dropdown"
-              aria-expanded="false"
-              style={{ cursor: "pointer" }}
-            >
-              
-              <svg
-                xmlns="http://www.w3.org/2000/svg"
-                width="30"
-                height="30"
-                fill="white"
-                className="bi bi-person-circle"
-                viewBox="0 0 16 16"
-              >
+            <div className="ms-4 me-3" data-bs-toggle="dropdown" aria-expanded="false" style={{cursor:'pointer'}}>
+              <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" className="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
                 <path
                   fillRule="evenodd"
@@ -153,23 +122,25 @@ const Nav = () => {
             </div>
 
             <ul className="dropdown-menu">
-              <li>
-                <Link className="dropdown-item" to="/sign_up">
-                  Sign up
-                </Link>
-              </li>
-              <li>
-                <hr className="dropdown-divider" />
-              </li>
-              <li>
-                <Link className="dropdown-item" to="/sign_in">
-                  Sign in
-                </Link>
-              </li>
+              <li><Link className="dropdown-item" to="/sign_up">Sign up</Link></li>
+              <li><hr className="dropdown-divider"/></li>
+              <li><Link className="dropdown-item" to="/sign_in">Sign in</Link></li>
             </ul>
           </div>
         </div>
       </nav>
+
+      {/* <button class="btn btn-primary" type="button" data-bs-toggle="offcanvas" data-bs-target="#offcanvasScrolling" aria-controls="offcanvasScrolling">Enable body scrolling</button> */}
+
+      <div class="offcanvas offcanvas-start" data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+        <div class="offcanvas-header">
+          <h5 class="offcanvas-title" id="offcanvasScrollingLabel">Offcanvas with body scrolling</h5>
+          <button type="button" class="btn-close" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+        </div>
+        <div class="offcanvas-body">
+          <p>Try scrolling the rest of the page to see this option in action.</p>
+        </div>
+      </div>
     </>
   );
 };
