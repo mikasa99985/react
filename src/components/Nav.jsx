@@ -5,9 +5,14 @@ import icon from '../assets/game_favicon.png'
 import iconGame from '../assets/favicon.png'
 
 const Nav = () => {
+
+
   return (
     <>
-      <nav className="navbar navbar-expand-lg floating-shadow" style={{ backgroundColor: 'rgb(0 0 0)' }} >
+      <nav
+        className="navbar navbar-expand-lg floating-shadow"
+        style={{ backgroundColor: "rgb(0 0 0)" }}
+      >
         <div className="container-fluid">
 
           {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
@@ -22,7 +27,7 @@ const Nav = () => {
             </svg>
           </button>
 
-          <div className="d-flex m-auto" style={{ cursor: 'pointer' }}>
+          <div className="d-flex m-auto" style={{cursor:'pointer'}}>
             <img className="anima-icon " src={icon} style={{ width: '40px' }} alt="" />
             <Link className="navbar-brand ms-3 fw-bolder" style={{ color: 'white' }} to="/">
               VIBRANT
@@ -48,7 +53,6 @@ const Nav = () => {
               <li className="nav-item nav-item-pop mx-4">
                 <Link className="nav-link" style={{ color: 'white' }} to="/help">Help</Link>
               </li>
-
             </ul>
             <div className="" >
               <svg xmlns="http://www.w3.org/2000/svg" data-bs-toggle="modal" data-bs-target="#searchModal" style={{ cursor: 'pointer' }} width="20" height="20" fill="white" className="bi bi-search" viewBox="0 0 16 16">
@@ -58,21 +62,22 @@ const Nav = () => {
           </div>
 
           <div className="dropdown dropstart">
-            <div className="ms-4 me-3" data-bs-toggle="dropdown" aria-expanded="false" style={{ cursor: 'pointer' }}>
+            <div className="ms-4 me-3" data-bs-toggle="dropdown" aria-expanded="false" style={{cursor:'pointer'}}>
               <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" className="bi bi-person-circle" viewBox="0 0 16 16">
                 <path d="M11 6a3 3 0 1 1-6 0 3 3 0 0 1 6 0z" />
-                <path fillRule="evenodd" d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z" />
+                <path
+                  fillRule="evenodd"
+                  d="M0 8a8 8 0 1 1 16 0A8 8 0 0 1 0 8zm8-7a7 7 0 0 0-5.468 11.37C3.242 11.226 4.805 10 8 10s4.757 1.225 5.468 2.37A7 7 0 0 0 8 1z"
+                />
               </svg>
             </div>
 
             <ul className="dropdown-menu">
               <li><Link className="dropdown-item" to="/sign_up">Sign up</Link></li>
-              <li><hr className="dropdown-divider" /></li>
+              <li><hr className="dropdown-divider"/></li>
               <li><Link className="dropdown-item" to="/sign_in">Sign in</Link></li>
             </ul>
           </div>
-
-
         </div>
       </nav>
 
