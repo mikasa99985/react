@@ -6,7 +6,7 @@ import Nav from "../components/Nav";
 import Bigcard from "../components/Bigcard";
 import Features from "../components/Features";
 import Statistic from "../components/Statistic";
-import belowbar from "../components/belowbar";
+import Belowbar from "../components/belowbar";
 const Home = () => {
   return (
     <>
