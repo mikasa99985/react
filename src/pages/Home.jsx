@@ -5,10 +5,11 @@ import Card from "../components/card";
 import Nav from "../components/Nav";
 import Bigcard from "../components/Bigcard";
 import Features from "../components/Features";
-
+import belowbar from "../components/belowbar";
 const Home = () => {
   return (
     <>
+      <Belowbar/>    
       <Nav />
       <Slidercard />
       <Bigcard />
