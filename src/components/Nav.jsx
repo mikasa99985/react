@@ -4,6 +4,8 @@ import "../utility/css/Navbar.css";
 import icon from "../assets/game_favicon.png";
 
 const Nav = () => {
+
+
   return (
     <>
       <nav
@@ -133,6 +135,7 @@ const Nav = () => {
               aria-expanded="false"
               style={{ cursor: "pointer" }}
             >
+              
               <svg
                 xmlns="http://www.w3.org/2000/svg"
                 width="30"
