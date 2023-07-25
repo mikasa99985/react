@@ -62,3 +62,9 @@
         background-position: 400%;
     }
 }
+
+@media only screen and (max-width: 600px){
+    .btn-cus{
+        font-size: 15px;
+    }
+}
