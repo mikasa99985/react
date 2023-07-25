@@ -5,6 +5,7 @@ import Card from "../components/card";
 import Nav from "../components/Nav";
 import Bigcard from "../components/Bigcard";
 import Features from "../components/Features";
+import Statistic from "../components/Statistic";
 
 const Home = () => {
   return (
@@ -13,6 +14,7 @@ const Home = () => {
       <Slidercard />
       <Bigcard />
       <Features />
+      <Statistic/>
     </>
   );
 };
