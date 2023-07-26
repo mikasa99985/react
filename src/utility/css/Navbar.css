@@ -9,11 +9,11 @@
   border-radius: 15px;
 } */
 
-.navbar-brand, .nav-item{
+.navbar-brand, .nav-item-pop{
   transition: 300ms;
 }
 
-.navbar-brand:hover, .nav-item:hover{
+.navbar-brand:hover, .nav-item-pop:hover{
   transform: scale(1.2);
 }
 

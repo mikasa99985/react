@@ -10,6 +10,7 @@ import Statistic from "../components/Statistic";
 const Home = () => {
   return (
     <>
+       
       <Nav />
       <Slidercard />
       <Bigcard />
