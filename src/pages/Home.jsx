@@ -8,10 +8,11 @@ import Features from "../components/Features";
 import Statistic from "../components/Statistic";
 
 const Home = () => {
+  
   return (
     <>
        
-      <Nav />
+      <Nav home={true} />
       <Slidercard />
       <Bigcard />
       <Features />

@@ -30,6 +30,14 @@
   transform: scale(1.2) rotate(-5deg);
 }
 
+.active-nav{
+  transform: scale(1.2);
+}
+
+.active-offc {
+  color: gray !important;
+}
+
 /* .navbar-brand:hover {
   background-color: rgba(255, 0, 0, 0.514);
   border-radius: 20px;
