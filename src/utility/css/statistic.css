@@ -1,0 +1,120 @@
+/* Reset some default styles */
+body, h1, h2, h3, h4, h5, h6, p, ul, li {
+    margin: 0;
+    padding: 0;
+  }
+  
+  body {
+    font-family: Arial, sans-serif;
+    line-height: 1.6;
+    background-color: #f7f7f7;
+  }
+  
+  .container {
+    max-width: 1140px;
+    margin: 0 auto;
+  }
+  
+  .text-gray-600 {
+    color: black;
+  }
+  
+  .text-center {
+    text-align: center;
+  }
+  
+  .mb-20 {
+    margin-bottom: 20px;
+  }
+  
+  .mb-4 {
+    margin-bottom: 4px;
+  }
+  
+  .title-font {
+    font-size: 2.5rem;
+  }
+  
+  .font-medium {
+    font-weight: 500;
+  }
+  
+  .text-gray-900 {
+    color: #111827;
+  }
+  
+  .leading-relaxed {
+    line-height: 1.7;
+  }
+  
+  .flex {
+    display: flex;
+  }
+  
+  .flex-wrap {
+    flex-wrap: wrap;
+  }
+  
+  .m-4 {
+    margin: 16px;
+  }
+  
+  .p-4 {
+    padding: 16px;
+  }
+  
+  .md {
+    width: 25%;
+  }
+  
+  .sm {
+    width: 50%;
+  }
+  
+  .w-full {
+    width: 100%;
+  }
+  
+  .border-2 {
+    border-width: 2px;
+  }
+  
+  .border-gray-200 {
+    border-color: #e5e7eb;
+  }
+  
+  .rounded-lg {
+    border-radius: 18px;
+  }
+  
+  .text-indigo-500 {
+    color: #6366f1;
+  }
+  
+  .w-12 {
+    width: 48px;
+  }
+  
+  .h-12 {
+    height: 48px;
+  }
+  
+  .inline-block {
+    display: inline-block;
+  }
+  .rounded-lg {
+    transition: transform 0.3s ease;
+}
+
+.rounded-lg:hover {
+    transform: scale(1.09);
+}
+
+/* Change text color on hover */
+.text-gray-900:hover {
+    color: #2c0404;
+}
+.rounded-lg:hover {
+    background-color: blueviolet;
+    box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+}
