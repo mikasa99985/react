@@ -6,6 +6,7 @@ import Nav from "../components/Nav";
 import Bigcard from "../components/Bigcard";
 import Features from "../components/Features";
 import Statistic from "../components/Statistic";
+import Footer from "../components/Footer";
 
 const Home = () => {
   return (
@@ -16,6 +17,7 @@ const Home = () => {
       <Bigcard />
       <Features />
       <Statistic/>
+      <Footer/>
     </>
   );
 };
