@@ -8,7 +8,7 @@
 }
 
 .form-sign{
-    width: 30%;
+    width: 430px;
     padding: 35px;
     display: flex;
     flex-direction: column;
@@ -21,6 +21,7 @@
     text-transform: uppercase;
     font-size: 20px;
     padding: 10px;
+    border-radius: 6px;
 }
 
 .form-sign a{
@@ -32,5 +33,12 @@
 }
 
 .form-sign a:hover{
-    color: blue;
+    color: #03a9f4;
+}
+
+@media only screen and (max-width: 600px){
+    .form-sign{
+        width: 95%;
+        padding: 15px;
+    }
 }

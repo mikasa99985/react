@@ -1,10 +1,6 @@
 .btn-cus {
     position: relative;
-    /* height: 60px; */
-    /* width: 200px; */
     padding: 15px 50px;
-    margin: 0 35px;
-    border-radius: 50px;
     border: none;
     outline: none;
     background: #111;
@@ -15,6 +11,10 @@
     text-transform: uppercase;
     cursor: pointer;
     transition: background 0.5s;
+}
+
+.btn-radius{
+    border-radius: 50px;
 }
 
 .btn-blue-glow:hover {
