@@ -12,7 +12,7 @@ const Home = () => {
   return (
     <>
        
-      <Nav home={true} />
+      <Nav shop={true} />
       <Slidercard />
       <Bigcard />
       <Features />
