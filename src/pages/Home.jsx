@@ -9,10 +9,11 @@ import Statistic from "../components/Statistic";
 import Footer from "../components/Footer";
 
 const Home = () => {
+  
   return (
     <>
        
-      <Nav />
+      <Nav shop={true} />
       <Slidercard />
       <Bigcard />
       <Features />

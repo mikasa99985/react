@@ -1,0 +1,36 @@
+.container-sign{
+    height: 100vh;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: whitesmoke;
+}
+
+.form-sign{
+    width: 30%;
+    padding: 35px;
+    display: flex;
+    flex-direction: column;
+    background-color: white;
+    border-radius: 8px;
+    box-shadow: 0 0 10px #dddddd;
+}
+
+.form-sign button{
+    text-transform: uppercase;
+    font-size: 20px;
+    padding: 10px;
+}
+
+.form-sign a{
+    text-decoration: none;
+    color: black;
+    text-transform: uppercase;
+    font-weight: bold;
+    transition: 200ms;
+}
+
+.form-sign a:hover{
+    color: blue;
+}

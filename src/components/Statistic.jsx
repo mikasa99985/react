@@ -4,7 +4,6 @@ import'../utility/css/statistic.css'
 export default function Statistic() {
     return (
         <>
-         
             <section className="text-gray-600">
                 <div className="container py-5">
                     <div className="row mb-4">
@@ -57,7 +56,6 @@ export default function Statistic() {
                     </div>
                 </div>
             </section>
-
         </>
     )
 }
