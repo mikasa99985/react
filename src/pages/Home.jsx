@@ -1,5 +1,5 @@
 import React, { useEffect } from "react";
-import { database, db } from "../../firebase.config";
+import { database, db, auth } from "../../firebase.config";
 import Slidercard from "../components/slidercard";
 import Card from "../components/card";
 import Nav from "../components/Nav";
@@ -9,16 +9,15 @@ import Statistic from "../components/Statistic";
 import Footer from "../components/Footer";
 
 const Home = () => {
-  
   return (
     <>
-       
+
       <Nav home={true} />
       <Slidercard />
       <Bigcard />
       <Features />
-      <Statistic/>
-      <Footer/>
+      <Statistic />
+      <Footer />
     </>
   );
 };

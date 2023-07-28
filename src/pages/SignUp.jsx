@@ -1,10 +1,14 @@
 import React, { useState } from "react";
 import '../utility/css/Sign.css';
-import { Link } from "react-router-dom";
+import { Link, useHistory } from "react-router-dom";
 import '../utility/css/btn_glow.css';
+import { db, auth } from '../../firebase.config';
+import { filter } from "../utility/js/util";
 
 
 const SignUp = () => {
+
+  let history = useHistory();
 
   let ImageUrl = "https://firebasestorage.googleapis.com/v0/b/online-app-a440d.appspot.com/o/empty-profile.png?alt=media&token=9d884c2e-e9ab-4ac0-9d28-cd7ec5ba917f";
 
@@ -15,11 +19,10 @@ const SignUp = () => {
     email: '',
     password: '',
     img: ImageUrl,
-    age: 0,
+    age: '',
     gender: 'male',
     phone: '',
-    type: 'email-password',
-
+    type: 'email-password'
   });
 
   let name, value;
@@ -32,13 +35,22 @@ const SignUp = () => {
 
   function Signup(e) {
     e.preventDefault();
-
     setLoading(true);
-    setTimeout(() => {
-      setLoading(false);
-      console.log(user);
-      setAlert('Sign up is not set');
-    }, 3000);
+    auth.createUserWithEmailAndPassword(user.email, user.password)
+      .then((userCredential) => {
+        db.collection("users").doc(auth.currentUser.uid).set(user).then(() => {
+          history.push('/');
+          setLoading(false);
+        }).catch((error) => {
+          setAlert('Network ERROR!')
+        });
+      })
+      .catch((error) => {
+        var errorCode = error.code;
+        var errorMessage = error.message;
+        setAlert(filter(errorMessage));
+        setLoading(false);
+      });
   }
 
   return (
@@ -104,7 +116,6 @@ const SignUp = () => {
               :
               <></>
           }
-
 
           <hr className="my-4" />
 
