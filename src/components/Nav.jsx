@@ -78,7 +78,7 @@ const Nav = (props) => {
         </div>
       </nav>
 
-      <div className="offcanvas offcanvas-start" style={{ backgroundColor: 'black' }} data-bs-scroll="true" data-bs-backdrop="false" tabindex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
+      <div className="offcanvas offcanvas-start" style={{ backgroundColor: 'black' }} data-bs-scroll="true" data-bs-backdrop="false" tabIndex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div className="offcanvas-header">
           <img className="anima-icon" src={icon} style={{ width: '40px' }} alt="" />
           <h5 className="offcanvas-title fw-bolder" style={{ fontSize: '30px', color: 'white' }} id="offcanvasScrollingLabel">VIBRANT</h5>
@@ -121,7 +121,7 @@ const Nav = (props) => {
         </div>
       </div>
 
-      <div className="modal fade" id="searchModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+      <div className="modal fade" id="searchModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-body">
