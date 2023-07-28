@@ -9,7 +9,7 @@ const Nav = (props) => {
 
   return (
     <>
-      <nav className="navbar navbar-expand-lg floating-shadow" style={{ backgroundColor: "rgb(0 0 0)" }}>
+      <nav className="navbar navbar-expand-lg floating-shadow" style={{ }}>
         <div className="container-fluid">
 
           {/* <button className="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
