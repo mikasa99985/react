@@ -3,12 +3,18 @@ import '../utility/css/Sign.css';
 import { Link, useHistory } from "react-router-dom";
 import '../utility/css/btn_glow.css';
 import { filter } from '../utility/js/util.js'
-import { db, auth } from '../../firebase.config';
+import { db, auth, provider } from '../../firebase.config';
 
 
 const SignIn = () => {
 
   let history = useHistory();
+
+  provider.addScope('https://www.googleapis.com/auth/contacts.readonly');
+  auth.languageCode = 'it';
+  provider.setCustomParameters({
+    'login_hint': 'user@example.com'
+  });
 
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState('');
@@ -40,6 +46,33 @@ const SignIn = () => {
         setAlert(filter(errorMessage));
       });
 
+  }
+
+  function Google() {
+    auth.signInWithPopup(provider).then((result) => {
+    
+      var credential = result.credential;
+      var token = credential.accessToken;
+      var user = result.user;
+
+      db.collection("users").doc(user.uid).get().then((doc) => {
+        if (doc.exists) {
+          history.push('/');
+        } else {
+          history.push('/google_sign_in');
+        }
+      }).catch((error) => {
+        console.log("Error!!!");
+      });
+
+    }).catch((error) => {
+      var errorCode = error.code;
+      var errorMessage = error.message;
+      var email = error.email;
+      var credential = error.credential;
+      console.log(errorMessage);
+      setAlert(filter(errorMessage));
+    });
   }
 
   return (
@@ -85,14 +118,14 @@ const SignIn = () => {
 
           <hr className="my-4" />
 
-          <button type="button" className="btn btn-primary d-flex align-items-center justify-content-center">
+          <button type="button" onClick={Google} className="btn btn-primary d-flex align-items-center justify-content-center">
             <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" fill="currentColor" className="bi bi-google me-2" viewBox="0 0 16 16">
               <path d="M15.545 6.558a9.42 9.42 0 0 1 .139 1.626c0 2.434-.87 4.492-2.384 5.885h.002C11.978 15.292 10.158 16 8 16A8 8 0 1 1 8 0a7.689 7.689 0 0 1 5.352 2.082l-2.284 2.284A4.347 4.347 0 0 0 8 3.166c-2.087 0-3.86 1.408-4.492 3.304a4.792 4.792 0 0 0 0 3.063h.003c.635 1.893 2.405 3.301 4.492 3.301 1.078 0 2.004-.276 2.722-.764h-.003a3.702 3.702 0 0 0 1.599-2.431H8v-3.08h7.545z" />
             </svg>
             Login with Google
           </button>
 
-          <Link to="/sign_in" className="text-center mt-4">Not Registered? Sign up Now</Link>
+          <Link to="/sign_up" className="text-center mt-4">Not Registered? Sign up Now</Link>
 
         </form>
       </div>

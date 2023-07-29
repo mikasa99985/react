@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from "react";
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import '../utility/css/Navbar.css';
 import icon from '../assets/game_favicon.png'
 import iconGame from '../assets/favicon.png'
@@ -7,15 +7,29 @@ import { database, db, auth } from "../../firebase.config";
 
 const Nav = (props) => {
 
+  let history = useHistory();
+
   const [login, setLogin] = useState(false);
   const [imageUrl, setImageUrl] = useState('https://firebasestorage.googleapis.com/v0/b/online-app-a440d.appspot.com/o/empty-profile.png?alt=media&token=9d884c2e-e9ab-4ac0-9d28-cd7ec5ba917f');
   
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
-        setLogin(true);
-        db.collection("users").doc(auth.currentUser.uid).onSnapshot((doc) => {
-          setImageUrl(doc.data().img);
+        db.collection("users").doc(user.uid).get().then((doc) => {
+          if (doc.exists) {
+            setLogin(true);
+            db.collection("users").doc(auth.currentUser.uid).onSnapshot((doc) => {
+              if (doc.data().type == 'email-password') {
+                setImageUrl(doc.data().img);
+              }else{
+                setImageUrl(user.photoURL)
+              }
+            });
+          } else {
+            history.push('/google_sign_in');
+          }
+        }).catch((error) => {
+          console.log("Error!!!");
         });
       } else {
         console.log("NO acc");
