@@ -7,6 +7,7 @@ import Bigcard from "../components/Bigcard";
 import Features from "../components/Features";
 import Statistic from "../components/Statistic";
 import Footer from "../components/Footer";
+import Footer from "../components/Tabcard";
 
 const Home = () => {
   return (
@@ -14,6 +15,7 @@ const Home = () => {
 
       <Nav home={true} />
       <Slidercard />
+      <Tabcard/>
       <Bigcard />
       <Features />
       <Statistic />
