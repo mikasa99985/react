@@ -4,7 +4,7 @@ import icon from '../assets/right-arrow.png'
 import '../utility/css/cardStyle.css'
 import '../utility/css/btn_glow.css'
 import { useState } from 'react';
-import { useEffectOnce } from '../utility/js/util';
+import { useEffectOnce, capitalize } from '../utility/js/util';
 import { auth, database, db } from '../../firebase.config';
 import { useEffect } from 'react'
 
