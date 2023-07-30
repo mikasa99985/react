@@ -1,3 +1,6 @@
+import { useEffect } from "react"
+import { useRef } from "react"
+
 export function filter(str) {
     str = str.replace('Firebase: ', '')
     str = str.replace('(auth/wrong-password).', '')
@@ -7,3 +10,33 @@ export function filter(str) {
     str = str.replace('(auth/email-already-in-use).', '')
     return str;
 }
+
+export const useEffectOnce = ( effect => {
+
+    const destroyFunc = useRef();
+    const calledOnce = useRef(false);
+    const renderAfterCalled = useRef(false);
+
+    if (calledOnce.current) {
+        renderAfterCalled.current = true;
+    }
+
+    useEffect( () => {
+        if (calledOnce.current) { 
+            return; 
+        }
+
+        calledOnce.current = true;
+        destroyFunc.current = effect();
+
+        return ()=> {
+            if (!renderAfterCalled.current) {
+                return;
+            }
+
+            if (destroyFunc.current) {
+                destroyFunc.current();
+            }
+        };
+    }, []);
+});

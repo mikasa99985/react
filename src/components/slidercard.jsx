@@ -3,7 +3,10 @@ import Card from './card'
 import icon from '../assets/right-arrow.png'
 import '../utility/css/cardStyle.css'
 import '../utility/css/btn_glow.css'
-import { useState } from 'react' ;
+import { useState } from 'react';
+import { useEffectOnce } from '../utility/js/util';
+import { auth, database, db } from '../../firebase.config';
+import { useEffect } from 'react'
 
 export default function Slidercard() {
 
@@ -21,14 +24,74 @@ export default function Slidercard() {
   // const mouseenter = () => {
   //   mouseishovering(true) ;
   // };
-  
+
   // const mousequit = () => {
   //   mouseishovering(false);
   // };
 
+  const [list1, setList1] = useState([]);
+  const [list2, setList2] = useState([]);
+  const [list3, setList3] = useState([]);
+  useEffect(() => {
+    let arr1 = [];
+    let arr2 = [];
+    let arr3 = [];
+
+    db.collection("game_collection")
+      .orderBy('type')
+      .startAt('')
+      .endAt('competitive' + '~')
+      .limit(9)
+      .get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.id, " => ", doc.data());
+          arr1.push(doc.data());
+        });
+      }).then(() => {
+        setList1(arr1);
+      }).catch((error) => {
+        console.log("Error ");
+      });
+
+    db.collection("game_collection")
+      .orderBy('type')
+      .startAt('fps')
+      .endAt('' + '~')
+      .limit(9)
+      .get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.id, " => ", doc.data());
+          arr2.push(doc.data());
+        });
+      }).then(() => {
+        setList2(arr2);
+      }).catch((error) => {
+        console.log("Error ");
+      });
+
+    db.collection("game_collection")
+      .orderBy('type')
+      .startAt('action')
+      .endAt('action' + '~')
+      .limit(9)
+      .get().then((querySnapshot) => {
+        querySnapshot.forEach((doc) => {
+          // doc.data() is never undefined for query doc snapshots
+          // console.log(doc.id, " => ", doc.data());
+          arr3.push(doc.data());
+        });
+      }).then(() => {
+        setList3(arr3);
+      }).catch((error) => {
+        console.log("Error ");
+      });
+
+  }, []);
+
   return (
     <>
-
       <div className="d-flex justify-content-center mt-5">
         <h1 className='fw-bolder'>EXPLORE MORE GAMES</h1>
       </div>
@@ -38,44 +101,52 @@ export default function Slidercard() {
 
           <div className="carousel-item active">
             <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{ translate: '-95px' }}>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?product" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?vidoe game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?laptop" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?codeing" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-
+              {
+                list1.map((element, index) => {
+                  return (
+                    <Card
+                      key={'List1'+index}
+                      img={element.img}
+                      gameTitle={element.name.slice(0, 10)+'...'}
+                      gameType={element.type.slice(0, 10)+'...'}
+                    />
+                  )
+                })
+              }
             </div>
           </div>
 
           <div className="carousel-item">
             <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{ translate: '-95px' }}>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?product" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?vidoe game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?laptop" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?codeing" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              {
+                list2.map((element, index) => {
+                  return (
+                    <Card
+                      key={'List2'+index}
+                      img={element.img}
+                      gameTitle={element.name.slice(0, 10)+'...'}
+                      gameType={element.type.slice(0, 10)+'...'}
+                    />
+                  )
+                })
+              }
             </div>
           </div>
 
           <div className="carousel-item">
             <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{ translate: '-95px' }}>
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?product" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?vidoe game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?laptop" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?codeing" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
-              <Card img="https://source.unsplash.com/collection/190727/900x1100?game" />
+              {
+                list3.map((element, index) => {
+                  return (
+                    <Card
+                      key={'List3'+index}
+                      img={element.img}
+                      gameTitle={element.name.slice(0, 10)+'...'}
+                      gameType={element.type.slice(0, 10)+'...'}
+                    />
+                  )
+                })
+              }
             </div>
           </div>
 

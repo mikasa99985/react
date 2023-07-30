@@ -7,8 +7,8 @@ export default function Card(props) {
       <div className="card pop-card" style={{ width: "13rem", cursor: 'pointer' }} >
         <img src={props.img} className="card-img" alt="..." />
         <div className="card-t">
-          <h4>Game Title</h4>
-          <h5 className='mb-3'>Game type</h5>
+          <h4>{props.gameTitle}</h4>
+          <h5 className='mb-3'>{props.gameType}</h5>
         </div>
       </div>
     </>
