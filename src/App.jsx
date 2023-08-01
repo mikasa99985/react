@@ -5,6 +5,7 @@ import Home from './pages/Home';
 import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import Google from './pages/Google';
+import Shop from './pages/Shop';
 
 function App() {
   const appStyle = {
@@ -30,6 +31,10 @@ function App() {
 
           <Route exact path="/google_sign_in">
             <Google />
+          </Route>
+
+          <Route exact path="/shop">
+            <Shop />
           </Route>
         </Switch>
       </Router>
