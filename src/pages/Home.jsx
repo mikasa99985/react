@@ -7,7 +7,7 @@ import Bigcard from "../components/Bigcard";
 import Features from "../components/Features";
 import Statistic from "../components/Statistic";
 import Footer from "../components/Footer";
-import Tabcard from "../components/Tabcard";
+import Tabcard from "../components/Tab/Tabcard";
 
 const Home = () => {
   return (
