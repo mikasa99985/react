@@ -24,7 +24,7 @@ const Card = () => {
                         <h3 className="mb-0">Age of Empires</h3>
 
                         <p className="card-text mb-auto">
-                            Age of Empires is a series of historical real-time strategy video games, originally developed by Ensemble Studios and published by Xbox Game Studios.
+                            Age of Empires is a series of historical real-time strategy video games
                         </p>
                         <a href="#" className="icon-link gap-1 icon-link-hover stretched-link">
                             View Details
