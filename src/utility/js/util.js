@@ -11,7 +11,7 @@ export function filter(str) {
     return str;
 }
 
-export const useEffectOnce = ( effect => {
+export const useEffectOnce = (effect => {
 
     const destroyFunc = useRef();
     const calledOnce = useRef(false);
@@ -21,15 +21,15 @@ export const useEffectOnce = ( effect => {
         renderAfterCalled.current = true;
     }
 
-    useEffect( () => {
-        if (calledOnce.current) { 
-            return; 
+    useEffect(() => {
+        if (calledOnce.current) {
+            return;
         }
 
         calledOnce.current = true;
         destroyFunc.current = effect();
 
-        return ()=> {
+        return () => {
             if (!renderAfterCalled.current) {
                 return;
             }
@@ -43,6 +43,36 @@ export const useEffectOnce = ( effect => {
 
 export function capitalize(string) {
     return string.charAt(0).toUpperCase() + string.slice(1);
+}
+
+export function parseTime(UNIX_timestamp, format) {
+    let a = new Date(UNIX_timestamp);
+    let months = ['Jan', 'Feb', 'Mar', 'Apr', 'May', 'Jun', 'Jul', 'Aug', 'Sep', 'Oct', 'Nov', 'Dec'];
+    let year = a.getFullYear();
+    let month = months[a.getMonth()];
+    let date = a.getDate();
+    let hour = a.getHours();
+    let min = a.getMinutes();
+    let sec = a.getSeconds();
+    let time = '';
+    switch (format) {
+        case 'full':
+            time = date + ' ' + month + ' ' + year + ' ' + hour + ':' + min + ':' + sec;
+            break;
+
+        case 'date':
+            time = date + ' ' + month + ' ' + year;
+            break;
+
+        case 'time':
+            time = hour + ':' + min + ':' + sec;
+            break;
+
+        default:
+            break;
+    }
+
+    return time;
 }
 
 Object.defineProperty(String.prototype, 'capitalize', {

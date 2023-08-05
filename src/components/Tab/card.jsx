@@ -1,12 +1,13 @@
 import React from 'react'
+import {parseTime} from '../../utility/js/util'
 
-const Card = () => {
+const Card = (props) => {
     return (
         <>
             <div className="col-md-6">
                 <div className="row g-0 border rounded overflow-hidden flex-md-row mb-4 shadow-sm h-md-250 position-relative">
                     <div className="col-auto d-none d-lg-block">
-                        <img src="https://firebasestorage.googleapis.com/v0/b/vibrant-games.appspot.com/o/GameCollectionImg%2F1689863035542?alt=media&token=a0ff5e42-c7cc-4f95-a1b9-3724dbe7befa"
+                        <img src={props.img}
                             className="bd-placeholder-img"
                             width="200"
                             height="250"
@@ -19,12 +20,12 @@ const Card = () => {
                     </div>
                     <div className="col p-4 d-flex flex-column position-static">
                         <strong className="d-inline-block mb-2 text-primary-emphasis">
-                            1st Aug 2023
+                            {parseTime(parseInt(props.time), 'date')}
                         </strong>
-                        <h3 className="mb-0">Age of Empires</h3>
+                        <h3 className="mb-0">{props.name}</h3>
 
                         <p className="card-text mb-auto">
-                            Age of Empires is a series of historical real-time strategy video games
+                            {props.desc}
                         </p>
                         <a href="#" className="icon-link gap-1 icon-link-hover stretched-link">
                             View Details
