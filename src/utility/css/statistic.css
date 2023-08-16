@@ -42,11 +42,11 @@
   height: 48px;
 }
 
-.rounded-lg {
+.card-pp {
   transition: transform 300ms ease;
 }
 
-.rounded-lg:hover {
+.card-pp:hover {
   transform: scale(1.06);
   background-color: whitesmoke;
   box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
