@@ -1,6 +1,6 @@
 import React from 'react'
 import { Link } from "react-router-dom";
-import icon from '../assets/favicon.png';
+import icon from '../assets/fav_icon.png';
 
 export default function Footer() {
   return (
