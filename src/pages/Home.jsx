@@ -8,6 +8,7 @@ import Features from "../components/Features";
 import Statistic from "../components/Statistic";
 import Footer from "../components/Footer";
 import Tab from "../components/Tab/Tab";
+import Ourteam from "../components/Ourteam";
 
 const Home = () => {
   return (
@@ -19,6 +20,7 @@ const Home = () => {
       <Bigcard />
       <Features />
       <Statistic />
+      <Ourteam/>
       <Footer />
     </>
   );

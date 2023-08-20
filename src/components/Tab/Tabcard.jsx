@@ -27,7 +27,7 @@ export default function Tabcard(props) {
 
   return (
     <>
-      <div className="mx-auto mt-5 mb-4 w-100">
+      <div className="mx-auto mt-5 mb-4 w-75">
         <div className="row mb-2">
 
           {list.map((element, index) => {

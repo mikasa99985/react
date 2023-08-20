@@ -2,7 +2,7 @@ import React, { useEffect, useState } from "react";
 import { Link, useHistory } from 'react-router-dom'
 import '../utility/css/Navbar.css';
 import icon from '../assets/game_favicon.png'
-import iconGame from '../assets/favicon.png'
+// import iconGame from '../assets/favicon.png'
 import { database, db, auth } from "../../firebase.config";
 
 const Nav = (props) => {
