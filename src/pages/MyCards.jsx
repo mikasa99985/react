@@ -26,7 +26,7 @@ const [imageUrl, setImageUrl] = useState('https://firebasestorage.googleapis.com
                                 Neil Sims
                             </p>
                             <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                email@windster.com
+                                email@fightclub.com
                             </p>
                         </div>
                         <div class="d-inline-flex align-items-center h5 font-semibold text-gray-900 dark:text-white">
@@ -43,18 +43,18 @@ const [imageUrl, setImageUrl] = useState('https://firebasestorage.googleapis.com
                 <li class="py-3 sm:py-4">
                     <div class="d-flex align-items-center space-x-4">
                         <div class="flex-shrink-0">
-                            <img class="w-8 h-8 rounded-circle" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"/>
+                            <img class="w-8 h-8 rounded-circle" style={{width:"60px"}} src={imageUrl} alt="Neil image"/>
                         </div>
                         <div class="flex-grow-1">
                             <p class="h6 text-sm font-medium text-gray-900 truncate dark:text-white">
                                 Neil Sims
                             </p>
                             <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                email@windster.com
+                                email@ghostrider.com
                             </p>
                         </div>
                         <div class="d-inline-flex align-items-center h5 font-semibold text-gray-900 dark:text-white">
-                            $320
+                            $420
                         </div>
                     </div>
                 </li>
@@ -67,18 +67,18 @@ const [imageUrl, setImageUrl] = useState('https://firebasestorage.googleapis.com
                 <li class="py-3 sm:py-4">
                     <div class="d-flex align-items-center space-x-4">
                         <div class="flex-shrink-0">
-                            <img class="w-8 h-8 rounded-circle" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"/>
+                            <img class="w-8 h-8 rounded-circle" style={{width:"60px"}} src={imageUrl} alt="Neil image"/>
                         </div>
                         <div class="flex-grow-1">
                             <p class="h6 text-sm font-medium text-gray-900 truncate dark:text-white">
                                 Neil Sims
                             </p>
                             <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                email@windster.com
+                                email@terminator.com
                             </p>
                         </div>
                         <div class="d-inline-flex align-items-center h5 font-semibold text-gray-900 dark:text-white">
-                            $320
+                            $500
                         </div>
                     </div>
                 </li>
@@ -91,18 +91,18 @@ const [imageUrl, setImageUrl] = useState('https://firebasestorage.googleapis.com
                 <li class="py-3 sm:py-4">
                     <div class="d-flex align-items-center space-x-4">
                         <div class="flex-shrink-0">
-                            <img class="w-8 h-8 rounded-circle" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"/>
+                            <img class="w-8 h-8 rounded-circle" style={{width:"60px"}} src={imageUrl} alt="Neil image"/>
                         </div>
                         <div class="flex-grow-1">
                             <p class="h6 text-sm font-medium text-gray-900 truncate dark:text-white">
                                 Neil Sims
                             </p>
                             <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                email@windster.com
+                                email@interstaller.com
                             </p>
                         </div>
                         <div class="d-inline-flex align-items-center h5 font-semibold text-gray-900 dark:text-white">
-                            $320
+                            $650
                         </div>
                     </div>
                 </li>
@@ -115,18 +115,18 @@ const [imageUrl, setImageUrl] = useState('https://firebasestorage.googleapis.com
                 <li class="py-3 sm:py-4">
                     <div class="d-flex align-items-center space-x-4">
                         <div class="flex-shrink-0">
-                            <img class="w-8 h-8 rounded-circle" src="/docs/images/people/profile-picture-1.jpg" alt="Neil image"/>
+                            <img class="w-8 h-8 rounded-circle" style={{width:"60px"}} src={imageUrl} alt="Neil image"/>
                         </div>
                         <div class="flex-grow-1">
                             <p class="h6 text-sm font-medium text-gray-900 truncate dark:text-white">
                                 Neil Sims
                             </p>
                             <p class="text-sm text-gray-500 truncate dark:text-gray-400">
-                                email@windster.com
+                                email@conjuring.com
                             </p>
                         </div>
                         <div class="d-inline-flex align-items-center h5 font-semibold text-gray-900 dark:text-white">
-                            $320
+                            $350
                         </div>
                     </div>
                 </li>
