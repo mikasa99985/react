@@ -89,3 +89,11 @@ Object.defineProperty(String.prototype, 'capitalize', {
     },
     enumerable: false
 });
+
+export function urlEncode(url){
+    return url.replaceAll(" ","_");
+}
+
+export function urlDecode(url){
+    return url.replaceAll("_"," ");
+}

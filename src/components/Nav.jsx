@@ -4,6 +4,7 @@ import '../utility/css/Navbar.css';
 import icon from '../assets/game_favicon.png'
 // import iconGame from '../assets/favicon.png'
 import { database, db, auth } from "../../firebase.config";
+import {urlEncode} from '../utility/js/util'
 
 const Nav = (props) => {
 
@@ -11,6 +12,7 @@ const Nav = (props) => {
 
   const [login, setLogin] = useState(false);
   const [query, setQuery] = useState('');
+  const [user, setUser] = useState({});
   const [imageUrl, setImageUrl] = useState('https://firebasestorage.googleapis.com/v0/b/online-app-a440d.appspot.com/o/empty-profile.png?alt=media&token=9d884c2e-e9ab-4ac0-9d28-cd7ec5ba917f');
 
   useEffect(() => {
@@ -18,6 +20,7 @@ const Nav = (props) => {
       if (user) {
         db.collection("users").doc(user.uid).get().then((doc) => {
           if (doc.exists) {
+            setUser(doc);
             setLogin(true);
             db.collection("users").doc(auth.currentUser.uid).onSnapshot((doc) => {
               if (doc.data().type == 'email-password') {
@@ -47,7 +50,7 @@ const Nav = (props) => {
     });
   }
 
-  function Search(e){
+  function Search(e) {
     e.preventDefault();
     history.push(`/shop?search=${query}`)
   }
@@ -125,7 +128,51 @@ const Nav = (props) => {
                   </>
                   :
                   <>
-                    <li><button className="dropdown-item" data-bs-toggle="modal" data-bs-target="#logoutModel">Logout</button></li>
+                    <li>
+                      <Link className="dropdown-item" to={`/profile/${user.id}/${urlEncode(user.data().name)}`}>
+                        <div className="">
+                          <p className="m-0">{user.data().name}</p>
+                          <p className="m-0">{user.data().email}</p>
+                        </div>
+                      </Link>
+                    </li>
+                    <li><hr className="dropdown-divider" /></li>
+                    <li>
+                      <Link className="dropdown-item d-flex align-items-center" to="/library">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-collection me-2" viewBox="0 0 16 16">
+                          <path d="M2.5 3.5a.5.5 0 0 1 0-1h11a.5.5 0 0 1 0 1h-11zm2-2a.5.5 0 0 1 0-1h7a.5.5 0 0 1 0 1h-7zM0 13a1.5 1.5 0 0 0 1.5 1.5h13A1.5 1.5 0 0 0 16 13V6a1.5 1.5 0 0 0-1.5-1.5h-13A1.5 1.5 0 0 0 0 6v7zm1.5.5A.5.5 0 0 1 1 13V6a.5.5 0 0 1 .5-.5h13a.5.5 0 0 1 .5.5v7a.5.5 0 0 1-.5.5h-13z" />
+                        </svg>
+                        Library
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item d-flex align-items-center" to="/my_cards">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-cart-check me-2" viewBox="0 0 16 16">
+                          <path d="M11.354 6.354a.5.5 0 0 0-.708-.708L8 8.293 6.854 7.146a.5.5 0 1 0-.708.708l1.5 1.5a.5.5 0 0 0 .708 0l3-3z" />
+                          <path d="M.5 1a.5.5 0 0 0 0 1h1.11l.401 1.607 1.498 7.985A.5.5 0 0 0 4 12h1a2 2 0 1 0 0 4 2 2 0 0 0 0-4h7a2 2 0 1 0 0 4 2 2 0 0 0 0-4h1a.5.5 0 0 0 .491-.408l1.5-8A.5.5 0 0 0 14.5 3H2.89l-.405-1.621A.5.5 0 0 0 2 1H.5zm3.915 10L3.102 4h10.796l-1.313 7h-8.17zM6 14a1 1 0 1 1-2 0 1 1 0 0 1 2 0zm7 0a1 1 0 1 1-2 0 1 1 0 0 1 2 0z" />
+                        </svg>
+                        My cards
+                      </Link>
+                    </li>
+                    <li>
+                      <Link className="dropdown-item d-flex align-items-center" to="/favorites">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-card-checklist me-2" viewBox="0 0 16 16">
+                          <path d="M14.5 3a.5.5 0 0 1 .5.5v9a.5.5 0 0 1-.5.5h-13a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h13zm-13-1A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h13a1.5 1.5 0 0 0 1.5-1.5v-9A1.5 1.5 0 0 0 14.5 2h-13z" />
+                          <path d="M7 5.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 1 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0zM7 9.5a.5.5 0 0 1 .5-.5h5a.5.5 0 0 1 0 1h-5a.5.5 0 0 1-.5-.5zm-1.496-.854a.5.5 0 0 1 0 .708l-1.5 1.5a.5.5 0 0 1-.708 0l-.5-.5a.5.5 0 0 1 .708-.708l.146.147 1.146-1.147a.5.5 0 0 1 .708 0z" />
+                        </svg>
+                        Favorites list
+                      </Link>
+                    </li>
+                    <li><hr className="dropdown-divider" /></li>
+                    <li>
+                      <button className="dropdown-item d-flex align-items-center" data-bs-toggle="modal" data-bs-target="#logoutModel">
+                        <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-box-arrow-right me-2" viewBox="0 0 16 16">
+                          <path fillRule="evenodd" d="M10 12.5a.5.5 0 0 1-.5.5h-8a.5.5 0 0 1-.5-.5v-9a.5.5 0 0 1 .5-.5h8a.5.5 0 0 1 .5.5v2a.5.5 0 0 0 1 0v-2A1.5 1.5 0 0 0 9.5 2h-8A1.5 1.5 0 0 0 0 3.5v9A1.5 1.5 0 0 0 1.5 14h8a1.5 1.5 0 0 0 1.5-1.5v-2a.5.5 0 0 0-1 0v2z" />
+                          <path fillRule="evenodd" d="M15.854 8.354a.5.5 0 0 0 0-.708l-3-3a.5.5 0 0 0-.708.708L14.293 7.5H5.5a.5.5 0 0 0 0 1h8.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3z" />
+                        </svg>
+                        Logout
+                      </button>
+                    </li>
                   </>
               }
 
@@ -183,7 +230,7 @@ const Nav = (props) => {
           <div className="modal-content">
             <div className="modal-body">
               <form className="input-group" onSubmit={Search}>
-                <input type="text" className="form-control" value={query} onChange={(e)=>{setQuery(e.target.value)}} placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" required />
+                <input type="text" className="form-control" value={query} onChange={(e) => { setQuery(e.target.value) }} placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" required />
                 <button type="submit" data-bs-dismiss="modal" className="btn btn-dark">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />

@@ -8,6 +8,7 @@ import Google from './pages/Google';
 import Shop from './pages/Shop';
 import Profile from './pages/Profile';
 import Page_404 from './pages/Page_404';
+import MyCards from './pages/MyCards';
 
 function App() {
   const appStyle = {
@@ -40,8 +41,12 @@ function App() {
             <Shop />
           </Route>
 
-          <Route exact path="/profile/:name/:id">
+          <Route exact path="/profile/:id/:name">
             <Profile />
+          </Route>
+
+          <Route exact path="/my_cards">
+            <MyCards />
           </Route>
 
           {/* 404 ERROR PAGE THIS REQUIRED THE END OF THE ALL ROUTERS */}
