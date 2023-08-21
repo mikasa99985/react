@@ -10,8 +10,9 @@ const Nav = (props) => {
   let history = useHistory();
 
   const [login, setLogin] = useState(false);
+  const [query, setQuery] = useState('');
   const [imageUrl, setImageUrl] = useState('https://firebasestorage.googleapis.com/v0/b/online-app-a440d.appspot.com/o/empty-profile.png?alt=media&token=9d884c2e-e9ab-4ac0-9d28-cd7ec5ba917f');
-  
+
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -21,7 +22,7 @@ const Nav = (props) => {
             db.collection("users").doc(auth.currentUser.uid).onSnapshot((doc) => {
               if (doc.data().type == 'email-password') {
                 setImageUrl(doc.data().img);
-              }else{
+              } else {
                 setImageUrl(user.photoURL)
               }
             });
@@ -40,12 +41,16 @@ const Nav = (props) => {
 
   function SignOut() {
     auth.signOut().then(() => {
-        console.log('Sign-out successful.');
+      console.log('Sign-out successful.');
     }).catch((error) => {
-        console.log(error.message);
+      console.log(error.message);
     });
-}
+  }
 
+  function Search(e){
+    e.preventDefault();
+    history.push(`/shop?search=${query}`)
+  }
 
   return (
     <>
@@ -172,13 +177,14 @@ const Nav = (props) => {
         </div>
       </div>
 
+      {/* Search */}
       <div className="modal fade" id="searchModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog">
           <div className="modal-content">
             <div className="modal-body">
-              <form className="input-group">
-                <input type="text" className="form-control" placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" required />
-                <button type="submit" className="btn btn-dark">
+              <form className="input-group" onSubmit={Search}>
+                <input type="text" className="form-control" value={query} onChange={(e)=>{setQuery(e.target.value)}} placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" required />
+                <button type="submit" data-bs-dismiss="modal" className="btn btn-dark">
                   <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                   </svg>

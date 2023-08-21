@@ -40,7 +40,7 @@ function App() {
             <Shop />
           </Route>
 
-          <Route exact path="/profile/:name/">
+          <Route exact path="/profile/:name/:id">
             <Profile />
           </Route>
 

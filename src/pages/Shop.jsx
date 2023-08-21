@@ -1,7 +1,10 @@
 import React from 'react';
 import '../utility/css/TempCard.css';
+import {useQuery} from '../utility/js/util'
 
 export default function Shop() {
+  const query = useQuery();
+  console.log(query.get('search'));
   return (
     <div>
       <div className="w-full max-w-sm bg-white border border-gray-200 rounded-lg shadow dark:bg-gray-800 dark:border-gray-700">
