@@ -1,5 +1,7 @@
+import React from 'react'
 import { useEffect } from "react"
 import { useRef } from "react"
+import { useParams, useRouteMatch, useLocation } from 'react-router-dom'
 
 export function filter(str) {
     str = str.replace('Firebase: ', '')
@@ -73,6 +75,12 @@ export function parseTime(UNIX_timestamp, format) {
     }
 
     return time;
+}
+
+export function useQuery() {
+    const { search } = useLocation();
+  
+    return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
 Object.defineProperty(String.prototype, 'capitalize', {

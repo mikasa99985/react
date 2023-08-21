@@ -6,6 +6,8 @@ import SignUp from './pages/SignUp';
 import SignIn from './pages/SignIn';
 import Google from './pages/Google';
 import Shop from './pages/Shop';
+import Profile from './pages/Profile';
+import Page_404 from './pages/Page_404';
 
 function App() {
   const appStyle = {
@@ -17,6 +19,7 @@ function App() {
     <div className='theme'>
       <Router>
         <Switch>
+
           <Route exact path="/">
             <Home />
           </Route>
@@ -36,6 +39,16 @@ function App() {
           <Route exact path="/shop">
             <Shop />
           </Route>
+
+          <Route exact path="/profile/:name/">
+            <Profile />
+          </Route>
+
+          {/* 404 ERROR PAGE THIS REQUIRED THE END OF THE ALL ROUTERS */}
+          <Route exact path="*">
+            <Page_404 />
+          </Route>
+
         </Switch>
       </Router>
     </div>
