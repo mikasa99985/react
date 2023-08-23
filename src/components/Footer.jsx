@@ -32,7 +32,7 @@ export default function Footer() {
               <h5>HELP</h5>
               <ul className="nav flex-column">
                 <li className="nav-item mb-2"><Link to="#" className="nav-link p-0 text-body-secondary">Live chat report</Link></li>
-                <li className="nav-item mb-2"><Link to="#" className="nav-link p-0 text-body-secondary">Email report</Link></li>
+                <li className="nav-item mb-2"><Link to="/report" className="nav-link p-0 text-body-secondary">Email report</Link></li>
               </ul>
             </div>
 
