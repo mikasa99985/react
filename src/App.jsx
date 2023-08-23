@@ -9,6 +9,7 @@ import Shop from './pages/Shop';
 import Profile from './pages/Profile';
 import Page_404 from './pages/Page_404';
 import MyCards from './pages/MyCards';
+import Details from './pages/Details';
 
 function App() {
   const appStyle = {
@@ -35,6 +36,10 @@ function App() {
 
           <Route exact path="/google_sign_in">
             <Google />
+          </Route>
+
+          <Route exact path="/shop/:name">
+            <Details />
           </Route>
 
           <Route exact path="/shop">

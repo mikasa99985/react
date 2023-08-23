@@ -29,6 +29,8 @@ export default function Slidercard() {
   //   mouseishovering(false);
   // };
 
+  let demo_list = [1, 2, 3, 4, 5, 6, 7, 8, 9]
+
   const [list1, setList1] = useState([]);
   const [list2, setList2] = useState([]);
   const [list3, setList3] = useState([]);
@@ -102,16 +104,27 @@ export default function Slidercard() {
           <div className="carousel-item active">
             <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{ translate: '-95px' }}>
               {
-                list1.map((element, index) => {
-                  return (
-                    <Card
-                      key={'List1'+index}
-                      img={element.img}
-                      gameTitle={element.name.slice(0, 10)+'...'}
-                      gameType={element.type.slice(0, 10)+'...'}
-                    />
-                  )
-                })
+                list1.length == 0 ?
+                  demo_list.map(element => {
+                    return (
+                      <div key={element} className="card pop-card" style={{ width: "13rem", cursor: 'pointer' }} >
+                        <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5qKfKjuNV4G-aBNAyxODGQxjZKcAi1NP7U0A5b2T9KQ&s" className="card-img" alt="..." />
+                        <div className="card-t">
+                        </div>
+                      </div>
+                    )
+                  })
+                  :
+                  list1.map((element, index) => {
+                    return (
+                      <Card
+                        key={'List1' + index}
+                        img={element.img}
+                        gameTitle={element.name.slice(0, 10) + '...'}
+                        gameType={element.type.slice(0, 10) + '...'}
+                      />
+                    )
+                  })
               }
             </div>
           </div>
@@ -119,13 +132,24 @@ export default function Slidercard() {
           <div className="carousel-item">
             <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{ translate: '-95px' }}>
               {
+                list2.length == 0 ?
+                demo_list.map(element => {
+                  return (
+                    <div key={element} className="card pop-card" style={{ width: "13rem", cursor: 'pointer' }} >
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5qKfKjuNV4G-aBNAyxODGQxjZKcAi1NP7U0A5b2T9KQ&s" className="card-img" alt="..." />
+                      <div className="card-t">
+                      </div>
+                    </div>
+                  )
+                })
+                :
                 list2.map((element, index) => {
                   return (
                     <Card
-                      key={'List2'+index}
+                      key={'List2' + index}
                       img={element.img}
-                      gameTitle={element.name.slice(0, 10)+'...'}
-                      gameType={element.type.slice(0, 10)+'...'}
+                      gameTitle={element.name.slice(0, 10) + '...'}
+                      gameType={element.type.slice(0, 10) + '...'}
                     />
                   )
                 })
@@ -136,13 +160,24 @@ export default function Slidercard() {
           <div className="carousel-item">
             <div className="card-wrapper container-sm d-flex justify-content-around w-50" style={{ translate: '-95px' }}>
               {
+                list3.length == 0 ?
+                demo_list.map(element => {
+                  return (
+                    <div key={element} className="card pop-card" style={{ width: "13rem", cursor: 'pointer' }} >
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR5qKfKjuNV4G-aBNAyxODGQxjZKcAi1NP7U0A5b2T9KQ&s" className="card-img" alt="..." />
+                      <div className="card-t">
+                      </div>
+                    </div>
+                  )
+                })
+                :
                 list3.map((element, index) => {
                   return (
                     <Card
-                      key={'List3'+index}
+                      key={'List3' + index}
                       img={element.img}
-                      gameTitle={element.name.slice(0, 10)+'...'}
-                      gameType={element.type.slice(0, 10)+'...'}
+                      gameTitle={element.name.slice(0, 10) + '...'}
+                      gameType={element.type.slice(0, 10) + '...'}
                     />
                   )
                 })
