@@ -4,7 +4,7 @@ import icon from '../assets/right-arrow.png'
 import '../utility/css/cardStyle.css'
 import '../utility/css/btn_glow.css'
 import { useState } from 'react';
-import { useEffectOnce, capitalize } from '../utility/js/util';
+import { useEffectOnce, capitalize, urlEncode } from '../utility/js/util';
 import { auth, database, db } from '../../firebase.config';
 import { useEffect } from 'react'
 
@@ -120,6 +120,7 @@ export default function Slidercard() {
                       <Card
                         key={'List1' + index}
                         img={element.img}
+                        link={`/shop/${urlEncode(element.name)}`}
                         gameTitle={element.name.slice(0, 10) + '...'}
                         gameType={element.type.slice(0, 10) + '...'}
                       />
@@ -148,6 +149,7 @@ export default function Slidercard() {
                     <Card
                       key={'List2' + index}
                       img={element.img}
+                      link={`/shop/${urlEncode(element.name)}`}
                       gameTitle={element.name.slice(0, 10) + '...'}
                       gameType={element.type.slice(0, 10) + '...'}
                     />
@@ -176,6 +178,7 @@ export default function Slidercard() {
                     <Card
                       key={'List3' + index}
                       img={element.img}
+                      link={`/shop/${urlEncode(element.name)}`}
                       gameTitle={element.name.slice(0, 10) + '...'}
                       gameType={element.type.slice(0, 10) + '...'}
                     />

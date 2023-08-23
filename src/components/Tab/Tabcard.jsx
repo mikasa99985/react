@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import Card from './card';
 import { db } from '../../../firebase.config';
+import { urlEncode } from '../../utility/js/util';
 
 export default function Tabcard(props) {
 
@@ -53,6 +54,7 @@ export default function Tabcard(props) {
                   return (
                     <Card
                       key={index}
+                      link={`/shop/${urlEncode(element.name)}`}
                       img={element.img}
                       time={element.time}
                       name={element.name}
