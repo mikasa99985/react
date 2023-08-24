@@ -79,7 +79,7 @@ export function parseTime(UNIX_timestamp, format) {
 
 export function useQuery() {
     const { search } = useLocation();
-  
+
     return React.useMemo(() => new URLSearchParams(search), [search]);
 }
 
@@ -90,10 +90,22 @@ Object.defineProperty(String.prototype, 'capitalize', {
     enumerable: false
 });
 
-export function urlEncode(url){
-    return url.replaceAll(" ","_");
+export function urlEncode(url) {
+    return url.replaceAll(" ", "_");
 }
 
-export function urlDecode(url){
-    return url.replaceAll("_"," ");
+export function urlDecode(url) {
+    return url.replaceAll("_", " ");
 }
+
+export function calculateMean(numbers) {
+    
+    if (numbers.length === 0) {
+        return 0; // Return 0 for an empty array, you can customize this behavior
+    }
+
+    const sum = numbers.reduce((acc, num) => acc + num, 0);
+    const mean = sum / numbers.length;
+    return mean;
+}
+

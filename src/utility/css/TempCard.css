@@ -66,8 +66,16 @@
 .rating-star {
   /* width: 1rem; */
   /* height: 1rem; */
-  fill: #f6ad55;
+  /* fill: #f6ad55; */
   margin-left: 4px;
+}
+
+.rating-star-yellow{
+  fill: #f6ad55;
+}
+
+.rating-star-gray{
+  fill: #e7e7e7;
 }
 
 .rating-value {

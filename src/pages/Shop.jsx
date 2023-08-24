@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Nav from "../components/Nav";
-import { urlEncode, useQuery } from '../utility/js/util'
+import { urlEncode, useQuery, useEffectOnce, calculateMean, capitalize } from '../utility/js/util'
 import ShopCard from '../components/ShopCard';
 import '../utility/css/TempCard.css';
 import { db, database } from '../../firebase.config'
@@ -9,18 +9,35 @@ export default function Shop() {
     const query = useQuery();
     const [list, setList] = useState([])
 
-    if (query.get('search') != null) {
-        console.log('search =', query.get('search'));
-    }
+    useEffectOnce(() => {
+        let query_db;
+        if (query.get('search') != null) {
+            // console.log('search =', query.get('search'));
+            query_db = db.collection("game_collection")
+                    .orderBy('name')
+                    .startAt(capitalize(query.get('search')))
+                    .endAt(capitalize(query.get('search')) + '~');
+        }else{
+            query_db = db.collection("game_collection");
+        }
 
-    useEffect(() => {
-        let arr = [];
-        db.collection("game_collection").get().then((querySnapshot) => {
-            querySnapshot.forEach((doc) => {
-                arr.push(doc);
+        query_db.get().then((querySnapshot) => {
+            querySnapshot.forEach(async (doc) => {
+                // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
+                // rate.forEach(element => {
+                //     console.log(element.val().rate);
+                // });
+                let arr = [];
+                database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
+                    snapshot.forEach(
+                        function (Childsnapshot) {
+                            arr.push(parseInt(Childsnapshot.val().rate));
+                        });
+                }).then(()=>{
+                    setList(oldArray => [...oldArray, { doc: doc, rate: arr }])
+                });
+
             });
-        }).then(() => {
-            setList(arr);
         }).catch((error) => {
             console.log("Error getting documents: ", error);
         });
@@ -36,26 +53,17 @@ export default function Shop() {
                     list.map((element, index) => {
                         return (
                             <ShopCard
-                                id={element.id}
-                                img={element.data().img}
-                                title={element.data().name.length>=25?element.data().name.slice(0,25)+'...':element.data().name}
-                                price={element.data().price==0?'FREE':'₹'+element.data().price}
-                                rate=""
+                                id={element.doc.id}
+                                img={element.doc.data().img}
+                                title={element.doc.data().name.length >= 25 ? element.doc.data().name.slice(0, 25) + '...' : element.doc.data().name}
+                                price={element.doc.data().price == 0 ? 'FREE' : '₹' + element.doc.data().price}
+                                rate={calculateMean(element.rate)}
                                 key={index}
-                                link={`/shop/${urlEncode(element.data().name)}`}
+                                link={`/shop/${urlEncode(element.doc.data().name)}`}
                             />
                         )
                     })
                 }
-
-                {/* <ShopCard
-                    id=""
-                    img="https://firebasestorage.googleapis.com/v0/b/vibrant-games.appspot.com/o/GameCollectionImg%2F1689866524816?alt=media&token=f5944b75-7705-4834-bc38-bbd110540d43"
-                    title="Apple Watch Series 7 GPS, Aluminium Case, Starlight Sport"
-                    price="599"
-                    rate=""
-                    link={`/shop/name`}
-                /> */}
             </div>
         </>
     );

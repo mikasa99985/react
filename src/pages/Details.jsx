@@ -1,5 +1,5 @@
 import React, { useEffect, useState } from 'react'
-import { db, database } from '../../firebase.config'
+import { db, database, auth } from '../../firebase.config'
 import { useParams } from 'react-router-dom'
 import { urlDecode } from '../utility/js/util'
 
@@ -8,6 +8,19 @@ const Details = () => {
 
   const [data, setData] = useState(false);
   const [slider_img, setImg] = useState([]);
+  const [isLogin, setLogin] = useState(false);
+  const [rateing, setRate] = useState({
+    rate: '0',
+    comment: ''
+  });
+
+  let name, value;
+  const getData = (even) => {
+    name = even.target.name
+    value = even.target.value
+
+    setRate({ ...rateing, [name]: value })
+  }
 
   useEffect(() => {
 
@@ -25,16 +38,40 @@ const Details = () => {
           }).then(() => {
             setImg(arr);
           });
-  
+
         });
-      }else{
+      } else {
         console.log('No data found');
       }
     }).catch((error) => {
       console.log("Error getting documents: ", error);
     });
 
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setLogin(true);
+      } else {
+        setLogin(false);
+      }
+    });
+
   }, [])
+
+  function submit(e) {
+    e.preventDefault();
+    console.log(auth.currentUser.uid,data.id, isLogin);
+
+    if (isLogin) {
+      database.ref(`game_collection/${data.id}/ratings/${auth.currentUser.uid}`).set(rateing).then(() => {
+        console.log("done");
+      });
+    } else {
+      console.log('You are not login');
+    }
+
+
+  }
+
   return (
     <>
       {/* do not delete this */}
@@ -56,6 +93,23 @@ const Details = () => {
           :
           <></>
       }
+
+      <div className="container w-75">
+        <form className='my-5' onSubmit={submit}>
+
+          <div className="mb-3">
+            <label htmlFor="rate" className="form-label">Rate us {rateing.rate}</label>
+            <input type="range" className="form-range" min="0" max="5" id="rate" name='rate' value={rateing.rate} onChange={getData} />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="comment" className="form-label">Comment</label>
+            <textarea className="form-control" id="comment" name='comment' value={rateing.desc} onChange={getData} rows="4"></textarea>
+          </div>
+
+          <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
+      </div>
 
     </>
   )
