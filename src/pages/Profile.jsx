@@ -8,7 +8,11 @@ const Profile = () => {
 
     return (
         <>
-            <h1>Profile Page <br /> Name: {urlDecode(params.name)} <br /> Id: {params.id}</h1>
+            {/* Do not remove */}
+            <h5>Profile Page <br /> Name: {urlDecode(params.name)} <br /> Id: {params.id}</h5>
+
+            {/* write code here */}
+            {/* ===> */}
         </>
     )
 }
