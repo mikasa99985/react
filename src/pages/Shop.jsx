@@ -56,12 +56,13 @@ export default function Shop() {
         });
     },[]);
 
-    function addCard(key, name, price, img) {
-        // console.log({key, name, price, img});
-
-        database.ref(`users/${auth.currentUser.uid}/my_cards/${key}` + auth.currentUser.uid).set({name, price, img}).then(() => {
-           
-        });
+    async function addCard(key, name, price, img) {
+        if (isLogin) {
+            await database.ref(`users/${auth.currentUser.uid}/my_cards/${key}`).set({name, price, img});
+            return true;
+        } else {
+            return false;
+        }
     }
 
     return (
@@ -83,7 +84,9 @@ export default function Shop() {
                                     id={element.doc.id}
                                     img={element.doc.data().img}
                                     title={element.doc.data().name.length >= 25 ? element.doc.data().name.slice(0, 25) + '...' : element.doc.data().name}
+                                    name={element.doc.data().name}
                                     price={element.doc.data().price == 0 ? 'FREE' : '₹' + element.doc.data().price}
+                                    row_price={element.doc.data().price}
                                     rate={calculateMean(element.rate)}
                                     key={index}
                                     link={`/shop/${urlEncode(element.doc.data().name)}`}

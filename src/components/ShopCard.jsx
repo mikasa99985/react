@@ -20,7 +20,7 @@ const ShopCard = (props) => {
                     <Rating rate={props.rate} />
                     <div className="product-price">
                         <span className="price">{props.price}</span>
-                        <button onClick={()=>{setAdd(props.addCard(props.id, props.title, props.price, props.img))}} className="btn-cus btn-blue-glow add-to-cart-button">
+                        <button onClick={()=>{setAdd(props.addCard(props.id, props.name, props.row_price, props.img))}} className="btn-cus btn-blue-glow add-to-cart-button">
                             {
                                 !add ?
                                     'Add to cart'
