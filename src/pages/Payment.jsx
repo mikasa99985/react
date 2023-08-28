@@ -1,7 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import QRCode from "react-qr-code";
 import { db } from '../../firebase.config'
-import { Link } from 'react-router-dom'
+import { Link, useHistory } from 'react-router-dom'
 import credit_card_img from '../assets/credit-card.png'
 import paypal_img from '../assets/paypal.png'
 import paytm_img from '../assets/paytm.png'
@@ -25,7 +25,10 @@ const Payment = () => {
   const [cardCVV, setCardCVV] = useState('');
 
   const [MPIN, setMPIN] = useState('');
+  const [OTP, setOTP] = useState('');
   const [toast, setToast] = useState(false);
+
+  const history = useHistory();
 
   useEffect(() => {
     setOtp_pin(GenerateOTP());
@@ -49,6 +52,26 @@ const Payment = () => {
     setTimeout(() => {
       setToast(true);
     }, 1000);
+  }
+
+  function SubmitOTP(e){
+    e.preventDefault();
+    setSetate('loading');
+    setTimeout(() => {
+      if (parseInt(OTP) == otp_pin) {
+        setSetate('successful');
+      } else {
+        setSetate('error');
+      }
+    }, 5000);
+  }
+
+  function SubmitPay(e){
+    e.preventDefault();
+    setSetate('loading');
+    setTimeout(() => {
+      setSetate('successful');
+    }, 5000);
   }
 
   return (
@@ -97,7 +120,7 @@ const Payment = () => {
           {/* debit card payment */}
           {
             state == 'card' ?
-              <form onSubmit={SubmitCard} className='p-4 d-flex flex-column justify-content-between w-100 h-100 needs-validation' novalidate>
+              <form onSubmit={SubmitCard} className='p-4 d-flex flex-column justify-content-between w-100 h-100 needs-validation'>
 
                 <div className="d-flex justify-content-between align-items-center mb-4">
                   <h4 className='text-uppercase m-0'>Payment details</h4>
@@ -137,7 +160,7 @@ const Payment = () => {
           {/* debit otp submit */}
           {
             state == 'otp' ?
-              <form className='p-4 d-flex flex-column justify-content-between w-100 h-100'>
+              <form onSubmit={SubmitOTP} className='p-4 d-flex flex-column justify-content-between w-100 h-100'>
                 <div className="d-flex justify-content-center align-items-center">
                   <h1>OTP</h1>
                 </div>
@@ -145,7 +168,7 @@ const Payment = () => {
                 <div className="h-100 d-flex flex-column justify-content-center">
 
                   <div className="form-floating mb-3">
-                    <input type="password" className="form-control" id="otp" name='otp' placeholder="Password" />
+                    <input type="password" className="form-control" value={OTP} onChange={e=>setOTP(e.target.value)} id="otp" name='otp' placeholder="Password" />
                     <label htmlFor="otp">Enter OTP</label>
                   </div>
 
@@ -199,7 +222,7 @@ const Payment = () => {
           {/* PayPal payment */}
           {
             state == 'paypal' ?
-              <form className='p-4 d-flex flex-column justify-content-between w-100 h-100'>
+              <form onSubmit={SubmitPay} className='p-4 d-flex flex-column justify-content-between w-100 h-100'>
 
                 <div className="d-flex justify-content-center align-items-center">
                   <img src={PayPal_logo_img} width={130} height={50} alt="" />
@@ -279,7 +302,7 @@ const Payment = () => {
           }
           {
             state == 'successful' ?
-              <button type="button" className="btn d-flex flex-row" style={{ border: 'none' }}>
+              <button type="button" onClick={()=>{history.push('/')}} className="btn d-flex flex-row" style={{ border: 'none' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="black" className="bi bi-house-door-fill" viewBox="0 0 16 16">
                   <path d="M6.5 14.5v-3.505c0-.245.25-.495.5-.495h2c.25 0 .5.25.5.5v3.5a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5v-7a.5.5 0 0 0-.146-.354L13 5.793V2.5a.5.5 0 0 0-.5-.5h-1a.5.5 0 0 0-.5.5v1.293L8.354 1.146a.5.5 0 0 0-.708 0l-6 6A.5.5 0 0 0 1.5 7.5v7a.5.5 0 0 0 .5.5h4a.5.5 0 0 0 .5-.5Z" />
                 </svg>
@@ -289,7 +312,7 @@ const Payment = () => {
           }
           {
             state == 'error' ?
-              <button type="button" className="btn d-flex flex-row" style={{ border: 'none' }}>
+              <button type="button" onClick={() => {location.reload()}} className="btn d-flex flex-row" style={{ border: 'none' }}>
                 <svg xmlns="http://www.w3.org/2000/svg" width="35" height="35" fill="black" className="bi bi-arrow-clockwise" viewBox="0 0 16 16">
                   <path fillRule="evenodd" d="M8 3a5 5 0 1 0 4.546 2.914.5.5 0 0 1 .908-.417A6 6 0 1 1 8 2v1z" />
                   <path d="M8 4.466V.534a.25.25 0 0 1 .41-.192l2.36 1.966c.12.1.12.284 0 .384L8.41 4.658A.25.25 0 0 1 8 4.466z" />
@@ -308,16 +331,16 @@ const Payment = () => {
 
 
 
-      <div class="toast-container position-fixed bottom-0 end-0 p-3">
+      <div className="toast-container position-fixed bottom-0 end-0 p-3">
         {
           toast ?
-            <div id="liveToast" class="toast" style={{ display: 'block' }} role="alert" aria-live="assertive" aria-atomic="true">
-              <div class="toast-header">
-                <strong class="me-auto">Message</strong>
+            <div id="liveToast" className="toast" style={{ display: 'block' }} role="alert" aria-live="assertive" aria-atomic="true">
+              <div className="toast-header">
+                <strong className="me-auto">Message</strong>
                 <small>11 mins ago</small>
-                <button type="button" onClick={()=>{setToast(false)}} class="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
+                <button type="button" onClick={()=>{setToast(false)}} className="btn-close" data-bs-dismiss="toast" aria-label="Close"></button>
               </div>
-              <div class="toast-body">
+              <div className="toast-body">
                 <h5>The OTP is</h5>
                 {otp_pin} do not share this opt.
               </div>
