@@ -26,10 +26,10 @@ const Profile = () => {
                     </div>
                 </div>
                 <div class="d-flex flex-column align-items-center pb-6">
-                    <img class="w-32 h-32 mb-2 rounded-full shadow-lg" src="/docs/images/people/profile-picture-3.jpg" alt="Bonnie image" />
+                    <img class="w-32 h-32 mb-2 rounded-full shadow-lg" src="https://i.pinimg.com/236x/47/5a/86/475a86177aeedacf8dc7f5e2b4eff61f.jpg" alt="Bonnie image" />
                     <h1 class="mb-1 text-3xl font-semibold text-gray-900">Bonnie Green</h1>
                     <span class="text-lg text-gray-500">Visual Designer</span>
-                    <div class="mt-4 space-x-2">
+                    <div class="mt-4 space-x-6">
                         <a href="#" class="btn btn-primary text-lg">Add friend</a>
                         <a href="#" class="btn btn-secondary text-lg">Message</a>
                     </div>
