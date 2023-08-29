@@ -115,3 +115,7 @@ export function jsonConcat(o1, o2) {
     }
     return o1;
 }
+
+export function GenerateOTP(){
+    return Math.floor(100000 + Math.random() * 900000);
+}

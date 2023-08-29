@@ -11,6 +11,7 @@ import Page_404 from './pages/Page_404';
 import MyCards from './pages/MyCards';
 import Details from './pages/Details';
 import EmailReport from './pages/EmailReport';
+import Payment from './pages/Payment';
 
 function App() {
   const appStyle = {
@@ -57,6 +58,10 @@ function App() {
           
           <Route exact path="/report">
             <EmailReport />
+          </Route>
+
+          <Route exact path="/payment">
+            <Payment />
           </Route>
 
           {/* 404 ERROR PAGE THIS REQUIRED THE END OF THE ALL ROUTERS */}

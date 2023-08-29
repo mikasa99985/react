@@ -63,7 +63,7 @@ export default function Footer() {
             <div className="col-6 col-md-2 mb-3">
               <h5>HELP</h5>
               <ul className="nav flex-column">
-                <li className="nav-item mb-2"><Link to="#" className="nav-link p-0 text-body-secondary">Live chat report</Link></li>
+                <li className="nav-item mb-2"><button data-bs-toggle="modal" data-bs-target="#exampleModal" className="nav-link p-0 text-body-secondary">Live chat report</button></li>
                 <li className="nav-item mb-2"><Link to="/report" className="nav-link p-0 text-body-secondary">Email report</Link></li>
               </ul>
             </div>
@@ -112,6 +112,24 @@ export default function Footer() {
             </ul>
           </div>
         </footer>
+      </div>
+
+      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content">
+            <div className="modal-header">
+              <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div className="modal-body">
+
+            </div>
+            <div className="modal-footer">
+              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary">Save changes</button>
+            </div>
+          </div>
+        </div>
       </div>
     </>
   )
