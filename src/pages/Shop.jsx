@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Nav from "../components/Nav";
-import { urlEncode, useQuery, useEffectOnce, calculateMean, capitalize } from '../utility/js/util'
+import { urlEncode, useQuery, useEffectOnce, calculateMean, capitalize, calculateDiscountedPrice } from '../utility/js/util'
 import ShopCard from '../components/ShopCard';
 import '../utility/css/TempCard.css';
 import { db, database, auth } from '../../firebase.config'
@@ -56,9 +56,9 @@ export default function Shop() {
         });
     },[]);
 
-    async function addCard(key, name, price, img) {
+    async function addCard(key, name, price, img, offers) {
         if (isLogin) {
-            await database.ref(`users/${auth.currentUser.uid}/my_cards/${key}`).set({name, price, img});
+            await database.ref(`users/${auth.currentUser.uid}/my_cards/${key}`).set({name, price:calculateDiscountedPrice(price,offers), img});
             return true;
         } else {
             return false;
@@ -85,9 +85,10 @@ export default function Shop() {
                                     img={element.doc.data().img}
                                     title={element.doc.data().name.length >= 25 ? element.doc.data().name.slice(0, 25) + '...' : element.doc.data().name}
                                     name={element.doc.data().name}
-                                    price={element.doc.data().price == 0 ? 'FREE' : '₹' + element.doc.data().price}
+                                    price={element.doc.data().price == 0 ? 'FREE' : '₹' + calculateDiscountedPrice(element.doc.data().price, element.doc.data().offers)}
                                     row_price={element.doc.data().price}
                                     rate={calculateMean(element.rate)}
+                                    offers={element.doc.data().offers}
                                     key={index}
                                     link={`/shop/${urlEncode(element.doc.data().name)}`}
                                     // addCard={()=>{addCard(element.doc.id, element.doc.data().name, element.doc.data().img)}}

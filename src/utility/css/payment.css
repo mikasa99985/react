@@ -53,12 +53,42 @@
     width: 400px;
 }
 
+.p-box{
+    width: 100%;
+    height: 100vh;
+}
+
+.p-g-img{
+    width: 330px;
+}
+
+.p-w-100{
+    width: auto;
+}
+
+@media only screen and (max-width: 800px){
+    .p-g-img{
+        width: 100%;
+    }
+
+    .p-box{
+        padding: 10px 0;
+        width: 95%;
+        height: auto;
+        margin: auto;
+    }
+}
+
 @media only screen and (max-width: 500px) {
     .payment-process-box {
         width: 100%;
     }
 
     .payment-card-pag {
+        width: 100%;
+    }
+
+    .p-w-100{
         width: 100%;
     }
 }
