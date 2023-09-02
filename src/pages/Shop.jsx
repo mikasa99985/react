@@ -1,6 +1,6 @@
 import React, { useEffect, useState } from 'react';
 import Nav from "../components/Nav";
-import { urlEncode, useQuery, useEffectOnce, calculateMean, capitalize } from '../utility/js/util'
+import { urlEncode, useQuery, useEffectOnce, calculateMean, capitalize, calculateDiscountedPrice } from '../utility/js/util'
 import ShopCard from '../components/ShopCard';
 import '../utility/css/TempCard.css';
 import { db, database, auth } from '../../firebase.config'
@@ -56,12 +56,13 @@ export default function Shop() {
         });
     },[]);
 
-    function addCard(key, name, price, img) {
-        // console.log({key, name, price, img});
-
-        database.ref(`users/${auth.currentUser.uid}/my_cards/${key}` + auth.currentUser.uid).set({name, price, img}).then(() => {
-           
-        });
+    async function addCard(key, name, price, img, offers) {
+        if (isLogin) {
+            await database.ref(`users/${auth.currentUser.uid}/my_cards/${key}`).set({name, price:calculateDiscountedPrice(price,offers), img});
+            return true;
+        } else {
+            return false;
+        }
     }
 
     return (
@@ -83,8 +84,11 @@ export default function Shop() {
                                     id={element.doc.id}
                                     img={element.doc.data().img}
                                     title={element.doc.data().name.length >= 25 ? element.doc.data().name.slice(0, 25) + '...' : element.doc.data().name}
-                                    price={element.doc.data().price == 0 ? 'FREE' : '₹' + element.doc.data().price}
+                                    name={element.doc.data().name}
+                                    price={element.doc.data().price == 0 ? 'FREE' : '₹' + calculateDiscountedPrice(element.doc.data().price, element.doc.data().offers)}
+                                    row_price={element.doc.data().price}
                                     rate={calculateMean(element.rate)}
+                                    offers={element.doc.data().offers}
                                     key={index}
                                     link={`/shop/${urlEncode(element.doc.data().name)}`}
                                     // addCard={()=>{addCard(element.doc.id, element.doc.data().name, element.doc.data().img)}}

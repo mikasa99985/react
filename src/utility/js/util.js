@@ -119,3 +119,26 @@ export function jsonConcat(o1, o2) {
 export function GenerateOTP(){
     return Math.floor(100000 + Math.random() * 900000);
 }
+
+// Function to calculate the final price after a percentage discount
+export function calculateDiscountedPrice(originalPrice, discountPercentage) {
+    if (originalPrice < 0 || discountPercentage < 0 || discountPercentage > 100) {
+      return "Invalid input";
+    }
+  
+    const discountAmount = (originalPrice * discountPercentage) / 100;
+    const discountedPrice = originalPrice - discountAmount;
+  
+    return discountedPrice;
+  }
+  
+  // Example usage
+//   const originalPrice = 100;
+//   const discountPercentage = 20;
+  
+//   const finalPrice = calculateDiscountedPrice(originalPrice, discountPercentage);
+  
+//   console.log(`Original Price: $${originalPrice}`);
+//   console.log(`Discount Percentage: ${discountPercentage}%`);
+//   console.log(`Final Price after Discount: $${finalPrice}`);
+  

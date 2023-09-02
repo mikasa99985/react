@@ -19,8 +19,11 @@ const ShopCard = (props) => {
                     </Link>
                     <Rating rate={props.rate} />
                     <div className="product-price">
-                        <span className="price">{props.price}</span>
-                        <button onClick={()=>{setAdd(props.addCard(props.id, props.title, props.price, props.img))}} className="btn-cus btn-blue-glow add-to-cart-button">
+                        <div className=" d-flex flex-column ">
+                            <span><del>{props.row_price==0||'₹'+props.row_price==props.price?'':'₹'+props.row_price}</del><span className='text-success fw-bold'>{props.offers==0?'':'  '+props.offers+'%'}</span></span>
+                            <span className="price">{props.price.slice(0,8)}</span>
+                        </div>
+                        <button onClick={()=>{setAdd(props.addCard(props.id, props.name, props.row_price, props.img, props.offers))}} className="btn-cus btn-blue-glow add-to-cart-button">
                             {
                                 !add ?
                                     'Add to cart'
