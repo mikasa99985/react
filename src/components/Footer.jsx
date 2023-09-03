@@ -2,7 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import icon from '../assets/fav_icon.png';
 import { auth, database } from '../../firebase.config';
-import Anthem from "../assets/Anthem.jpg" ;
+
 
 export default function Footer() {
 
@@ -117,17 +117,17 @@ export default function Footer() {
 
       <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content">
-            <div class="modal-header">
+          <div class="modal-content" style={{height:"80vh" , width:"70vh" , left:"75vh" ,top:"7vh" ,  background: "linear-gradient(to left, yellow 50%, #ff0099 50%)", borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49% "}}>
+            <div class="modal-header" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
               <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
               <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body">
+            <div class="modal-body" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
 
             </div>
-            <div className="modal-footer">
-              <button type="button" className="btn btn-secondary" data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary">Save changes</button>
+            <div className="modal-footer" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
+              <button type="button" className="btn btn-secondary" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%", background:"linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(131,58,180,1) 0%, rgba(198,28,101,1) 21%, rgba(199,27,99,1) 50%, rgba(252,4,38,1) 89%, rgba(252,176,69,1) 100%, rgba(252,176,69,1) 100%)" , borderColor:"yellow"}} data-bs-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%", background:"linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(131,58,180,1) 0%, rgba(198,28,101,1) 21%, rgba(199,27,99,1) 50%, rgba(252,4,38,1) 89%, rgba(252,176,69,1) 100%, rgba(252,176,69,1) 100%)" , borderColor:"red"}}>Save changes</button>
             </div>
           </div>
         </div>
