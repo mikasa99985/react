@@ -1,0 +1,19 @@
+.modal-cos{
+    display: flex;
+    position: absolute;
+    right: 0px;
+    bottom: 0px;
+    margin: 0px;
+    padding: 0px;
+    align-items: end;
+}
+
+@media screen and (max-width: 480px) {
+    .modal-cos{
+        position: unset;
+        right: 0px;
+        bottom: 0px;
+        margin: 0px;
+        padding: 0px;
+    }
+  }
