@@ -13,7 +13,7 @@ const Page_404 = () => {
                         <Link to="/" className=" fw-medium btn btn-dark px-3.5 py-2.5 shadow-sm hover:bg-primary-dark focus-visible-shadow focus-visible-outline focus-visible-outline-offset-2 focus-visible-outline-primary">
                             Go back home
                         </Link>
-                        <Link to="/contact_us" className="btn btn-link text-sm font-weight-semibold text-dark">
+                        <Link to="/contact" className="btn btn-link text-sm font-weight-semibold text-dark">
                             Contact support <span aria-hidden="true">&rarr;</span>
                         </Link>
                     </div>

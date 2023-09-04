@@ -115,14 +115,14 @@ export default function Footer() {
         </footer>
       </div>
 
-      <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div class="modal-dialog modal-dialog-centered">
-          <div class="modal-content" style={{height:"80vh" , width:"70vh" , left:"75vh" ,top:"7vh" ,  background: "linear-gradient(to left, yellow 50%, #ff0099 50%)", borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49% "}}>
-            <div class="modal-header" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
-              <h1 class="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
-              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+      <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered">
+          <div className="modal-content" style={{height:"80vh" , width:"70vh" , left:"75vh" ,top:"7vh" ,  background: "linear-gradient(to left, yellow 50%, #ff0099 50%)", borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49% "}}>
+            <div className="modal-header" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
+              <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+              <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div class="modal-body" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
+            <div className="modal-body" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
 
             </div>
             <div className="modal-footer" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
