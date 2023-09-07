@@ -118,7 +118,7 @@ export default function Footer() {
 
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-cos">
-          <div className="modal-content mb-4" style={{height:"65vh" , width:"70vh" ,  background: "linear-gradient(to left, yellow 50%, #ff0099 50%)", borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49% "}}>
+          <div className="modal-content mb-4" style={{height:"65vh" , width:"70vh" ,  background: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,255,202,1) 23%, rgba(226,255,0,1) 54%, rgba(252,0,255,1) 82%, rgba(252,70,107,1) 90%)", borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49% "}}>
             <div className="modal-header" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
               <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
@@ -127,8 +127,8 @@ export default function Footer() {
 
             </div>
             <div className="modal-footer" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
-              <button type="button" className="btn btn-secondary" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%", background:"linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(131,58,180,1) 0%, rgba(198,28,101,1) 21%, rgba(199,27,99,1) 50%, rgba(252,4,38,1) 89%, rgba(252,176,69,1) 100%, rgba(252,176,69,1) 100%)" , borderColor:"yellow"}} data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%", background:"linear-gradient(90deg, rgba(131,58,180,1) 0%, rgba(131,58,180,1) 0%, rgba(198,28,101,1) 21%, rgba(199,27,99,1) 50%, rgba(252,4,38,1) 89%, rgba(252,176,69,1) 100%, rgba(252,176,69,1) 100%)" , borderColor:"red"}}>Save changes</button>
+              <button type="button" className="btn btn-secondary rgbbutton1" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49% "}} data-bs-dismiss="modal">Close</button>
+              <button type="button" className="btn btn-primary rgbbutton1" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>Save changes</button>
             </div>
           </div>
         </div>
