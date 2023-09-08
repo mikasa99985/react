@@ -242,8 +242,8 @@ const Nav = (props) => {
         </div>
       </div>
 
-      <div className="modal fade " id="logoutModel" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog modal-dialog-centered" style={{ width: '400px' }} role="document">
+      <div className="modal fade" id="logoutModel" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
+        <div className="modal-dialog modal-dialog-centered logout-modal" role="document">
           <div className="modal-content rounded-3 shadow">
             <div className="modal-body p-4 text-center">
               <svg xmlns="http://www.w3.org/2000/svg" width="46" height="46" fill="#ff6a6a" className="mb-3 bi bi-exclamation-circle-fill" viewBox="0 0 16 16">

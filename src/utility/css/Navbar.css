@@ -78,8 +78,16 @@
   z-index:10;
 }
 
+.logout-modal{
+  width: 400px;
+}
+
 @media only screen and (max-width: 600px){
   .container-fluid{
     margin: 0px 0px;
   }
+  .logout-modal{
+    width: auto;
+  }
 }
+

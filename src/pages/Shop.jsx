@@ -11,6 +11,7 @@ export default function Shop() {
     const [list, setList] = useState([]);
     const [isLogin, setLogin] = useState(false);
     const [loading, setLoading] = useState(true);
+    const [loadingface, setLoadingface] = useState(true);
 
     useEffectOnce(() => {
         let query_db;
@@ -25,6 +26,8 @@ export default function Shop() {
         }
 
         query_db.get().then((querySnapshot) => {
+            console.log(querySnapshot);
+
             querySnapshot.forEach(async (doc) => {
                 // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
                 // rate.forEach(element => {
@@ -32,16 +35,20 @@ export default function Shop() {
                 // });
                 let arr = [];
                 database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
+                    // setLoading(false);
+
                     snapshot.forEach(
                         function (Childsnapshot) {
                             arr.push(parseInt(Childsnapshot.val().rate));
                         });
                 }).then(() => {
+                    setLoadingface(false);
                     setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
                 });
 
             });
-        }).then(()=>{
+            // setLoading(false);
+        }).then(() => {
             setLoading(false);
         }).catch((error) => {
             console.log("Error getting documents: ", error);
@@ -101,7 +108,9 @@ export default function Shop() {
                                 )
                             })
                             :
-                            <h1>no data found</h1>
+                            <div className="d-flex justify-content-center align-items-center" style={{height:'calc(100vh - 90px)'}}>
+                                <h1 className=''>No data found</h1>
+                            </div>
                 }
             </div>
         </>

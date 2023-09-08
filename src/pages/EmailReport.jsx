@@ -88,7 +88,7 @@ const EmailReport = () => {
                         <textarea className="form-control" id="desc" name='desc' value={report.desc} onChange={getData} rows="10" placeholder="Enter report description" required></textarea>
                     </div>
                     <div className="d-flex align-items-center">
-                        <button type="submit" className="btn-cus btn-blue-glow" style={{ fontSize: "14px", padding: "14px 40px", borderRadius: "7px" }}>Submit Report</button>
+                        <button type="submit" className="btn-cus btn-cus-repo btn-blue-glow" style={{ fontSize: "14px", padding: "14px 40px", borderRadius: "7px" }}>Submit Report</button>
                         {
                             loading ?
                                 <div className="spinner-border ms-4" style={{ width: "45px", height: "45px" }} role="status">
