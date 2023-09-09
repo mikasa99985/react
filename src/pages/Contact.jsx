@@ -62,7 +62,7 @@ const Contact = () => {
 
   return (
     <>
-      <Nav/>
+      <Nav />
       {
         alert ?
           <div className={`alert ${alert.status ? 'alert-success' : 'alert-danger'} alert-dismissible fade show`} role="alert">
@@ -74,7 +74,10 @@ const Contact = () => {
 
       }
 
-      <h1 className='text-center my-5'>Contact us</h1>
+      {/* <h1 className='text-center my-5'>Contact us</h1> */}
+      <div className=" d-flex justify-content-center align-items-center mb-5" style={{ height: '350px', background: 'gray' }}>
+        <h1 className="text-center fw-bolder text-light">Contact us</h1>
+      </div>
 
       <div className=" container d-lg-flex mb-5">
         <div className="left-con">
@@ -88,15 +91,15 @@ const Contact = () => {
               <p>Lorem ipsum dolor, sit amet consectetur adipisicing elit. Labore reiciendis enim quam commodi. Corrupti pariatur dicta at beatae est rerum, neque nisi, explicabo fugiat in odit commodi minima nesciunt aliquid.</p>
             </div>
           </div>
-        <Iframe
-              url="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d124410.3394253335!2d77.58495242202125!3d12.983163304641854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sisro!5e0!3m2!1sen!2sin!4v1692887290402!5m2!1sen!2sin"
-              width="100%"
-              height="65%"
-              allowFullScreen=""
-              loading="lazy"
-              referrerPolicy="no-referrer-when-downgrade"
-              className="map-iframe absolute inset-0 rounded-4"
-            />
+          <Iframe
+            url="https://www.google.com/maps/embed?pb=!1m16!1m12!1m3!1d124410.3394253335!2d77.58495242202125!3d12.983163304641854!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!2m1!1sisro!5e0!3m2!1sen!2sin!4v1692887290402!5m2!1sen!2sin"
+            width="100%"
+            height="65%"
+            allowFullScreen=""
+            loading="lazy"
+            referrerPolicy="no-referrer-when-downgrade"
+            className="map-iframe absolute inset-0 rounded-4"
+          />
         </div>
 
         <div className="right-con">

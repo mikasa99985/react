@@ -4,7 +4,9 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: whitesmoke;
+    /* background-color: whitesmoke; */
+    background: no-repeat url('https://cdn.dribbble.com/users/156849/screenshots/6993098/32.gif');
+    background-size: 100% 100%;
 }
 
 .form-sign{

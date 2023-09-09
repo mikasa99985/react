@@ -1,5 +1,6 @@
 import React from 'react'
 import '../utility/css/btn_glow.css';
+import '../utility/css/help.css';
 import { Link } from 'react-router-dom'
 import Nav from '../components/Nav';
 
@@ -8,10 +9,12 @@ const Help = () => {
         <>
             <Nav help={true} />
 
+            <div className=" d-flex justify-content-center align-items-center help-bg" style={{height:'480px'}}>
+                <div className="h-100 w-100" style={{background: 'black', opacity: '50%'}}>
+                </div>
+                <h1 className="text-center fw-bolder text-light position-absolute">Welcome to Vibrant Game Help</h1>
+            </div>    
             <div className="container mt-5">
-                <h1 className="text-center">VIBRANT GAME Help Center</h1>
-
-
                 <div className="row mt-5">
                     <div className="col-md-4">
                         <h2 className=''>How can we help you ?</h2>

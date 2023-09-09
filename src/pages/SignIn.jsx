@@ -78,7 +78,7 @@ const SignIn = () => {
   return (
     <>
       <div className="container-sign">
-        <h1 className="mb-4 text-uppercase fw-bolder">Login</h1>
+        <h1 className="mb-4 text-uppercase fw-bolder text-light">Login</h1>
         <form onSubmit={(e) => { Signin(e) }} className="form-sign">
 
           <div className="form-floating mb-3">

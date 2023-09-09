@@ -11,8 +11,8 @@ const Favorites = () => {
 
             <h1 className='text-center my-5'>Favorites list</h1>
             <div className=" container">
-                <ul class="list-group">
-                    <li class="list-group-item">
+                <ul className="list-group">
+                    <li className="list-group-item">
                         <div className=" d-flex flex-column flex-md-row justify-content-between align-items-center">
                             <div className=" d-flex flex-column flex-md-row align-items-center">
                                 <img className=' rounded' src={img} width={100} alt="" />
@@ -27,7 +27,7 @@ const Favorites = () => {
                             </div>
                         </div>
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         <div className=" d-flex flex-column flex-md-row justify-content-between align-items-center">
                             <div className=" d-flex flex-column flex-md-row align-items-center">
                                 <img className=' rounded' src={img} width={100} alt="" />
@@ -42,7 +42,7 @@ const Favorites = () => {
                             </div>
                         </div>
                     </li>
-                    <li class="list-group-item">
+                    <li className="list-group-item">
                         <div className=" d-flex flex-column flex-md-row justify-content-between align-items-center">
                             <div className=" d-flex flex-column flex-md-row align-items-center">
                                 <img className=' rounded' src={img} width={100} alt="" />
