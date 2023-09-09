@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { database, auth } from '../../firebase.config'
 import LibraryCard from '../components/LibraryCard';
 import { urlEncode } from '../utility/js/util';
+import Nav from '../components/Nav';
 
 const Library = () => {
 
@@ -30,7 +31,8 @@ const Library = () => {
 
     return (
         <>
-            <h1 className='text-center my-4'>Library</h1>
+            <Nav library={true}/>
+            {/* <h1 className='text-center my-4'>Library</h1> */}
             <div className="d-flex flex-wrap justify-content-center mx-auto w-res my-3">
                 {
                     loading ?

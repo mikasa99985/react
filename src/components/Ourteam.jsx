@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react'
 import '../utility/css/ourteam.css'
 import { db } from '../../firebase.config';
+import {Link} from 'react-router-dom'
 
 const Ourteam = () => {
 
@@ -32,7 +33,7 @@ const Ourteam = () => {
             {
               arrData.map((element, index) => {
                 return (
-                  <div key={index} className="col-lg-3 col-md-6  mb-4">
+                  <Link to='/ourteam' key={index} className="col-lg-3 col-md-6 mb-4 our-link">
                     <div className="h-full flex align-content-center border border-gray-200 p-3 rounded-lg">
                       <img alt="team" style={{ width: '65px', height: '65px' }} className="bg-gray-100 object-cover object-center flex-shrink-0 mr-4 rounded-full" src={element.img}></img>
                       <div className="flex flex-column justify-content-center ms-3">
@@ -40,7 +41,7 @@ const Ourteam = () => {
                         <p className="text-gray-500 mb-0">{element.work}</p>
                       </div>
                     </div>
-                  </div>
+                  </Link>
                 )
               })
             }

@@ -1,3 +1,21 @@
 .rounded-full{
     border-radius: 9999px;
 }
+
+.our-link{
+    text-decoration: none;
+    color: black;
+    transition: 300ms;
+}
+
+.our-link:hover{
+    transform: scale(1.05);
+}
+
+.our-link div{
+    transition: 300ms;
+}
+
+.our-link:hover > div{
+    box-shadow: 0 0 10px 1px #dbdbdb;
+}

@@ -3,6 +3,7 @@ import { auth, db, database } from '../../firebase.config'
 import Iframe from 'react-iframe';
 import '../utility/css/contacts.css';
 import { jsonConcat } from '../utility/js/util';
+import Nav from '../components/Nav';
 
 const Contact = () => {
   const [report, setReport] = useState({
@@ -61,6 +62,7 @@ const Contact = () => {
 
   return (
     <>
+      <Nav/>
       {
         alert ?
           <div className={`alert ${alert.status ? 'alert-success' : 'alert-danger'} alert-dismissible fade show`} role="alert">
