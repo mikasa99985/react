@@ -2,6 +2,7 @@ import React, { useEffect, useState } from 'react'
 import { auth, db, database } from '../../firebase.config'
 import Iframe from 'react-iframe';
 import '../utility/css/contacts.css';
+import '../utility/css/bg.css';
 import { jsonConcat } from '../utility/js/util';
 import Nav from '../components/Nav';
 
@@ -75,8 +76,10 @@ const Contact = () => {
       }
 
       {/* <h1 className='text-center my-5'>Contact us</h1> */}
-      <div className=" d-flex justify-content-center align-items-center mb-5" style={{ height: '350px', background: 'gray' }}>
-        <h1 className="text-center fw-bolder text-light">Contact us</h1>
+      <div className=" d-flex justify-content-center align-items-center cus-bg mb-5" style={{ height: '400px', backgroundImage:'url("https://static.vecteezy.com/system/resources/thumbnails/013/381/423/small/game-console-joystick-glowing-neon-buttons-signs-bright-signboard-light-banner-easy-to-edit-illustration-vector.jpg")'}}>
+        <div className="h-100 w-100" style={{ background: 'black', opacity: '50%' }}>
+        </div>
+        <h1 className="text-center fw-bolder text-light position-absolute">Contact Us</h1>
       </div>
 
       <div className=" container d-lg-flex mb-5">
