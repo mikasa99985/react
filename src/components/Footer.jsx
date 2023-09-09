@@ -6,7 +6,9 @@ import '../utility/css/footer.css'
 
 
 export default function Footer() {
-
+  const [isZoomed, setIsZoomed] = useState(false);
+  const zoomClass = isZoomed ? 'zoomed' : '';
+  
   const [feedback, setFeedback] = useState('');
   const [isLogin, setLogin] = useState(false);
 
@@ -118,17 +120,16 @@ export default function Footer() {
 
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-cos">
-          <div className="modal-content mb-4" style={{height:"65vh" , width:"65vh" ,  background: "linear-gradient(162deg, rgba(0,255,34,1) 10%, rgba(0,255,244,1) 24%, rgba(215,255,0,1) 38%, rgba(255,0,206,1) 53%, rgba(255,0,61,1) 68%, rgba(252,0,255,1) 80%, rgba(186,70,252,1) 92%)", borderRadius:"58% 42% 58% 42% / 100% 0% 100% 0%   "}}>
-            <div className="modal-header" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
+          <div className="modal-content mb-4" style={{height:"65vh" , width:"60vh" ,  background: "linear-gradient(162deg, rgba(0,255,34,1) 10%, rgba(0,255,244,1) 24%, rgba(215,255,0,1) 38%, rgba(255,0,206,1) 53%, rgba(255,0,61,1) 68%, rgba(252,0,255,1) 80%, rgba(186,70,252,1) 92%)"}}>
+            <div className="modal-header" >
               <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div className="modal-body" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
+            <div className="modal-body" >
 
             </div>
-            <div className="modal-footer" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
-              <button type="button" className="btn btn-secondary rgbbutton1" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49% "}} data-bs-dismiss="modal">Close</button>
-              <button type="button" className="btn btn-primary rgbbutton1" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>Save changes</button>
+            <div className="modal-footer" >
+              <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)} style={{width:"8vh", height:"8vh", left:"10px"  , borderRadius:"100px" , background:"black"}} ><div className='textsend' style={{right:"5px" , position:'relative'}}>Send</div></button>
             </div>
           </div>
         </div>
@@ -136,4 +137,3 @@ export default function Footer() {
     </>
   )
 }
-
