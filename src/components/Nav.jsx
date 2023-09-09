@@ -90,8 +90,8 @@ const Nav = (props) => {
                 <Link className={props.shop ? 'nav-link active-nav' : 'nav-link'} style={{ color: 'white' }} to="/shop">Shop</Link>
               </li>
 
-              <li className={!props.explore ? `nav-item mx-4 nav-item-pop` : 'nav-item mx-4'}>
-                <Link className={props.explore ? 'nav-link active-nav' : 'nav-link'} style={{ color: 'white' }} to="/explore">Explore</Link>
+              <li className={!props.library ? `nav-item mx-4 nav-item-pop` : 'nav-item mx-4'}>
+                <Link className={props.library ? 'nav-link active-nav' : 'nav-link'} style={{ color: 'white' }} to="/library">Library</Link>
               </li>
 
 
@@ -181,6 +181,7 @@ const Nav = (props) => {
         </div>
       </nav>
 
+      {/* Mobile Navbar */}
       <div className="offcanvas offcanvas-start" style={{ backgroundColor: 'black' }} data-bs-scroll="true" data-bs-backdrop="false" tabIndex="-1" id="offcanvasScrolling" aria-labelledby="offcanvasScrollingLabel">
         <div className="offcanvas-header">
           <img className="anima-icon" src={icon} style={{ width: '40px' }} alt="" />
@@ -202,7 +203,7 @@ const Nav = (props) => {
             </li>
 
             <li className="nav-item mx-4">
-              <Link className={props.explore ? 'nav-link active-offc' : 'nav-link'} style={{ color: 'white', fontSize: '25px' }} to="/explore">Explore</Link>
+              <Link className={props.library ? 'nav-link active-offc' : 'nav-link'} style={{ color: 'white', fontSize: '25px' }} to="/library">Library</Link>
             </li>
 
             <li className="nav-item mx-4">
