@@ -129,7 +129,7 @@ export default function Footer() {
 
             </div>
             <div className="modal-footer" >
-              <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)} style={{width:"8vh", height:"8vh", left:"10px"  , borderRadius:"100px" , background:"black"}} ><div className='textsend' style={{right:"5px" , position:'relative'}}>Send</div></button>
+              <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)} style={{width:"8vh", height:"8vh", left:"10px"  , borderRadius:"100px" , background:"black"}} > Send </button>
             </div>
           </div>
         </div>
