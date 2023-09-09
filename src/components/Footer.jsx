@@ -118,7 +118,7 @@ export default function Footer() {
 
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-cos">
-          <div className="modal-content mb-4" style={{height:"65vh" , width:"70vh" ,  background: "radial-gradient(circle, rgba(255,255,255,1) 0%, rgba(0,255,202,1) 23%, rgba(226,255,0,1) 54%, rgba(252,0,255,1) 82%, rgba(252,70,107,1) 90%)", borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49% "}}>
+          <div className="modal-content mb-4" style={{height:"65vh" , width:"65vh" ,  background: "linear-gradient(162deg, rgba(0,255,34,1) 10%, rgba(0,255,244,1) 24%, rgba(215,255,0,1) 38%, rgba(255,0,206,1) 53%, rgba(255,0,61,1) 68%, rgba(252,0,255,1) 80%, rgba(186,70,252,1) 92%)", borderRadius:"58% 42% 58% 42% / 100% 0% 100% 0%   "}}>
             <div className="modal-header" style={{borderRadius:"14% 86% 57% 43% / 51% 55% 45% 49%"}}>
               <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
