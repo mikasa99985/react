@@ -279,7 +279,7 @@ const Nav = (props) => {
                     {
                       searchHistory.map((element, index) => {
                         return (
-                          <a href={`/shop?search=${element}`} className="search-rec-link">{element}</a>
+                          <a href={`/shop?search=${element}`} key={index} className="search-rec-link">{element}</a>
                         );
                       })
                     }

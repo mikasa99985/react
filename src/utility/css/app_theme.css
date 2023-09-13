@@ -1,5 +1,8 @@
 .theme{
     background-color: #fff;
+    /* background: no-repeat url('https://png.pngtree.com/thumb_back/fh260/background/20201009/pngtree-science-or-technology-background-with-dynamic-particles-trendy-colorful-design-template-image_406781.jpg');
+    background-size: 100% 100%;
+    background-attachment: scroll; */
 }
 
 @media (prefers-color-scheme: dark) {

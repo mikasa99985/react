@@ -8,6 +8,7 @@ import Statistic from "../components/Statistic";
 import Footer from "../components/Footer";
 import Tab from "../components/Tab/Tab";
 import Ourteam from "../components/Ourteam";
+import '../utility/css/home.css';
 
 
 const Home = () => {
@@ -15,10 +16,18 @@ const Home = () => {
     <>
       <Nav home={true} />
       <Slidercard />
-      <Tab/>
+
+      <div className="tab-bg pt-5 pb-1 mb-5">
+        <Tab/>
+      </div>
+
       <Bigcard />
-      <Features />
-      <Statistic />
+
+      <div className="FS-bg pt-1 mt-5 pb-1 mb-5">
+        <Features />
+        <Statistic />
+      </div>
+
       <Ourteam/>
       <Footer />
     </>

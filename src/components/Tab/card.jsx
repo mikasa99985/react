@@ -61,6 +61,13 @@ const Card = (props) => {
                                     focusable="false"
                                     alt="" />
                             </div>
+                            <div style={{
+                                position: 'absolute',
+                                width: '100%',
+                                height: '100%',
+                                background: 'black',
+                                opacity: '4%',
+                            }}></div>
                             <div className="col p-4 d-flex flex-column position-static">
                                 <strong className="d-inline-block mb-2 text-primary-emphasis">
                                     {parseTime(parseInt(props.time), 'date')}
