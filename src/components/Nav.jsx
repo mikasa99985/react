@@ -4,7 +4,8 @@ import '../utility/css/Navbar.css';
 import icon from '../assets/game_favicon.png'
 // import iconGame from '../assets/favicon.png'
 import { database, db, auth } from "../../firebase.config";
-import {urlEncode} from '../utility/js/util'
+import { urlEncode, getCookie } from '../utility/js/util'
+import { cookie } from '../utility/js/cookie';
 
 const Nav = (props) => {
 
@@ -12,6 +13,7 @@ const Nav = (props) => {
 
   const [login, setLogin] = useState(false);
   const [query, setQuery] = useState('');
+  const [searchHistory, setSearchHistory] = useState([]);
   const [user, setUser] = useState({});
   const [imageUrl, setImageUrl] = useState('https://firebasestorage.googleapis.com/v0/b/online-app-a440d.appspot.com/o/empty-profile.png?alt=media&token=9d884c2e-e9ab-4ac0-9d28-cd7ec5ba917f');
 
@@ -50,9 +52,27 @@ const Nav = (props) => {
     });
   }
 
+  useEffect(() => {
+    if (getCookie('search_history') != null) {
+      setSearchHistory(cookie.get('search_history'));
+    }
+  }, []);
+
   function Search(e) {
     e.preventDefault();
-    history.push(`/shop?search=${query}`)
+    let arr = [];
+    if (getCookie('search_history') != null) {
+      arr = cookie.get('search_history');
+    }
+
+    arr.push(query);
+    cookie.set('search_history', arr, 1);
+    history.push(`/shop?search=${query}`);
+  }
+
+  function clear_history(){
+    cookie.eraseCookie('search_history');
+    location.reload();
   }
 
   return (
@@ -227,17 +247,46 @@ const Nav = (props) => {
 
       {/* Search */}
       <div className="modal fade" id="searchModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-        <div className="modal-dialog">
-          <div className="modal-content">
-            <div className="modal-body">
+        <div className="modal-dialog modal-cox">
+          <div className="modal-content" style={{ borderRadius: '22px' }}>
+            <div className="modal-body p-0">
               <form className="input-group" onSubmit={Search}>
-                <input type="text" className="form-control" value={query} onChange={(e) => { setQuery(e.target.value) }} placeholder="Search" aria-label="Username" aria-describedby="basic-addon1" required />
-                <button type="submit" data-bs-dismiss="modal" className="btn btn-dark">
-                  <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
+                <button type="submit" data-bs-dismiss="modal" className="btn btn-light" style={{ borderTopRightRadius: '0px', borderTopLeftRadius: '22px', borderBottomRightRadius: '0px', borderBottomLeftRadius: '0px' }}>
+                  <svg xmlns="http://www.w3.org/2000/svg" width="18" height="18" fill="currentColor" className="bi bi-search" viewBox="0 0 16 16">
                     <path d="M11.742 10.344a6.5 6.5 0 1 0-1.397 1.398h-.001c.03.04.062.078.098.115l3.85 3.85a1 1 0 0 0 1.415-1.414l-3.85-3.85a1.007 1.007 0 0 0-.115-.1zM12 6.5a5.5 5.5 0 1 1-11 0 5.5 5.5 0 0 1 11 0z" />
                   </svg>
                 </button>
+                <input type="text" className="form-control bg-light" style={{ borderTopRightRadius: '22px', border: 'none', fontSize: '19px', boxShadow: 'none' }} value={query} onChange={(e) => { setQuery(e.target.value) }} placeholder="Type your search" aria-label="Username" aria-describedby="basic-addon1" required />
               </form>
+              <div className="mx-5 my-3" style={{ fontSize: '14px' }}>
+
+                {/* Example */}
+                <div className="">
+                  <span className="fw-bold">GAMES (recommended)</span>
+                  <div className=" d-flex flex-column mx-3">
+                    <a href="/shop/Red_Dead_Redemption_2" className="search-rec-link">Red Dead Redemption 2</a>
+                    <a href="/shop/The_Last_of_Us_Part_1" className="search-rec-link">The Last of Us Part 1</a>
+                    <a href="/shop/Call_of_Duty:_Modern_Warfare_II_(2022)" className="search-rec-link">Call of Duty: Modern Warfare II (2022)</a>
+                  </div>
+                </div>
+
+                <div className="mt-3">
+                  <div className=" d-flex justify-content-between">
+                    <span className="fw-bold">Search history</span>
+                    <button onClick={clear_history} className="btn p-0" style={{ fontSize: '14px' }}>Clear history</button>
+                  </div>
+                  <div className=" d-flex flex-column mx-3">
+                    {
+                      searchHistory.map((element, index) => {
+                        return (
+                          <a href={`/shop?search=${element}`} className="search-rec-link">{element}</a>
+                        );
+                      })
+                    }
+                  </div>
+                </div>
+
+              </div>
             </div>
           </div>
         </div>

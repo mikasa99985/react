@@ -38,6 +38,32 @@
   color: gray !important;
 }
 
+.search-rec-link{
+  text-decoration: none;
+  color: black;
+  padding: 3px 0px;
+}
+
+.search-rec-link:hover{
+  text-decoration: underline;
+}
+
+.modal-cox{
+  --bs-modal-width: 700px;
+}
+
+@media screen and (max-width: 1025px) {
+  .modal-cox{
+    --bs-modal-width: 580px;
+  }
+}
+
+@media screen and (max-width: 769px) {
+  .modal-cox{
+    --bs-modal-width: 450px;
+  }
+}
+
 /* .navbar-brand:hover {
   background-color: rgba(255, 0, 0, 0.514);
   border-radius: 20px;
