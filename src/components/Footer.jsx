@@ -2,13 +2,13 @@ import React, { useEffect, useState } from 'react'
 import { Link } from "react-router-dom";
 import icon from '../assets/fav_icon.png';
 import { auth, database } from '../../firebase.config';
-import '../utility/css/footer.css'
+import '../utility/css/footer.css' ;
 
 
 export default function Footer() {
   const [isZoomed, setIsZoomed] = useState(false);
   const zoomClass = isZoomed ? 'zoomed' : '';
-  
+
   const [feedback, setFeedback] = useState('');
   const [isLogin, setLogin] = useState(false);
 
@@ -78,7 +78,7 @@ export default function Footer() {
                 <p>Give feedback to our webside</p>
                 <div className="d-flex flex-column flex-sm-row w-100 gap-2">
                   <label htmlFor="feedback" className="visually-hidden">Feedback</label>
-                  <input id="feedback" value={feedback} onChange={event => setFeedback(event.target.value)} type="text" className="form-control" placeholder="Feedback" required/>
+                  <input id="feedback" value={feedback} onChange={event => setFeedback(event.target.value)} type="text" className="form-control" placeholder="Feedback" required />
                   <button className="btn btn-dark" type="submit">Send</button>
                 </div>
               </form>
@@ -120,16 +120,17 @@ export default function Footer() {
 
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-cos">
-          <div className="modal-content mb-4" style={{height:"65vh" , width:"60vh" ,  background: "linear-gradient(162deg, rgba(0,255,34,1) 10%, rgba(0,255,244,1) 24%, rgba(215,255,0,1) 38%, rgba(255,0,206,1) 53%, rgba(255,0,61,1) 68%, rgba(252,0,255,1) 80%, rgba(186,70,252,1) 92%)"}}>
-            <div className="modal-header" >
-              <h1 className="modal-title fs-5" id="exampleModalLabel">Modal title</h1>
+          <div className="modal-content mb-4" style={{ height: "65vh", width: "60vh", background: "white" }}>
+            <div className="modal-header" style={{ height: "7vh" }} >
+              <div className="modal-title fs-5" id="exampleModalLabel" style={{ right: "5px" }}> HI </div>
+              
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body" >
 
             </div>
-            <div className="modal-footer" >
-              <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)} style={{width:"8vh", height:"8vh", left:"10px"  , borderRadius:"100px" , background:"black"}} > Send </button>
+            <div className="modal-footer " >
+              <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)} style={{ width: "8vh", height: "8vh", left: "10px", display: "flex", alignItems: "center", justifyContent: "center", borderRadius: "50px", background: "black" }} >  send  </button>
             </div>
           </div>
         </div>
