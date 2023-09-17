@@ -4,32 +4,62 @@ const About = () => {
   return (
     <>
       <h1>About</h1>
-    
-      <section className="container py-10 bg-light">
-    <div className="row align-items-center">
-        <div className="col-lg-6 mb-4">
-            <div className="position-relative">
-                <img src="https://i.postimg.cc/QtyYkbxp/pexels-andrea-piacquadio-927022.jpg" alt="" className="img-fluid rounded"/>
-                <div className="position-absolute w-100 h-100 bg-primary rounded-bottom-3"></div>
-                <div className="position-absolute text-primary translate-middle cursor-pointer top-50 start-50">
-                    <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="currentColor" className="bi bi-play-circle-fill" viewBox="0 0 16 16">
-                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"></path>
-                    </svg>
+      <div class="container text-center">
+        <div class="hero-text mw-custom-m ml-auto mr-auto ph3">
+          <h1 class="ubisoftsans tc white">ABOUT US</h1>
+          <p class="ubisoftsans tc white f2 b">Enrich players' lives by creating memorable and meaningful gaming experiences</p>
+          <div class="container">
+            <div class="row justify-content-end">
+              <div class="col-lg-6">
+                
+              <div class="mt-5 feature-card bg-near-white pa3">
+    <h2 class="mt0 mb3">Our Story</h2>
+    <p class="lh-copy mb3">Ubisoft may have 21,000 employees in offices and studios around the world, but the company began with a family. </p>
+    <a path="/about-us/our-story" aria-label="Learn More: Our Story" class="f5 br2 link dim br-pill ls-md ba bw1 b--primary-magenta ph4 pv2 dib white bg-primary-magenta ttu b pointer" locale="en-us" href="/en-us/company/about-us/our-story">
+        <span>Learn More</span>
+    </a>
+</div>
+
+              </div>
+            </div>
+            <div class="feature-card bg-near-white pa3"><h2 class="mt0 mb3">Our Brands</h2><p class="lh-copy mb3">At Ubisoft, we create worlds for everyone. We are dedicated to enriching the lives of our players by developing high-quality games that resonate with all kinds of personalities, bring people together, and allow everyone to learn and grow while having fun.</p><a path="/about-us/our-brands" aria-label="Learn More: Our Brands" class="f5 br2 link dim br-pill ls-md ba bw1 b--primary-magenta ph4 pv2 dib white bg-primary-magenta ttu b pointer" locale="en-us" href="/en-us/company/about-us/our-brands"><span>Learn More</span></a></div>
+            <div class="container">
+              <div class="row justify-content-end">
+                <div class="col-lg-6">
+                  <div class="feature-card bg-near-white pa3">
+                    <h2 class="mt0 mb3">Our People</h2>
+                    <p class="lh-copy mb3">Discover the exciting stories of the people behind our games.</p>
+                    <a path="/about-us/our-people" aria-label="Learn More: Our People" class="f5 br2 link dim br-pill ls-md ba bw1 b--primary-magenta ph4 pv2 dib white bg-primary-magenta ttu b pointer" locale="en-us" href="/en-us/company/about-us/our-people">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
                 </div>
+              </div>
             </div>
-        </div>
-        <div className="col-lg-6 mb-4">
-            <div className="position-relative">
-                <h1 className="position-absolute top-0 start-0 text-secondary fs-1 d-none d-md-block opacity-50"></h1>
-                <h1 className="border-start border-primary ps-2 mb-4 fs-4 fs-lg-1 text-primary fw-bold">Welcome to our site</h1>
+            <div class="feature-card bg-near-white pa3"><h2 class="mt0 mb3">Diversity and Inclusion</h2><p class="lh-copy mb3">Learn more about how we are putting D&amp;I at the heart of everything we do with a focus on colleagues, content, culture and community.</p><a path="/about-us/diversity-inclusion" aria-label="Learn More: Diversity and Inclusion" class="f5 br2 link dim br-pill ls-md ba bw1 b--primary-magenta ph4 pv2 dib white bg-primary-magenta ttu b pointer" locale="en-us" href="/en-us/company/about-us/diversity-inclusion"><span>Learn More</span></a></div>
+            <div class="container">
+              <div class="row justify-content-end">
+                <div class="col-lg-6">
+                  <div class="feature-card bg-near-white pa3">
+                    <h2 class="mt0 mb3">Investor Center</h2>
+                    <p class="lh-copy mb3">The Investor Center page centralizes detailed information for the company’s shareholders and prospective investors and provides plenty of documentation...</p>
+                    <a path="/about-us/investors" aria-label="Learn More: Investor Center" class="f5 br2 link dim br-pill ls-md ba bw1 b--primary-magenta ph4 pv2 dib white bg-primary-magenta ttu b pointer" locale="en-us" href="/en-us/company/about-us/investors">
+                      <span>Learn More</span>
+                    </a>
+                  </div>
+                </div>
+              </div>
+              <div class="feature-card bg-near-white pa3"><h2 class="mt0 mb3">Ubisoft Codes of Conduct</h2><p class="lh-copy mb3">Whether they apply to our employees, our players, or our business partners, Ubisoft's Codes of Conduct are reference documents that define our commitments as a company and game publisher.</p><a path="/about-us/codes-of-conduct" aria-label="Learn More: Ubisoft Codes of Conduct" class="f5 br2 link dim br-pill ls-md ba bw1 b--primary-magenta ph4 pv2 dib white bg-primary-magenta ttu b pointer" locale="en-us" href="/en-us/company/about-us/codes-of-conduct"><span>Learn More</span></a></div>
             </div>
-            <p className="mb-4 fs-5 text-secondary">
-                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
-            </p>
-            <a href="#" className="btn btn-primary rounded-pill">Learn more</a>
+
+          </div>
+      
         </div>
-    </div>
-</section>
+      </div>
+
+
+
+
 
     </>
 
