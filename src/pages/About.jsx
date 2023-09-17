@@ -5,53 +5,31 @@ const About = () => {
     <>
       <h1>About</h1>
     
-
-    
-    <nav class="navbar navbar-expand-lg navbar-dark bg-dark">
-        <a class="navbar-brand" href="#">Your Website</a>
-        <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-        </button>
-        <div class="collapse navbar-collapse" id="navbarNav">
-            <ul class="navbar-nav ml-auto">
-                <li class="nav-item">
-                    <a class="nav-link" href="index.html">Home</a>
-                </li>
-                <li class="nav-item active">
-                    <a class="nav-link" href="about.html">About Us <span class="sr-only">(current)</span></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="contact.html">Contact</a>
-                </li>
-            </ul>
-        </div>
-    </nav>
-
- 
-    <section class="container mt-5">
-        <div class="row">
-            <div class="col-lg-6" >
-                <h2>About Us</h2>
-                <p>
-                    Lorem ipsum dolor sit amet, consectetur adipiscing elit. Nullam eu sem sit amet ligula
-                    blandit bibendum a et elit. Nulla facilisi. Vivamus laoreet mi a mi pretium, a sollicitudin
-                    risus tincidunt.
-                </p>
-            </div>
-            <div class="col-lg-6">
-                <img src="about-image.jpg" alt="About Us" class="img-fluid"/>
+      <section class="container py-10 bg-light">
+    <div class="row align-items-center">
+        <div class="col-lg-6 mb-4">
+            <div class="position-relative">
+                <img src="https://i.postimg.cc/QtyYkbxp/pexels-andrea-piacquadio-927022.jpg" alt="" class="img-fluid rounded"/>
+                <div class="position-absolute w-100 h-100 bg-primary rounded-bottom-3"></div>
+                <div class="position-absolute text-primary translate-middle cursor-pointer top-50 start-50">
+                    <svg xmlns="http://www.w3.org/2000/svg" width="72" height="72" fill="currentColor" class="bi bi-play-circle-fill" viewBox="0 0 16 16">
+                        <path d="M16 8A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM6.79 5.093A.5.5 0 0 0 6 5.5v5a.5.5 0 0 0 .79.407l3.5-2.5a.5.5 0 0 0 0-.814l-3.5-2.5z"></path>
+                    </svg>
+                </div>
             </div>
         </div>
-    </section>
-
-    <footer class="bg-dark text-white text-center py-3">
-        <p>&copy; 2023 Your Website. All Rights Reserved.</p>
-    </footer>
-
-    <script src="https://code.jquery.com/jquery-3.5.1.slim.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.3/dist/umd/popper.min.js"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
-
+        <div class="col-lg-6 mb-4">
+            <div class="position-relative">
+                <h1 class="position-absolute top-0 start-0 text-secondary fs-1 d-none d-md-block opacity-50"></h1>
+                <h1 class="border-start border-primary ps-2 mb-4 fs-4 fs-lg-1 text-primary fw-bold">Welcome to our site</h1>
+            </div>
+            <p class="mb-4 fs-5 text-secondary">
+                Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniamLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+            </p>
+            <a href="#" class="btn btn-primary rounded-pill">Learn more</a>
+        </div>
+    </div>
+</section>
 
     </>
 
