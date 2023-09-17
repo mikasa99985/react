@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import icon from '../assets/fav_icon.png';
 import { auth, database } from '../../firebase.config';
 import '../utility/css/footer.css' ;
+import bot_img from '../assets/Botlogo.svg';
 
 
 export default function Footer() {
@@ -122,6 +123,7 @@ export default function Footer() {
         <div className="modal-dialog modal-dialog-centered modal-cos">
           <div className="modal-content mb-4" style={{ height: "65vh", width: "60vh", background: "white" }}>
             <div className="modal-header" style={{ height: "7vh" }} >
+              <img src={bot_img} width={50} alt="" />
               <div className="modal-title fs-5" id="exampleModalLabel" style={{ right: "5px" }}> HI </div>
               
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
