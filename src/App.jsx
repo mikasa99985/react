@@ -87,8 +87,8 @@ function App() {
           </Route>
 
           <Route exact path="/ourteam">
-            <OurTeam />
-          </Route>
+            <OurTeam /> 
+  </Route> 
 
           <Route exact path="/about">
             < About/>

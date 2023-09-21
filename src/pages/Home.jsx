@@ -28,7 +28,7 @@ const Home = () => {
         <Statistic />
       </div>
 
-      <Ourteam/>
+      {/*<Ourteam/>*/}
       <Footer />
     </>
   );

@@ -1,0 +1,36 @@
+{/* do not delete this */}
+      {
+        data ?
+          <>
+            <h5 className='m-2'>{data.id}</h5>
+            <h1 className='m-2'>{data.data.name}</h1>
+            <img className='m-2' src={data.data.img} width={300} alt="" />
+            <div className="d-flex flex-wrap">
+              {
+                slider_img.map((element, index) => {
+                  return (<img key={index} className='m-2' src={element} width={300} alt="" />)
+                })
+              }
+            </div>
+            <p className='m-2'>{data.data.desc.slice(0, 1500)}</p>
+          </>
+          :
+          <></>
+      }
+
+      <div className="container w-75">
+        <form className='my-5' onSubmit={submit}>
+
+          <div className="mb-3">
+            <label htmlFor="rate" className="form-label">Rate us {rateing.rate}</label>
+            <input type="range" className="form-range" min="0" max="5" id="rate" name='rate' value={rateing.rate} onChange={getData} />
+          </div>
+
+          <div className="mb-3">
+            <label htmlFor="comment" className="form-label">Comment</label>
+            <textarea className="form-control" id="comment" name='comment' value={rateing.desc} onChange={getData} rows="4"></textarea>
+          </div>
+
+          <button type="submit" className="btn btn-primary">Submit</button>
+        </form>
+      </div>
