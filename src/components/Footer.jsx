@@ -128,12 +128,12 @@ export default function Footer() {
             
             <div className="modal-header chatbot-modal-header" >
               <img src={Slack} style={{padding:"3px"}} width={28}  alt=""/>
-                <p className='paragraph'> BT 2.0 </p> 
-              <div className="modal-title fs-5" id="exampleModalLabel" style={{ right: "5px" }}> </div>
+                
+              <div className="modal-title fs-5 modaltitlebot" id="exampleModalLabel" > BT 2.0 </div>
 
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
-            <div className="modal-body" style={{ padding: "0px", backgroundImage: `url(${Chatbody})` }} >
+            <div className="modal-body botmodalbody" >
 
               
 
