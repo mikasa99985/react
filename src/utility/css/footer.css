@@ -18,6 +18,38 @@
     }
   }
 
+.chatbot-modal {
+  height: 55vh ;
+  width: 24vw ;
+  margin: 20px;
+}
+
+@media (max-width:480px) {
+  .chatbot-modal{
+    width: 100%;
+    margin: 30px;
+
+  }
+}
+
+.chatbot-modal-header {
+  padding: 6px;
+}  
+
+.paragraph {
+ margin:0px;
+ text-indent: 4px;
+ font-family: cursive;
+}
+
+
+
+
+
+
+
+
+
  .test:active {
   color: cyan;
  }
