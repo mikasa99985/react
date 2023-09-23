@@ -34,6 +34,7 @@
 
 .chatbot-modal-header {
   padding: 6px;
+  background-image: url(/src/assets/Chatbanner.png);
 }  
 
 .modaltitlebot {
