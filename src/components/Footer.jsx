@@ -125,32 +125,32 @@ export default function Footer() {
       <div className="modal fade" id="exampleModal" tabIndex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
         <div className="modal-dialog modal-dialog-centered modal-cos">
           <div className="modal-content mb-4 chatbot-modal">
-            
+
             <div className="modal-header chatbot-modal-header" >
-              <img src={Slack} style={{padding:"3px"}} width={28}  alt=""/>
-                
+              <img src={Slack} style={{ padding: "3px" }} width={28} alt="" />
+
               <div className="modal-title fs-5 modaltitlebot" id="exampleModalLabel" > BT 2.0 </div>
 
               <button type="button" className="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
             </div>
             <div className="modal-body botmodalbody" >
 
-              
+
 
             </div>
-            <div className="chatfooter" style={{ height: "10vh" }}  >
+            <div className="chatfooter botfooter">
 
-              
+          
+              <div>
+                <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)}>
 
-                <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)} style={{ width: "5vh", height: "5vh", left: "50vh", top: "17px", alignItems: "center", position: "relative", justifyContent: "center", borderRadius: "15px", background: "pink", borderColor: "pink" }} >
-
-                  <div className='test' style={{ scale: "0.4", display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "10vh", right: "30px", bottom: "23px", position: "relative" }}>
+                  {/* <div className='test' style={{ scale: "0.4", display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "10vh", right: "30px", bottom: "23px", position: "relative" }}>
                     <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style={{ height: "6vh", width: "6vh" }} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                  </div>
+                  </div> */}
 
 
                 </button>
-              
+              </div>
             </div>
           </div>
         </div>
