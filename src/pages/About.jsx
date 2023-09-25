@@ -23,7 +23,7 @@ const About = () => {
             <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
           </div>
           <div class="col-md-7 order-md-1">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">800x500</text></svg>
+            <img src="https://emle.org/wp-content/uploads/revslider/news/demo-img-2-3.png" width={670} alt="" />
           </div>
         </div>
 
@@ -33,7 +33,7 @@ const About = () => {
             <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
           </div>
           <div class="col-md-7">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">800x500</text></svg>
+            <img src="https://emle.org/wp-content/uploads/revslider/news/demo-img-2-3.png" width={670} alt="" />
           </div>
         </div>
         {/* fix */}
@@ -44,7 +44,7 @@ const About = () => {
             <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
           </div>
           <div class="col-md-7 order-md-1">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">800x500</text></svg>
+            <img src="https://emle.org/wp-content/uploads/revslider/news/demo-img-2-3.png" width={670} alt="" />
           </div>
         </div>
 
@@ -54,7 +54,7 @@ const About = () => {
             <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
           </div>
           <div class="col-md-7">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">800x500</text></svg>
+            <img src="https://emle.org/wp-content/uploads/revslider/news/demo-img-2-3.png" width={670} alt="" />
           </div>
         </div>
 
@@ -64,7 +64,7 @@ const About = () => {
             <p class="lead">Another featurette? Of course. More placeholder content here to give you an idea of how this layout would work with some actual real-world content in place.</p>
           </div>
           <div class="col-md-7 order-md-1">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">800x500</text></svg>
+            <img src="https://emle.org/wp-content/uploads/revslider/news/demo-img-2-3.png" width={670} alt="" />
           </div>
         </div>
 
@@ -74,13 +74,13 @@ const About = () => {
             <p class="lead">Some great placeholder content for the first featurette here. Imagine some exciting prose here.</p>
           </div>
           <div class="col-md-7">
-            <svg class="bd-placeholder-img bd-placeholder-img-lg featurette-image img-fluid mx-auto" width="800" height="500" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="Placeholder: 500x500" preserveAspectRatio="xMidYMid slice" focusable="false"><title>Placeholder</title><rect width="100%" height="100%" fill="var(--bs-secondary-bg)"></rect><text x="50%" y="50%" fill="var(--bs-secondary-color)" dy=".3em">800x500</text></svg>
+            <img src="https://emle.org/wp-content/uploads/revslider/news/demo-img-2-3.png" width={670} alt="" />
           </div>
         </div>
 
       </div>
 
-      <Footer/>
+      <Footer />
 
     </>
 
