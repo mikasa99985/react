@@ -140,17 +140,18 @@ export default function Footer() {
             </div>
             <div className="chatfooter botfooter">
 
-          
-              <div>
-                <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)}>
+              <input className='botbox' placeholder='Type your message...' >  
+              </input>
 
-                  {/* <div className='test' style={{ scale: "0.4", display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "10vh", right: "30px", bottom: "23px", position: "relative" }}>
-                    <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style={{ height: "6vh", width: "6vh" }} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-                  </div> */}
+              {/* <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)}> */}
+
+              {/* <div className='test' style={{ scale: "0.4", display: "flex", justifyContent: "center", alignItems: "center", height: "10vh", width: "10vh", right: "30px", bottom: "23px", position: "relative" }}> */}
+              {/* <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" style={{ height: "6vh", width: "6vh" }} viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg> */}
+              {/* </div> */}
 
 
-                </button>
-              </div>
+              {/* </button> */}
+
             </div>
           </div>
         </div>
