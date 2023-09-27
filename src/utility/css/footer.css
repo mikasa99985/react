@@ -125,12 +125,9 @@ justify-content:space-between;
 .test:active {
   color: cyan;
   padding-left: 15px;
-  
- 
  }
 
+ .svgbutton {
+  color: red;
+ }
 
-.svgbutton:active{
-  color: cyan;
-  
-}
