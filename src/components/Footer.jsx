@@ -16,6 +16,31 @@ export default function Footer() {
   const [feedback, setFeedback] = useState('');
   const [isLogin, setLogin] = useState(false);
 
+  const [isActive, setIsActive] = useState(false);
+  // const toggleColor = () => {
+  //   setIsActive(!isActive) ;
+  // }
+
+  const [isHover, setIsHover] = useState(false);
+
+
+  const handleMouseDown = () => {
+    setIsActive(true);
+  };
+
+  const handleMouseUp = () => {
+    setIsActive(false);
+  };
+
+  const handleMouseEnter = () => {
+    setIsHover(true);
+  }
+
+  const handleMouseLeave = () => {
+    setIsHover(false);
+  }
+
+
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -140,20 +165,28 @@ export default function Footer() {
             </div>
             <div className="chatfooter botfooter">
 
-              <input className='botbox' placeholder='Type your message...' >  
+              <input className='botbox' placeholder='Type your message...' >
               </input>
 
-              <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)}>
+              <button type="button" className='btn btn-primary rgbbutton1' >
 
-              {/* <div className='test' >
+                {/* <div className='test' >
                 
-              </div> */}
- <svg xmlns="http://www.w3.org/2000/svg" style={{scale:"0.5"}}  width="30" height="30"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
-              
+                 </div> */}
+                <svg xmlns="http://www.w3.org/2000/svg"
+                  onMouseDown={handleMouseDown}
+                  onMouseUp={handleMouseUp}
+                  onMouseEnter={handleMouseEnter}
+                  onMouseLeave={handleMouseLeave}
+
+                  style={{ transition: "0.1s", color: isActive ? 'white' : isHover ? 'cyan' : '#ff728e', scale: '0.5' }}
+
+                  width="30" height="30" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+
 
 
               </button>
-             
+
             </div>
           </div>
         </div>
