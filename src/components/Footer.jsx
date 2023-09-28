@@ -143,17 +143,17 @@ export default function Footer() {
               <input className='botbox' placeholder='Type your message...' >  
               </input>
 
-              {/* <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)}> */}
+              <button type="button" className={`btn btn-primary rgbbutton1 ${zoomClass}`} onMouseEnter={() => setIsZoomed(true)} onMouseLeave={() => setIsZoomed(false)}>
 
               {/* <div className='test' >
                 
               </div> */}
-
+ <svg xmlns="http://www.w3.org/2000/svg" style={{scale:"0.5"}}  width="30" height="30"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
               
 
 
-              {/* </button> */}
-              <svg xmlns="http://www.w3.org/2000/svg" className='svgbutton' style={{}}  width="30" height="30"  viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" class="feather feather-send"><line x1="22" y1="2" x2="11" y2="13"></line><polygon points="22 2 15 22 11 13 2 9 22 2"></polygon></svg>
+              </button>
+             
             </div>
           </div>
         </div>

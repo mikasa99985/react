@@ -68,11 +68,11 @@ justify-content:space-between;
 .rgbbutton1 { 
   transition: transform 0.3s;
   transition: transform 0.3s, text-shadow 0.3s;
-  color:rgb(255,0,232);
-  text-shadow: 0px 0px 10px rgb(255, 49, 186);
+  color:#f87f98;
+  /* text-shadow: 0px 0px 10px rgb(255, 49, 186); */
   border-color:rgba(243, 228, 140, 0.829);
-  /* box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.500); */
-  padding: 14px;
+  box-shadow: 0.5px 0.5px 2px rgba(0, 0, 0, 0.400);
+  padding: 0px;
   border-radius: 10px;
   background-color: pink;
   background-color: rgba(243, 228, 140, 0.829);
@@ -81,26 +81,27 @@ justify-content:space-between;
 .rgbbutton1:hover{
     /*transform: scale(1.2); */
     
-    color:rgb(255, 230, 0);
+    color:#b7f87f;
   -moz-transition: all 0.2s ease-in;
   -o-transition: all 0.2s ease-in;
   -webkit-transition: all 0.2s ease-in;
   transition: all 0.2s ease-in;
   animation: border-animation 5s linear infinite ;
-  background-color: pink;
+  background-color: whitesmoke;
+  /* box-shadow: none; */
   
 }
 
 .rgbbutton1:active  {
     
-    text-shadow: 0px 0px 20px rgb(255, 255, 255);
-    color:rgb(255,0,232);
-    border-color:rgb(255,0,232) ;
+    /* text-shadow: 0px 0px 20px rgb(255, 255, 255); */
+    /* color:cyan; */
+    border-color:#fcccee !important;
    transition: all 0s ease-in;
    animation: border-animation  linear infinite ;
-   box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.600);
-   background-color: rgb(237, 192, 255) !important;
-   
+   /* box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.600); */
+   background-color:#fcccee !important;
+   box-shadow: none;
 }
 
 
@@ -127,3 +128,4 @@ justify-content:space-between;
   padding-left: 15px;
  }
 
+ 
