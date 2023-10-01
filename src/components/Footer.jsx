@@ -242,6 +242,7 @@ export default function Footer() {
         </footer>
       </div>
 
+      {/* Chat bot modal */}
       <div
         className="modal fade"
         id="exampleModal"
