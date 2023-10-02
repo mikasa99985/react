@@ -269,7 +269,13 @@ export default function Footer() {
                 aria-label="Close"
               ></button>
             </div>
-            <div className="modal-body botmodalbody"></div>
+            <div className="modal-body botmodalbody">
+
+            <div>Hi</div>
+
+            </div>
+            
+
             <div className="chatfooter botfooter">
               <input
                 className="botbox"
