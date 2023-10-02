@@ -5,6 +5,8 @@ import { urlDecode } from '../utility/js/util'
 import '../utility/css/details.css'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
+import Imgslider from '../components/details/Imgslider'
+
 
 const Details = () => {
   const params = useParams();
@@ -119,7 +121,7 @@ const Details = () => {
       <div className="container my-5">
         <div className="w-100 game-img-slider">
           {/* img Slider */}
-          <h4>Img Slider</h4>
+          <Imgslider/>
         </div>
       </div>
 
