@@ -5,7 +5,7 @@ import { urlDecode } from '../utility/js/util'
 import '../utility/css/details.css'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
-import Imgslider from '../components/details/imgslider'
+import Imgslider from '../components/details/Imgslider'
 
 
 const Details = () => {
