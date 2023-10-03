@@ -15,7 +15,6 @@ export default function Footer() {
   const [feedback, setFeedback] = useState("");
   const [isLogin, setLogin] = useState(false);
 
-
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -271,11 +270,9 @@ export default function Footer() {
               ></button>
             </div>
             <div className="modal-body botmodalbody">
-
-            <div>Hi</div>
-
+              <div className="chatbodymessagesent"
+               >Hellosssssssssssssssssssssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssdddddddddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwweeeeeeeeeeeeewwwwwwwwwwwwwwwweeeeee sssssssssssssssssssddddddddddddddddddddddddddddddddsssd..........!!!!@#</div>
             </div>
-            
 
             <div className="chatfooter botfooter">
               <input
