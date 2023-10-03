@@ -7,6 +7,7 @@ import bot_img from "../assets/Botlogo.svg";
 import Slack from "../assets/Slack.png";
 import Chatbanner from "../assets/Chatbanner.png";
 import Chatbody from "../assets/Chatbody.png";
+import LeftMessage from "../components/message/LeftMessage";
 
 export default function Footer() {
   const [isZoomed, setIsZoomed] = useState(false);
@@ -270,8 +271,11 @@ export default function Footer() {
               ></button>
             </div>
             <div className="modal-body botmodalbody">
-              <div className="chatbodymessagesent"
-               >Hellossssssssssssssssssssssssdddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssdddddddddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwweeeeeeeeeeeeewwwwwwwwwwwwwwwweeeeee sssssssssssssssssssddddddddddddddddddddddddddddddddsssd..........!!!!@#</div>
+              <div className="chats">
+                <LeftMessage/>
+                <LeftMessage/>
+                <LeftMessage/>
+              </div>
             </div>
 
             <div className="chatfooter botfooter">

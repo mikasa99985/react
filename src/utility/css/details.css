@@ -3,6 +3,11 @@
     background-color: #ddd;
 }
 
+.img-slider{
+    height: calc(75vh - 56px);
+}
+
+
 .game-header {
     display: flex;
     flex-direction: row;
@@ -148,6 +153,10 @@
     }
 
     .game-img-slider {
+        height: 200px;
+    }
+
+    .img-slider{
         height: 200px;
     }
 

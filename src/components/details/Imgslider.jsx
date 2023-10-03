@@ -3,16 +3,13 @@ import React from 'react'
 const Imgslider = () => {
   return (
     <>
-      {/* Create image slider here */}
-      <h4>components/details/Imgslider.jsx</h4>  {/* <--- replace this code */}
-
       <div id="carouselExampleIndicators" className="carousel slide">
         <div className="carousel-indicators">
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="0" className="active" aria-current="true" aria-label="Slide 1"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="1" aria-label="Slide 2"></button>
           <button type="button" data-bs-target="#carouselExampleIndicators" data-bs-slide-to="2" aria-label="Slide 3"></button>
         </div>
-        <div className="carousel-inner">
+        <div className="carousel-inner img-slider">
           <div className="carousel-item active">
             <img src="https://assets-prd.ignimgs.com/2022/09/23/top25modernpcgames-blogroll-1663951042311.jpg" className="d-block w-100" alt="..." />
           </div>
