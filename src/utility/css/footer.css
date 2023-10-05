@@ -163,6 +163,17 @@
   /* border: 2px solid black; */
 }
 
+
+@media (max-width:480px) {
+  .message-outer-container {
+    
+   position: sticky; 
+   display: flex;
+   width: fit-content;
+   margin-right: 8px; 
+  }
+}
+
 .message-container {
   min-height: 50px;
   max-height: 300px;
