@@ -157,7 +157,9 @@
   margin: 5px;
   display: flex;
   justify-content: start;
-
+  position: absolute;
+  top: 60%;
+  left: 40%;
   /* border: 2px solid black; */
 }
 
@@ -167,8 +169,8 @@
   /* width: 120px; */
   min-width: 120px;
   max-width: 220px;
-  background: #fdca17;
-  border-radius: 9px;
+  background: #fcc7c5;
+  border-radius: 15px;
 }
 
 .message {
@@ -179,6 +181,7 @@
 .message p {
   margin: 8px 5px;
   line-height: 15px;
+  font-size: 14px;
 }
 
 .bottom-container {
