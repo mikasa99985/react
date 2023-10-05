@@ -203,9 +203,16 @@
 }
 
 .message p {
-  margin: 8px 5px;
+  /* margin: 8px 5px;
   line-height: 15px;
-  font-size: 14px;
+  font-size: 14px; */
+  margin: 8px 5px;
+    line-height: 15px;
+    font-size: 14px;
+    display: flex;
+    overflow: hidden;
+    /* word-wrap: break-word; */
+    flex-direction: column
 }
 
 .bottom-container {
