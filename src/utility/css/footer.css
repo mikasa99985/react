@@ -154,23 +154,36 @@
 .message-outer-container {
   /* height: 53px; */
   /* min-height: 53px; */
-  margin: 5px;
+  /* margin: 5px;
   display: flex;
   justify-content: start;
   position: absolute;
   top: 60%;
-  left: 40%;
+  left: 40%; */
   /* border: 2px solid black; */
+
+  
+    /* height: 53px; */
+    /* min-height: 53px; */
+    margin: 5px;
+    display: flex;
+    position: relative;
+    top: 62%;
+    /* left: 0%; */
+    /* border: 2px solid black; */
+    justify-content: flex-end;
+    flex-direction: row;
 }
 
 
 @media (max-width:480px) {
   .message-outer-container {
     
-   position: sticky; 
+   /* position: sticky; 
    display: flex;
    width: fit-content;
-   margin-right: 8px; 
+   margin-right: 8px;  */
+   top : 63% ;
   }
 }
 
