@@ -91,12 +91,12 @@ export const ImageSlider = () => {
 
 
         </div>
-        <button class="carousel-control-prev" style={{ top: 'unset', bottom: '80px' }} type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
+        <button class="carousel-control-prev" style={{ top: 'unset', bottom: '120px' }} type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="prev">
           {/* <span class="carousel-control-prev-icon" aria-hidden="true"></span> */}
           <img src={icon} style={{ rotate: "180deg" }} width={40} alt="btn" />
           <span class="visually-hidden">Previous</span>
         </button>
-        <button class="carousel-control-next" style={{ top: 'unset', bottom: '80px' }} type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
+        <button class="carousel-control-next" style={{ top: 'unset', bottom: '120px' }} type="button" data-bs-target="#carouselExampleCaptions" data-bs-slide="next">
           {/* <span class="carousel-control-next-icon" aria-hidden="true"></span> */}
           <img src={icon} style={{ rotate: "0deg" }} width={40} alt="btn" />
           <span class="visually-hidden">Next</span>
