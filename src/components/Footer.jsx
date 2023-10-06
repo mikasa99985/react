@@ -8,6 +8,8 @@ import Slack from "../assets/Slack.png";
 import Chatbanner from "../assets/Chatbanner.png";
 import Chatbody from "../assets/Chatbody.png";
 import LeftMessage from "../components/message/LeftMessage";
+import RightMessage from "../components/message/RightMessage";
+
 
 export default function Footer() {
   const [isZoomed, setIsZoomed] = useState(false);
@@ -273,6 +275,7 @@ export default function Footer() {
             <div className="modal-body botmodalbody">
               <div className="chats">
                 <LeftMessage/>
+                <RightMessage/>
                 
               </div>
             </div>
