@@ -7,6 +7,7 @@ import { db, auth, provider } from '../../firebase.config';
 
 
 const SignIn = () => {
+  window.scrollTo(0, 0)
 
   let history = useHistory();
 

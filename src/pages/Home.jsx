@@ -13,6 +13,7 @@ import { ImageSlider } from "../components/ImageSlider";
 
 
 const Home = () => {
+  window.scrollTo(0, 0)
   return (
     <>
       <Nav home={true} />

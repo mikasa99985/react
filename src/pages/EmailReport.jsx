@@ -2,9 +2,10 @@ import React, { useEffect, useState } from 'react'
 import '../utility/css/btn_glow.css'
 import { database, auth } from '../../firebase.config'
 import { jsonConcat } from '../utility/js/util'
+import Banner from '../components/banner';
 
 const EmailReport = () => {
-
+    window.scrollTo(0, 0)
     const [report, setReport] = useState({
         name: '',
         email: '',
@@ -37,7 +38,7 @@ const EmailReport = () => {
         setLoading(true);
         if (isLogin) {
             let report_json = jsonConcat({ userId: auth.currentUser.uid }, report);
-    
+
             database.ref('reports/email').push().set(report_json).then(() => {
                 setTimeout(() => {
                     setLoading(false);
@@ -46,34 +47,37 @@ const EmailReport = () => {
                         email: '',
                         desc: ''
                     });
-                    setAlert({status: true, message:'Successfully send this form'});
+                    setAlert({ status: true, message: 'Successfully send this form' });
                 }, 100);
-    
+
             }).catch(() => {
                 setLoading(false);
-                setAlert({status: true, message:'This Form is not able to send'});
+                setAlert({ status: true, message: 'This Form is not able to send' });
             });
-        }else{
+        } else {
             setLoading(false);
-            setAlert({status: false, message:'You are not login'})
+            setAlert({ status: false, message: 'You are not login' })
         }
     }
 
     return (
         <>
+            <Banner height='400px' img='https://sands.org.uk/sites/default/files/2022-12/GFG3%20BANNER%20EMAIL.png'>
+                <h1 className="fw-bolder">Email Report</h1>
+            </Banner>
             {
                 alert ?
-                    <div className={`alert ${alert.status?'alert-success':'alert-danger'} alert-dismissible fade show`} role="alert">
-                        <strong>{alert.status?'Success !!!':'ERROR !!!'}</strong> {alert.message}
+                    <div className={`alert ${alert.status ? 'alert-success' : 'alert-danger'} alert-dismissible fade show`} role="alert">
+                        <strong>{alert.status ? 'Success !!!' : 'ERROR !!!'}</strong> {alert.message}
                         <button type="button" className="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
                     </div>
                     :
                     <></>
-            
+
             }
 
             <div className="container my-5">
-                <h1 className='text-center'>Email Report</h1>
+                {/* <h1 className='text-center'>Email Report</h1> */}
                 <form className="report-form mt-5" onSubmit={submit}>
                     <div className="mb-3">
                         <label htmlFor="name" className="form-label">Your Name</label>

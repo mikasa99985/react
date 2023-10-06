@@ -14,6 +14,7 @@ import '../utility/css/btn_glow.css'
 import { GenerateOTP, useQuery } from '../utility/js/util'
 
 const Payment = () => {
+  window.scrollTo(0, 0)
 
   const [state, setSetate] = useState('select');
   const [otp_pin, setOtp_pin] = useState(0);

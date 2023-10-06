@@ -6,6 +6,7 @@ import Nav from '../components/Nav';
 import Banner from '../components/banner';
 
 const Help = () => {
+    window. scrollTo(0, 0)
     return (
         <>
             <Nav help={true} />

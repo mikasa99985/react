@@ -6,6 +6,7 @@ import '../utility/css/TempCard.css';
 import { db, database, auth } from '../../firebase.config'
 
 export default function Shop() {
+    window.scrollTo(0, 0)
     const query = useQuery();
 
     const [list, setList] = useState([]);

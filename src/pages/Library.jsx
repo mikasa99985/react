@@ -3,8 +3,11 @@ import { database, auth } from '../../firebase.config'
 import LibraryCard from '../components/LibraryCard';
 import { urlEncode } from '../utility/js/util';
 import Nav from '../components/Nav';
+import Banner from '../components/banner'
+import Footer from '../components/Footer';
 
 const Library = () => {
+    window. scrollTo(0, 0)
 
     const [list, setList] = useState([]);
     const [loading, setLoading] = useState(true);
@@ -33,6 +36,9 @@ const Library = () => {
         <>
             <Nav library={true}/>
             {/* <h1 className='text-center my-4'>Library</h1> */}
+            <Banner height='400px' img='https://indiater.com/wp-content/uploads/2021/06/fortnite-chapter-2-game-banner-free-photoshop-template-scaled.jpg'>
+                <h1 className="fw-bolder">LIBRARY</h1>
+            </Banner>
             <div className="d-flex flex-wrap justify-content-center mx-auto w-res my-3">
                 {
                     loading ?
@@ -59,6 +65,7 @@ const Library = () => {
                             })
                 }
             </div>
+            <Footer/>
         </>
     )
 }

@@ -2,6 +2,7 @@ import React from 'react'
 import {Link} from 'react-router-dom'
 
 const Page_404 = () => {
+    window.scrollTo(0, 0)
     return (
         <div>
             <div className="container d-flex align-items-center justify-content-center min-vh-100 bg-white px-4 py-5 py-sm-5">

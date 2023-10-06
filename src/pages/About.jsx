@@ -4,6 +4,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
 const About = () => {
+  window. scrollTo(0, 0)
   return (
     <>
       {/* <h1>About</h1> */}

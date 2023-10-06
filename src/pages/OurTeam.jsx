@@ -5,6 +5,7 @@ import Nav from '../components/Nav';
 import Footer from '../components/Footer';
 
 const OurTeam = () => {
+  window. scrollTo(0, 0)
 
   const [arrData, setArr] = useState([]);
   useEffect(() => {

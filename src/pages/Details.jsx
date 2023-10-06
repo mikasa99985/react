@@ -9,6 +9,7 @@ import Imgslider from '../components/details/Imgslider'
 
 
 const Details = () => {
+  window. scrollTo(0, 0)
   const params = useParams();
 
   const [data, setData] = useState(false);

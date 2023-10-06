@@ -7,6 +7,7 @@ import { filter } from "../utility/js/util";
 
 
 const SignUp = () => {
+  window.scrollTo(0, 0)
 
   let history = useHistory();
 

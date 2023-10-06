@@ -1,0 +1,44 @@
+.my-card-img{
+    width: 260px;
+    height: 330px;
+    border-radius: 10px;
+}
+
+.w-card{
+    width: 70%;
+    margin: auto;
+}
+
+.w-card-my{
+    width: 350px;
+}
+
+.btn-my-card button, .btn-my-card a{
+    margin-top: 15px;
+}
+
+@media screen and (max-width: 1200px){
+    .w-card-my {
+        width: 300px;
+    }
+
+    
+}
+
+@media screen and (max-width: 991px){
+    .w-card{
+        width: 100%;
+    }
+}
+
+@media screen and (max-width: 768px){
+    .w-card{
+        align-items: center;
+    }
+    .w-card-my {
+        width: 100%;
+    }
+    .my-card-img {
+        width: 100%;
+    }
+}

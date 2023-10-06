@@ -8,6 +8,7 @@ import Banner from '../components/banner';
 import Footer from '../components/Footer';
 
 const Contact = () => {
+  window. scrollTo(0, 0)
   const [report, setReport] = useState({
     name: '',
     email: '',

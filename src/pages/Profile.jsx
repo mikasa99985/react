@@ -6,6 +6,7 @@ import { Link } from 'react-router-dom'
 import { jsonConcat } from '../utility/js/util'
 
 const Profile = () => {
+    window.scrollTo(0, 0)
     const params = useParams();
     // console.log('params', params);
 

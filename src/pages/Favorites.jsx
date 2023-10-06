@@ -2,6 +2,7 @@ import React from 'react'
 import Nav from '../components/Nav'
 
 const Favorites = () => {
+    window. scrollTo(0, 0)
 
     let img = 'https://firebasestorage.googleapis.com/v0/b/online-app-a440d.appspot.com/o/empty-profile.png?alt=media&token=9d884c2e-e9ab-4ac0-9d28-cd7ec5ba917f';
 

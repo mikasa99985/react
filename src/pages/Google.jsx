@@ -6,6 +6,7 @@ import { filter } from '../utility/js/util.js'
 import { db, auth } from '../../firebase.config';
 
 const Google = () => {
+    window. scrollTo(0, 0)
 
     let history = useHistory();
 
