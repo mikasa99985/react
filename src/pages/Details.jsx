@@ -11,7 +11,7 @@ import Rating from '../components/details/Rating'
 
 
 const Details = () => {
-  window. scrollTo(0, 0)
+  window.scrollTo(0, 0)
   const params = useParams();
 
   const [data, setData] = useState(false);
@@ -121,65 +121,74 @@ const Details = () => {
 
       <Nav />
 
-      <div className="container my-5">
-        <div className="w-100 game-img-slider">
-          {/* img Slider */}
-          <Imgslider/>
-        </div>
-      </div>
-
-      {/* Game details */}
-      <div className="container my-5">
-        <div className="game-header">
-          <img src="https://emle.org/wp-content/uploads/revslider/news/demo-img-2-3.png" alt="" />
-          <div className="game-details">
-            <h1>Game Name</h1>
-            <p>Lorem ipsum dolor sit, amet consectetur adipisicing elit. Odio ratione iste repellat, tempore quos id facere consectetur, delectus cumque, ut placeat expedita? Tenetur et quia cupiditate, reprehenderit neque possimus porro? Blanditiis officia laborum laboriosam?</p>
-          </div>
-        </div>
-      </div>
-
-      {/* Full description & Buy */}
-
-      <div className="container my-5">
-        <div className="game-desc">
-          <div className="game-full-desc">
-            {/* Game description */}
-            Lorem ipsum dolor sit amet consectetur adipisicing elit. Quae dolorem totam perferendis beatae repudiandae nam fuga, mollitia molestias animi ipsam placeat sint quas at quod natus nulla omnis. Ab itaque sapiente inventore dignissimos, obcaecati consequatur dolores recusandae, totam tenetur qui mollitia rerum molestiae. Officiis debitis architecto, autem vitae vero obcaecati earum est aperiam sed rerum adipisci illo magnam placeat laboriosam tempore error soluta fugiat nihil incidunt. Mollitia hic alias voluptatibus dolore quis aliquid numquam tempora, minima maiores ut deserunt molestias. Quia nisi dolores animi quis natus! Iure, totam accusantium illo reiciendis amet ut expedita soluta cum sit recusandae tempore? Quis?
-          </div>
-          <div className="game-buy">
-            <button className='btn btn-dark'>Buy Now</button>
-            <button className='btn btn-warning'>Add Card</button>
-            <button className='btn btn-info'>Add favorites</button>
-            <div className="game-comm">
-              {/* Game Comments */}
-              <h4>Game Comments</h4>
+      {
+        data ?
+          <>
+            <div className="container my-5">
+              <div className="w-100 game-img-slider">
+                {/* img Slider */}
+                <Imgslider element={slider_img} />
+              </div>
             </div>
-          </div>
-        </div>
-      </div>
 
-      {/* Specification */}
-      <div className="container my-5">
-        <div className="game-spe">
-          <Specification/>
-        </div>
-      </div>
+            {/* Game details */}
+            <div className="container my-5">
+              <div className="game-header">
+                <img src={data.data.img} alt="" />
+                <div className="game-details">
+                  <h1>{data.data.name}</h1>
+                  <h5>{data.data.desc.slice(0, 500)}</h5>
+                </div>
+              </div>
+            </div>
 
-      {/* All comments & rate */}
-      <div className="container my-5">
-        <div className="game-a-c-r">
-          <div className="game-all-comm">
-            {/* All comments */}
-            <h4>All comments</h4>
-          </div>
-          <div className="game-rate">
-            {/* Game Rating */}
-            <Rating/>
-          </div>
-        </div>
-      </div>
+            {/* Full description & Buy */}
 
+            <div className="container my-5">
+              <div className="game-desc">
+                <div className="game-full-desc">
+                  {/* Game description */}
+                  {data.data.desc.slice(0, 1500)}
+                </div>
+                <div className="game-buy">
+                  <button className='btn btn-dark'>Buy Now</button>
+                  <button className='btn btn-warning'>Add Card</button>
+                  <button className='btn btn-info'>Add favorites</button>
+                  <div className="game-comm">
+                    {/* Game Comments */}
+                    <h4>Game Comments</h4>
+                  </div>
+                </div>
+              </div>
+            </div>
+
+            {/* Specification */}
+            <div className="container my-5">
+              <div className="game-spe">
+                <Specification />
+              </div>
+            </div>
+
+            {/* All comments & rate */}
+            <div className="container my-5">
+              <div className="game-a-c-r">
+                <div className="game-all-comm">
+                  {/* All comments */}
+                  <h4>All comments</h4>
+                </div>
+                <div className="game-rate">
+                  {/* Game Rating */}
+                  <Rating />
+                </div>
+              </div>
+            </div>
+          </>
+          :
+          <></>
+      }
+
+
+      {/* Demo Image:- https://emle.org/wp-content/uploads/revslider/news/demo-img-2-3.png */}
       <Footer />
     </>
   )

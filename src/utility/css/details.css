@@ -24,9 +24,6 @@
 
 .game-details h1 {
     margin-bottom: 20px;
-
-
-    background: #ddd;
 }
 
 .game-details p {
@@ -49,7 +46,7 @@
     margin-right: 65px;
 
 
-    background: #ddd;
+    /* background: #ddd; */
 }
 
 .game-buy {
@@ -98,6 +95,15 @@
     background: #ddd;
 }
 
+.details-img-slider-indi{
+    height: 70px !important;
+    width: 120px !important;
+    border-radius: 5px !important;
+    border-top: unset !important;
+    border-bottom: unset !important;
+}
+
+
 @media screen and (max-width: 1024px) {
     .game-details {
         margin-left: 30px;
@@ -115,7 +121,16 @@
     .game-all-comm {
         margin-right: 30px;
     }
+
+    
 }
+
+@media screen and (max-width: 1000px){
+    .details-indicators{
+        display: none;
+    }
+}
+
 
 @media screen and (max-width: 767px) {
     .game-header {
