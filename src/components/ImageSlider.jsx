@@ -6,19 +6,19 @@ export const ImageSlider = () => {
     <>
       <div id="carouselExampleCaptions" class="carousel slide carousel-fade" data-bs-ride="carousel">
         <div class="carousel-indicators">
-          <img src="https://cdn.sanity.io/images/6znhzi10/production/e58fe693e62a07c633b48885817b374c1e047078-2400x1350.jpg?w=1600" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="img-slider-indi active" aria-current="true" aria-label="Slide 1"></img>
+          <img src="https://wallpaperaccess.com/full/459704.jpg" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="0" className="img-slider-indi active" aria-current="true" aria-label="Slide 1"></img>
 
           <img src="https://static1.thegamerimages.com/wordpress/wp-content/uploads/2022/07/Spider-Man-Remastered-PC.jpg" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="1" className='img-slider-indi' aria-label="Slide 2"></img>
 
           <img src="https://wallpapercave.com/wp/wp9351526.jpg" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="2" className='img-slider-indi' aria-label="Slide 3"></img>
 
           
-          <img src="https://cdn.wallpapersafari.com/29/27/NeCdV8.png" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" className='img-slider-indi' aria-label="Slide 4"></img>
+          <img src="https://images7.alphacoders.com/128/1281832.jpg" data-bs-target="#carouselExampleCaptions" data-bs-slide-to="3" className='img-slider-indi' aria-label="Slide 4"></img>
         </div>
         <div class="carousel-inner">
 
           <div class="carousel-item d-flex justify-content-center active">
-            <img src="https://cdn.sanity.io/images/6znhzi10/production/e58fe693e62a07c633b48885817b374c1e047078-2400x1350.jpg?w=1600" class="d-block slider-img-size" alt="..." />
+            <img src="https://wallpaperaccess.com/full/459704.jpg" class="d-block slider-img-size" alt="..." />
 
             <div class="img-slider-text-container">
               <div className="img-slider-text">
@@ -72,7 +72,7 @@ export const ImageSlider = () => {
           </div>
 
           <div class="carousel-item d-flex justify-content-center">
-            <img src="https://cdn.wallpapersafari.com/29/27/NeCdV8.png" class="d-block slider-img-size" alt="..." />
+            <img src="https://images7.alphacoders.com/128/1281832.jpg" class="d-block slider-img-size" alt="..." />
 
             <div class="img-slider-text-container">
               <div className="img-slider-text">
