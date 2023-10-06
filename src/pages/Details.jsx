@@ -6,6 +6,8 @@ import '../utility/css/details.css'
 import Nav from '../components/Nav'
 import Footer from '../components/Footer'
 import Imgslider from '../components/details/Imgslider'
+import Specification from '../components/details/Specification'
+import Rating from '../components/details/Rating'
 
 
 const Details = () => {
@@ -160,7 +162,7 @@ const Details = () => {
       {/* Specification */}
       <div className="container my-5">
         <div className="game-spe">
-          <h4>Specification</h4>
+          <Specification/>
         </div>
       </div>
 
@@ -173,7 +175,7 @@ const Details = () => {
           </div>
           <div className="game-rate">
             {/* Game Rating */}
-            <h4>Game Rating</h4>
+            <Rating/>
           </div>
         </div>
       </div>
