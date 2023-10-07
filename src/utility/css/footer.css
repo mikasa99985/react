@@ -151,6 +151,11 @@
   overflow-y: scroll;
 }
 
+.chats::-webkit-scrollbar {
+  
+  display: none;
+}
+
 .message-outer-container {
   /* height: 53px; */
   /* min-height: 53px; */
