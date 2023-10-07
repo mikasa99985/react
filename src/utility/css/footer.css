@@ -176,7 +176,7 @@
     top: 62%;
     /* left: 0%; */
     /* border: 2px solid black; */
-    justify-content: flex-end;
+    justify-content: flex-start;
     flex-direction: row;
 }
 
@@ -198,8 +198,9 @@
   /* width: 120px; */
   min-width: 120px;
   max-width: 220px;
-  background: #fcc7c5;
+  background: #ffebeb;
   border-radius: 15px;
+  box-shadow: 0.8px 0.2px 2.5px #ff6e6e8e;
 }
 
 .message {
@@ -230,3 +231,4 @@
   margin: 2px 5px;
   font-size: 11px;
 }
+

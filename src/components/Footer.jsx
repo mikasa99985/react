@@ -275,7 +275,7 @@ export default function Footer() {
             <div className="modal-body botmodalbody">
               <div className="chats">
                 <LeftMessage/>
-                <RightMessage/>
+                {/* <RightMessage/> */}
                 
               </div>
             </div>
