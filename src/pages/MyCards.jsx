@@ -13,6 +13,7 @@ const MyCards = () => {
     const [imageUrl, setImageUrl] = useState('https://firebasestorage.googleapis.com/v0/b/online-app-a440d.appspot.com/o/empty-profile.png?alt=media&token=9d884c2e-e9ab-4ac0-9d28-cd7ec5ba917f');
     const [list, setList] = useState([]);
     const [loading, setLoading] = useState(true);
+    const [isRemove, setRemove] = useState(0);
 
     const history = useHistory();
 
@@ -24,7 +25,8 @@ const MyCards = () => {
                 setLogin(false);
             }
         });
-    })
+        
+    },[]);
 
     useEffect(() => {
         let arr = [];
@@ -41,9 +43,11 @@ const MyCards = () => {
             });
         } else {
         }
-    }, [isLogin, remove]);
+        // console.log('done');
+    }, [isLogin, isRemove]);
 
     function remove(key) {
+        setRemove(isRemove+1);
         database.ref(`users/${auth.currentUser.uid}/my_cards/${key}`).remove().then(function () {
         }).catch(function (error) {
             console.log(error);
@@ -83,7 +87,7 @@ const MyCards = () => {
                                         :
                                         list.map((element, index) => {
                                             return (
-                                                <li className="p-4 border rounded-lg shadow-sm mb-3 d-flex flex-column flex-md-row justify-content-between w-card">
+                                                <li key={index} className="p-4 border rounded-lg shadow-sm mb-3 d-flex flex-column flex-md-row justify-content-between w-card">
                                                     <img className='my-card-img' src={element.val().img} alt="" />
                                                     <div className="d-flex flex-column justify-content-between w-card-my mt-5 mt-md-0">
                                                         <div className="text-my-card">
