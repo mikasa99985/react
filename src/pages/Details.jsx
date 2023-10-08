@@ -8,6 +8,7 @@ import Footer from '../components/Footer'
 import Imgslider from '../components/details/Imgslider'
 import Specification from '../components/details/Specification'
 import Rating from '../components/details/Rating'
+import Comments from '../components/details/Comments'
 
 
 const Details = () => {
@@ -156,7 +157,7 @@ const Details = () => {
                   <button className='btn btn-info'>Add favorites</button>
                   <div className="game-comm">
                     {/* Game Comments */}
-                    <h4>Game Comments</h4>
+                    <Comments/>
                   </div>
                 </div>
               </div>
