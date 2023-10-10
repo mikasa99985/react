@@ -3,15 +3,14 @@ import React from "react";
 const RightMessage = () => {
   return (
     <>
-      <div className="message-outer-container">
-        <div className="message-container">
-          <div className="message">
+      <div className="message-outer-containerright">
+        <div className="message-containerright">
+          <div className="messageright">
             <p>
-              Hello World Lorem ipsum dolor sit amet consectetur adipisicing
-              elit. Aut quia asperiores natus debitis veniam deleniti.
+              Vendetta! 
             </p>
           </div>
-          <div className="bottom-container">
+          <div className="bottom-containerright">
             <p>admin</p>
             <p>1234567890</p>
           </div>
