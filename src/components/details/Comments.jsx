@@ -1,12 +1,12 @@
 import React from "react";
-// import "../../utility/css/commentcontainer.css";
-// import Niel from "../../assets/Niel.png";
+import "../../utility/css/commentcontainer.css";
+import Niel from "../../assets/Niel.png";
 
 
 const Comments = () => {
   return (
     <>
-{/*       
+       
       <div class="commentcontainer">
         <div class="cardcustom">
           <div class="card-header">
@@ -54,9 +54,9 @@ const Comments = () => {
                   class="text-gray-500"
                   style={{
                     fontWeight: "300",
-                    color: "grey",
+                    
                     marginTop: "-22px",
-                    fontweight: "300",
+                    
                     color: "grey",
                     fontSize: "small",
                     fontStyle: "italic",
@@ -127,7 +127,7 @@ const Comments = () => {
             </div>
           </li>
         </ul>
-      </div> */}
+      </div> 
     </>
   );
 };
