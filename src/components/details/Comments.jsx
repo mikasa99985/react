@@ -63,7 +63,7 @@ const Comments = () => {
                   email@windster.com
                 </p>
               </div>
-              {/*          
+                      
               <div class="text-base font-weight-bold text-gray-900">$320</div>
             </div>
           </li>
@@ -121,7 +121,7 @@ const Comments = () => {
                 <p class="text-gray-500">email@windster.com</p>
               </div>
               <div class="text-base font-weight-bold text-gray-900">$2367</div>
-            */}
+           
             </div>
           </li>
         </ul>

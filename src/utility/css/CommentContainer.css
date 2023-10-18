@@ -78,7 +78,7 @@ border-radius: var(--bs-card-border-radius);
 .commentname {
     margin: 2px;
     margin-left: 12px;
-    overflow: "hidden"
+    overflow: hidden ;
     
     
 }
