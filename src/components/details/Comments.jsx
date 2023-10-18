@@ -1,12 +1,12 @@
 import React from "react";
-import "../../utility/css/commentcontainer.css";
-import Niel from "../../assets/Niel.png";
+// import "../../utility/css/commentcontainer.css";
+// import Niel from "../../assets/Niel.png";
 
 
 const Comments = () => {
   return (
     <>
-      {/*  ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */}
+{/*       
       <div class="commentcontainer">
         <div class="cardcustom">
           <div class="card-header">
@@ -127,7 +127,7 @@ const Comments = () => {
             </div>
           </li>
         </ul>
-      </div>
+      </div> */}
     </>
   );
 };
