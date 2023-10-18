@@ -1,27 +1,37 @@
 .game-comm{
     margin: 2px;
-    object-fit: contain;
+    /* object-fit: contain; */
     /* word-wrap: break-word;
     overflow: scroll; */
   
     
 }
 
-/* @media (max-width:480px) {
+/* @media (max-width:24.0px) {
     .game-comm{
-
+        ;
     }
     
 } */
 
 
-.CommentContainer{
+.commentcontainer{
     background-color:burlywood ;
-    object-fit: contain;
-  
+    /* object-fit: contain; */
+    margin: 2px;
 }
 
-.CardCustom {
+/* @media (max-width:480px) {
+    .commentcontainer{
+        width: 100%;
+        
+        
+    }
+    
+} */
+
+
+.cardcustom {
 --bs-card-spacer-y: 1rem;
 --bs-card-spacer-x: 1rem;
 --bs-card-title-spacer-y: 0.5rem;
@@ -52,6 +62,31 @@ border: var(--bs-card-border-width) solid var(--bs-card-border-color);
 border-radius: var(--bs-card-border-radius);
 }
 
+/* @media (max-width:480px) {
+    .cardcustom{
+        width: 100%;
+        
+        
+    }
+    
+} */
+
 .viewallcustom{
     text-decoration: none;
 }
+
+.commentname {
+    margin: 2px;
+    margin-left: 12px;
+    overflow: "hidden"
+    
+    
+}
+
+/* @media (max-width:480px) {
+    .card-header{
+        width: 100%;
+        
+        
+    }  
+} */

@@ -5,33 +5,65 @@ import Niel from "/Users/Yuki_/Desktop/v/src/assets/Niel.png";
 const Comments = () => {
   return (
     <>
-      <div class="CommentContainer">
-    {/*  ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */}
-        
-            <div class="CardCustom">
-              <div class="card-header">
-             <div class="d-flex justify-content-between align-items-center">
-               <h5 class="card-title text-xl font-weight-bold text-gray-900">
+      {/*  ssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddddwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwwsssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssssss */}
+      <div class="commentcontainer">
+        <div class="cardcustom">
+          <div class="card-header">
+            <div class="d-flex justify-content-between align-items-center">
+              <h5
+                class="card-title text-xl font-weight-bold text-gray-900 testsec"
+                style={{ overflow: "hidden" }}
+              >
                 Latest Customers
               </h5>
               <a
                 href="#"
                 class="text-sm font-weight-medium text-primary viewallcustom"
+                style={{ overflow: "hidden" }}
               >
                 View all
               </a>
-             </div>
-             </div>
-         </div>
-             <ul class="list-group list-group-flush">
+            </div>
+          </div>
+        </div>
+        <ul class="list-group list-group-flush">
           <li class="list-group-item py-3">
-            <div class="d-flex align-items-center">
-            <img src={Niel} style={{height:"40px",width:"40px" , borderRadius:"20px" }}  alt="" />
-                {/*          
-              <div class="flex-grow-1">
-                <p class="font-weight-medium text-gray-900">Neil Sims</p>
-                <p class="text-gray-500">email@windster.com</p>
+            <div class="d-flex ">
+              <img
+                src={Niel}
+                style={{
+                  height: "45px",
+                  width: "45px",
+                  borderRadius: "30px",
+                  overflow: "hidden",
+                }}
+                alt=""
+              />
+              <div
+                class="flex-grow-1 align-items-center commentname"
+              >
+                <p
+                  class="font-weight-medium text-gray-900"
+                  style={{ fontWeight: "450" }}
+                >
+                  Neil Sims
+                </p>
+                <p
+                  class="text-gray-500"
+                  style={{
+                    fontWeight: "300",
+                    color: "grey",
+                    marginTop: "-22px",
+                    fontweight: "300",
+                    color: "grey",
+                    fontSize: "small",
+                    fontStyle: "italic",
+                  }}
+                >
+                  email@windster.com
+                </p>
               </div>
+              {/*          
               <div class="text-base font-weight-bold text-gray-900">$320</div>
             </div>
           </li>
@@ -92,9 +124,7 @@ const Comments = () => {
             */}
             </div>
           </li>
-             </ul> 
-             
-      
+        </ul>
       </div>
     </>
   );
