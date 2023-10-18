@@ -1,6 +1,7 @@
 import React from "react";
-import "/Users/Yuki_/Desktop/v/src/utility/css/CommentContainer.css";
-import Niel from "/Users/Yuki_/Desktop/v/src/assets/Niel.png";
+import "../../utility/css/commentcontainer.css";
+import Niel from "../../assets/Niel.png";
+
 
 const Comments = () => {
   return (
@@ -11,6 +12,7 @@ const Comments = () => {
           <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
               <h5
+              
                 class="card-title text-xl font-weight-bold text-gray-900 testsec"
                 style={{ overflow: "hidden" }}
               >
