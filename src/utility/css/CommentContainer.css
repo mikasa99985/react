@@ -1,20 +1,27 @@
-.game-comm{
+
+
+
+
+
+
+
+
+
+/* .game-comm{
     margin: 2px;
     border-radius: 5px;
-    /* object-fit: contain; */
-    /* word-wrap: break-word;
-    overflow: scroll; */
+   
   
     
-}
+} */
 
 
 
 
-.commentcontainer{
+/* .commentcontainer{
   
     margin: 2px;
-}
+} */
 
 /* @media (max-width:480px) {
     .commentcontainer{
@@ -26,24 +33,24 @@
 } */
 
 
-.cardcustom {
+/* .cardcustom {
     padding: 20px;
     background-color: white;
-}
+} */
 
 
 
-.viewallcustom{
+/* .viewallcustom{
     text-decoration: none;
-}
+} */
 
-.commentname {
+/* .commentname {
     margin: 2px;
     margin-left: 12px;
     overflow: hidden ;
     
     
-}
+} */
 
 /* @media (max-width:480px) {
     .card-header{

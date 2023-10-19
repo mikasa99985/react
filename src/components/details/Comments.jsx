@@ -1,10 +1,13 @@
 import React from "react";
-// import "../../utility/css/commentcontainer.css";
+import "../../utility/css/commentcontainer.css";
 import Niel from "../../assets/Niel.png";
 
 const Comments = () => {
   return (
     <>
+
+
+
       <div class="commentcontainer">
         <div class="cardcustom">
           <div class="card-header">
@@ -19,12 +22,13 @@ const Comments = () => {
                 href="#"
                 class="text-sm font-weight-medium text-primary viewallcustom"
                 style={{ overflow: "hidden", fontWeight:"325" }}
-              >
+                >
                 View all
               </a>
             </div>
           </div>
         </div>
+              
 
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-3">
@@ -38,21 +42,21 @@ const Comments = () => {
                   overflow: "hidden",
                 }}
                 alt=""
-              />
+                />
               <div class="flex-grow-1 align-items-center commentname">
                 <p
                   class="font-weight-medium text-gray-900"
                   style={{ fontWeight: "450" }}
-                >
+                  >
                   Neil Sims
                 </p>
                 <p
                   class="text-gray-500"
                   style={{
                     fontWeight: "300",
-
+                    
                     marginTop: "-22px",
-
+                    
                     color: "grey",
                     fontSize: "small",
                     fontStyle: "italic",
@@ -61,8 +65,9 @@ const Comments = () => {
                   email@windster.com
                 </p>
               </div>
+             
+                  {/*     
 
-              {/*     
               <div class="text-base font-weight-bold text-gray-900">$320</div>
             </div>
           </li>
@@ -130,7 +135,7 @@ const Comments = () => {
           </li>
         </ul>
       </div>
-    </>
+      </>
   );
 };
 
