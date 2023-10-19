@@ -1,6 +1,6 @@
 import React from "react";
 // import "../../utility/css/commentcontainer.css";
-// import Niel from "../../assets/Niel.png";
+import Niel from "../../assets/Niel.png";
 
 const Comments = () => {
   return (
