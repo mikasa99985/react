@@ -1,33 +1,31 @@
 import React from "react";
-import "../../utility/css/commentcontainer.css";
-import Niel from "../../assets/Niel.png";
-
+// import "../../utility/css/commentcontainer.css";
+// import Niel from "../../assets/Niel.png";
 
 const Comments = () => {
   return (
     <>
-       
       <div class="commentcontainer">
         <div class="cardcustom">
           <div class="card-header">
             <div class="d-flex justify-content-between align-items-center">
-              <h5
-              
+              <h6
                 class="card-title text-xl font-weight-bold text-gray-900 testsec"
                 style={{ overflow: "hidden" }}
               >
-                Latest Customers
-              </h5>
+                <b>Latest Customers</b>
+              </h6>
               <a
                 href="#"
                 class="text-sm font-weight-medium text-primary viewallcustom"
-                style={{ overflow: "hidden" }}
+                style={{ overflow: "hidden", fontWeight:"325" }}
               >
                 View all
               </a>
             </div>
           </div>
         </div>
+
         <ul class="list-group list-group-flush">
           <li class="list-group-item py-3">
             <div class="d-flex ">
@@ -41,9 +39,7 @@ const Comments = () => {
                 }}
                 alt=""
               />
-              <div
-                class="flex-grow-1 align-items-center commentname"
-              >
+              <div class="flex-grow-1 align-items-center commentname">
                 <p
                   class="font-weight-medium text-gray-900"
                   style={{ fontWeight: "450" }}
@@ -54,9 +50,9 @@ const Comments = () => {
                   class="text-gray-500"
                   style={{
                     fontWeight: "300",
-                    
+
                     marginTop: "-22px",
-                    
+
                     color: "grey",
                     fontSize: "small",
                     fontStyle: "italic",
@@ -65,7 +61,8 @@ const Comments = () => {
                   email@windster.com
                 </p>
               </div>
-                      
+
+              {/*     
               <div class="text-base font-weight-bold text-gray-900">$320</div>
             </div>
           </li>
@@ -75,7 +72,7 @@ const Comments = () => {
                 class="w-8 h-8 rounded-circle"
                 src="/docs/images/people/profile-picture-3.jpg"
                 alt="Bonnie image"
-              ></img>
+                ></img>
               <div class="flex-grow-1">
                 <p class="font-weight-medium text-gray-900">Bonnie Green</p>
                 <p class="text-gray-500">email@windster.com</p>
@@ -108,6 +105,8 @@ const Comments = () => {
                 <p class="font-weight-medium text-gray-900">Lana Byrd</p>
                 <p class="text-gray-500">email@windster.com</p>
               </div>
+
+              
               <div class="text-base font-weight-bold text-gray-900">$367</div>
             </div>
           </li>
@@ -122,12 +121,15 @@ const Comments = () => {
                 <p class="font-weight-medium text-gray-900">Thomes Lean</p>
                 <p class="text-gray-500">email@windster.com</p>
               </div>
-              <div class="text-base font-weight-bold text-gray-900">$2367</div>
+              <div class="text-base font-weight-bold text-gray-900">$2367</div> 
            
+            */}
+
+
             </div>
           </li>
         </ul>
-      </div> 
+      </div>
     </>
   );
 };

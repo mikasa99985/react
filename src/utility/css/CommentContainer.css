@@ -1,5 +1,6 @@
 .game-comm{
     margin: 2px;
+    border-radius: 5px;
     /* object-fit: contain; */
     /* word-wrap: break-word;
     overflow: scroll; */
@@ -7,17 +8,11 @@
     
 }
 
-/* @media (max-width:24.0px) {
-    .game-comm{
-        ;
-    }
-    
-} */
+
 
 
 .commentcontainer{
-    background-color:burlywood ;
-    /* object-fit: contain; */
+  
     margin: 2px;
 }
 
@@ -31,16 +26,12 @@
 } */
 
 
+.cardcustom {
+    padding: 20px;
+    background-color: white;
+}
 
 
-/* @media (max-width:480px) {
-    .cardcustom{
-        width: 100%;
-        
-        
-    }
-    
-} */
 
 .viewallcustom{
     text-decoration: none;
