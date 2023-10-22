@@ -162,11 +162,10 @@ const Details = () => {
                 </div>
               </div>
             </div>
-
             {/* Specification */}
             <div className="container my-5">
               <div className="game-spe">
-                <Specification />
+                <Specification spec={data.data.system} />
               </div>
             </div>
 

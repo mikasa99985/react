@@ -1,10 +1,12 @@
 import React, { useEffect, useState } from 'react';
 import Nav from "../components/Nav";
+import Footer from '../components/Footer';
 import { urlEncode, useQuery, useEffectOnce, calculateMean, capitalize, calculateDiscountedPrice } from '../utility/js/util'
 import ShopCard from '../components/ShopCard';
 import '../utility/css/TempCard.css';
 import { db, database, auth } from '../../firebase.config'
 import Banner from '../components/banner';
+import {Link, useHistory} from 'react-router-dom';
 
 export default function Shop() {
     window.scrollTo(0, 0)
@@ -20,6 +22,7 @@ export default function Shop() {
     const [loading, setLoading] = useState(true);
     const [loadingface, setLoadingface] = useState(true);
 
+    const history = useHistory();
 
     // let query_db;
     // if (query.get('search') != null) {
@@ -34,7 +37,7 @@ export default function Shop() {
 
     // Adventure
     useEffectOnce(() => {
-        let query_db = db.collection("game_collection").orderBy('type').startAt('adventure').endAt('adventure' + '~');
+        let query_db = db.collection("game_collection").orderBy('type').startAt('adventure').endAt('adventure' + '~').limit(4);
 
         query_db.get().then((querySnapshot) => {
             // console.log(querySnapshot);
@@ -69,7 +72,7 @@ export default function Shop() {
 
     // Action 
     useEffectOnce(() => {
-        let query_db = db.collection("game_collection").orderBy('type').startAt('action').endAt('action' + '~');
+        let query_db = db.collection("game_collection").orderBy('type').startAt('action').endAt('action' + '~').limit(4);
 
         query_db.get().then((querySnapshot) => {
             // console.log(querySnapshot);
@@ -102,9 +105,9 @@ export default function Shop() {
 
     }, [])
 
-    // // FPS
+    // FPS
     useEffectOnce(() => {
-        let query_db = db.collection("game_collection").orderBy('type').startAt('fps').endAt('fps' + '~');
+        let query_db = db.collection("game_collection").orderBy('type').startAt('fps').endAt('fps' + '~').limit(4);
 
         query_db.get().then((querySnapshot) => {
             // console.log(querySnapshot);
@@ -139,7 +142,7 @@ export default function Shop() {
 
     // // Free
     useEffectOnce(() => {
-        let query_db = db.collection("game_collection").where("price", "==", 0);
+        let query_db = db.collection("game_collection").where("price", "==", 0).limit(4);
 
         query_db.get().then((querySnapshot) => {
             // console.log(querySnapshot);
@@ -203,36 +206,12 @@ export default function Shop() {
                 </div>
                 <div className="s-button mt-2 mt-sm-3 mt-lg-5">
                     <button className="btn-cus btn-radius btn-blue-glow banner-shop-btn-cus me-md-5 mb-1 mb-sm-4 mb-md-0" >NEW GAMES</button>
-                    <button className="btn-cus btn-radius btn-blue-glow banner-shop-btn-cus" >OFFERS !!!</button>
+                    <button onClick={()=>{history.push('/collection')}} className="btn-cus btn-radius btn-blue-glow banner-shop-btn-cus" >More</button>
                 </div>
             </Banner>
 
-            <h1 className='ms-4 mt-5'>Adventure Games</h1>
-            <div className="d-flex flex-wrap  mx-auto w-res my-3">
-                {
-                    AdventureList.map((element, index) => {
-                        return (
-                            <ShopCard
-                                id={element.doc.id}
-                                img={element.doc.data().img}
-                                title={element.doc.data().name.length >= 25 ? element.doc.data().name.slice(0, 25) + '...' : element.doc.data().name}
-                                name={element.doc.data().name}
-                                price={element.doc.data().price == 0 ? 'FREE' : '₹' + calculateDiscountedPrice(element.doc.data().price, element.doc.data().offers)}
-                                row_price={element.doc.data().price}
-                                rate={calculateMean(element.rate)}
-                                offers={element.doc.data().offers}
-                                key={index}
-                                link={`/shop/${urlEncode(element.doc.data().name)}`}
-                                // addCard={()=>{addCard(element.doc.id, element.doc.data().name, element.doc.data().img)}}
-                                addCard={addCard}
-                            />
-                        )
-                    })
-                }
-            </div>
-
             <h1 className='ms-4 mt-5'>Action Games</h1>
-            <div className="d-flex flex-wrap mx-auto w-res my-3">
+            <div className="d-flex flex-wrap justify-content-center mx-auto w-res my-3">
                 {
                     ActionList.map((element, index) => {
                         return (
@@ -255,8 +234,32 @@ export default function Shop() {
                 }
             </div>
 
+            <h1 className='ms-4 mt-5'>Adventure Games</h1>
+            <div className="d-flex flex-wrap justify-content-center mx-auto w-res my-3">
+                {
+                    AdventureList.map((element, index) => {
+                        return (
+                            <ShopCard
+                                id={element.doc.id}
+                                img={element.doc.data().img}
+                                title={element.doc.data().name.length >= 25 ? element.doc.data().name.slice(0, 25) + '...' : element.doc.data().name}
+                                name={element.doc.data().name}
+                                price={element.doc.data().price == 0 ? 'FREE' : '₹' + calculateDiscountedPrice(element.doc.data().price, element.doc.data().offers)}
+                                row_price={element.doc.data().price}
+                                rate={calculateMean(element.rate)}
+                                offers={element.doc.data().offers}
+                                key={index}
+                                link={`/shop/${urlEncode(element.doc.data().name)}`}
+                                // addCard={()=>{addCard(element.doc.id, element.doc.data().name, element.doc.data().img)}}
+                                addCard={addCard}
+                            />
+                        )
+                    })
+                }
+            </div>
+
             <h1 className='ms-4 mt-5'>FPS Games</h1>
-            <div className="d-flex flex-wrap mx-auto w-res my-3">
+            <div className="d-flex flex-wrap justify-content-center mx-auto w-res my-3">
                 {
                     FPSList.map((element, index) => {
                         return (
@@ -280,7 +283,7 @@ export default function Shop() {
             </div>
 
             <h1 className='ms-4 mt-5'>Free Games</h1>
-            <div className="d-flex flex-wrap mx-auto w-res my-3">
+            <div className="d-flex flex-wrap justify-content-center mx-auto w-res my-3">
                 {
                     FreeList.map((element, index) => {
                         return (
@@ -339,6 +342,8 @@ export default function Shop() {
                             </div>
                 }
             </div> */}
+
+            <Footer/>
         </>
     );
 }

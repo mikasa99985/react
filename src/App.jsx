@@ -18,6 +18,7 @@ import Help from './pages/Help';
 import Favorites from './pages/Favorites';
 import OurTeam from './pages/OurTeam';
 import About from './pages/About';
+import Collection from './pages/Collection';
 
 function App() {
   const appStyle = {
@@ -52,6 +53,10 @@ function App() {
 
           <Route exact path="/shop">
             <Shop />
+          </Route>
+
+          <Route exact path="/collection">
+            <Collection />
           </Route>
 
           <Route exact path="/profile/:id/:name">
