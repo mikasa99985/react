@@ -8,6 +8,9 @@ import '../utility/css/TempCard.css';
 import { db, database, auth } from '../../firebase.config'
 
 const Collection = () => {
+  window.scrollTo(0, 0);
+  const query = useQuery();
+
   const [List, setList] = useState([]);
 
   const [isLogin, setLogin] = useState(false);
@@ -16,19 +19,37 @@ const Collection = () => {
   const [lastVisible, setlastVisible] = useState();
   const [fastVisible, setfastVisible] = useState();
 
-  const limit = 5;
+  const limit = 10;
   const field = 'time';
 
   useEffectOnce(async () => {
+
     let query_db = db.collection("game_collection").orderBy(field).limit(limit);
+
+    if (query.get('search') != null) {
+      // console.log('search =', query.get('search'));
+      let str = capitalize(query.get('search'));
+
+      query_db = db.collection("game_collection")
+          .orderBy('name')
+          .startAt("[a-zA-Z0-9]*")
+          .endAt(str + '\uf8ff');
+
+      // query_db = db.collection("game_collection")
+      //         .where('name', '>=', query.get('search'))
+      //         .where('name', '<=', query.get('search') + '\uf8ff');
+
+    }
 
     query_db.get().then((querySnapshot) => {
       // console.log(querySnapshot);
+      if (!querySnapshot.empty) {
+        setfastVisible(querySnapshot.docs[0]);
+        setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+      } else {
+        setLoading(false);
+      }
 
-      setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
-      setfastVisible(querySnapshot.docs[0]);
-
-      let i = 1;
       querySnapshot.forEach(async (doc) => {
         // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
         // rate.forEach(element => {
@@ -45,11 +66,7 @@ const Collection = () => {
         }).then(() => {
           // setLoadingface(false);
           setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
-          if (limit == i) {
-            setLoading(false);
-            console.log('done', i);
-          }
-          i++
+          setLoading(false);
         });
 
       });
@@ -63,13 +80,18 @@ const Collection = () => {
   }, [])
 
   function next() {
+    setLoading(true);
     setList([]);
     let query_db = db.collection("game_collection").orderBy(field).startAfter(lastVisible).limit(limit);
     query_db.get().then((querySnapshot) => {
       // console.log(querySnapshot);
 
-      setfastVisible(querySnapshot.docs[0]);
-      setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+      if (!querySnapshot.empty) {
+        setfastVisible(querySnapshot.docs[0]);
+        setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+      } else {
+        setLoading(false);
+      }
 
       querySnapshot.forEach(async (doc) => {
         // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
@@ -87,25 +109,31 @@ const Collection = () => {
         }).then(() => {
           // setLoadingface(false);
           setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
+          setLoading(false);
         });
 
       });
       // setLoading(false);
     }).then(() => {
-      setLoading(false);
+      // setLoading(false);
     }).catch((error) => {
       console.log("Error getting documents: ", error);
     });
   }
 
   function previous() {
+    setLoading(true);
     setList([]);
     let query_db = db.collection("game_collection").orderBy(field).endBefore(fastVisible).limitToLast(limit);
     query_db.get().then((querySnapshot) => {
       // console.log(querySnapshot);
 
-      setfastVisible(querySnapshot.docs[0]);
-      setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+      if (!querySnapshot.empty) {
+        setfastVisible(querySnapshot.docs[0]);
+        setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+      } else {
+        setLoading(false);
+      }
 
       querySnapshot.forEach(async (doc) => {
         // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
@@ -123,16 +151,28 @@ const Collection = () => {
         }).then(() => {
           // setLoadingface(false);
           setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
+          setLoading(false);
+
         });
 
       });
       // setLoading(false);
     }).then(() => {
-      setLoading(false);
+      // setLoading(false);
     }).catch((error) => {
       console.log("Error getting documents: ", error);
     });
   }
+
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setLogin(true);
+      } else {
+        setLogin(false);
+      }
+    });
+  }, []);
 
   async function addCard(key, name, price, img, offers) {
     if (isLogin) {
@@ -161,26 +201,31 @@ const Collection = () => {
       <div className="d-flex flex-wrap justify-content-center mx-auto w-res my-3">
         {
           !loading ?
-            List.map((element, index) => {
-              return (
-                <ShopCard
-                  id={element.doc.id}
-                  img={element.doc.data().img}
-                  title={element.doc.data().name.length >= 25 ? element.doc.data().name.slice(0, 25) + '...' : element.doc.data().name}
-                  name={element.doc.data().name}
-                  price={element.doc.data().price == 0 ? 'FREE' : '₹' + calculateDiscountedPrice(element.doc.data().price, element.doc.data().offers)}
-                  row_price={element.doc.data().price}
-                  rate={calculateMean(element.rate)}
-                  offers={element.doc.data().offers}
-                  key={index}
-                  link={`/shop/${urlEncode(element.doc.data().name)}`}
-                  // addCard={()=>{addCard(element.doc.id, element.doc.data().name, element.doc.data().img)}}
-                  addCard={addCard}
-                />
-              )
-            })
+            List.length != 0 ?
+              List.map((element, index) => {
+                return (
+                  <ShopCard
+                    id={element.doc.id}
+                    img={element.doc.data().img}
+                    title={element.doc.data().name.length >= 25 ? element.doc.data().name.slice(0, 25) + '...' : element.doc.data().name}
+                    name={element.doc.data().name}
+                    price={element.doc.data().price == 0 ? 'FREE' : '₹' + calculateDiscountedPrice(element.doc.data().price, element.doc.data().offers)}
+                    row_price={element.doc.data().price}
+                    rate={calculateMean(element.rate)}
+                    offers={element.doc.data().offers}
+                    key={index}
+                    link={`/shop/${urlEncode(element.doc.data().name)}`}
+                    // addCard={()=>{addCard(element.doc.id, element.doc.data().name, element.doc.data().img)}}
+                    addCard={addCard}
+                  />
+                )
+              })
+              :
+              <div className="d-flex justify-content-center align-items-center" style={{ height: 'calc(100vh - 532px)' }}>
+                <h1 className=''>No data found</h1>
+              </div>
             :
-            <div className=" d-flex justify-content-around align-items-center">
+            <div className=" d-flex justify-content-around align-items-center" style={{ height: 'calc(100vh - 532px)' }}>
               <div className="spinner-border" style={{ width: '70px', height: '70px', borderWidth: '8px' }} role="status">
                 <span className="visually-hidden">Loading...</span>
               </div>
@@ -190,13 +235,13 @@ const Collection = () => {
 
       <div className="d-flex justify-content-between my-5">
         <button onClick={previous} className='btn'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-arrow-left-circle" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" className="bi bi-arrow-left-circle" viewBox="0 0 16 16">
+            <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
           </svg>
         </button>
         <button onClick={next} className='btn'>
-          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" class="bi bi-arrow-right-circle" viewBox="0 0 16 16">
-            <path fill-rule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
+          <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" className="bi bi-arrow-right-circle" viewBox="0 0 16 16">
+            <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
           </svg>
         </button>
       </div>

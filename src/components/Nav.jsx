@@ -67,7 +67,7 @@ const Nav = (props) => {
 
     arr.push(query);
     cookie.set('search_history', arr, 1);
-    history.push(`/shop?search=${query}`);
+    history.push(`/collection?search=${query}`);
   }
 
   function clear_history(){

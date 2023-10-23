@@ -9,7 +9,7 @@ import Banner from '../components/banner';
 import {Link, useHistory} from 'react-router-dom';
 
 export default function Shop() {
-    window.scrollTo(0, 0)
+    window.scrollTo(0, 0);
     const query = useQuery();
 
     // const [list, setList] = useState([]);
