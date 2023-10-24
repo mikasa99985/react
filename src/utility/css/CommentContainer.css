@@ -1,61 +1,65 @@
-
-
-
-
-
-
-
-
-
-/* .game-comm{
-    margin: 2px;
+.game-comm{
+    /* margin: 2px; */
     border-radius: 5px;
-   
+    border-color: rgba(194, 187, 187, 0);
+    border-style:solid;
+    border-width: 0.1px;
+    border-radius: 2px;
+    
   
     
-} */
+}
 
 
 
-
-/* .commentcontainer{
-  
-    margin: 2px;
-} */
-
-/* @media (max-width:480px) {
+ /* @media (max-width:480px) {
     .commentcontainer{
         width: 100%;
         
         
     }
     
-} */
+}  */
+ .commentsection{
+    justify-content: space-between;
+ }
 
-
-/* .cardcustom {
+ .cardcustom {
     padding: 20px;
     background-color: white;
-} */
+} 
 
 
 
-/* .viewallcustom{
+ .viewallcustom{
     text-decoration: none;
-} */
+} 
 
-/* .commentname {
-    margin: 2px;
-    margin-left: 12px;
+ .commentname {
+    
+    margin-left: 5px;
     overflow: hidden ;
+    /* padding-right: 75px; */
     
-    
-} */
+} 
 
-/* @media (max-width:480px) {
+
+.customdiv{
+    display: flex;
+    overflow: hidden;
+}
+
+
+.commentprice{
+   
+    overflow: hidden;
+    
+}
+
+ /* @media (max-width:480px) {
     .card-header{
         width: 100%;
         
         
     }  
-} */
+}  */
