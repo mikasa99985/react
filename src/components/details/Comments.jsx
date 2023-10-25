@@ -1,6 +1,7 @@
 import React from "react";
 import "../../utility/css/commentcontainer.css";
 import Niel from "../../assets/Niel.png";
+import Rating from "../Rating";
 
 const Comments = () => {
   return (
@@ -68,7 +69,7 @@ const Comments = () => {
              
                       
 
-              <div class="text-base font-weight-bold text-gray-900">$320</div>
+              <div class="text-base font-weight-bold text-gray-900"><Rating rate={2} /></div>
             </div>
           </li>
 
@@ -109,7 +110,7 @@ const Comments = () => {
              
                       
 
-              <div class="text-base font-weight-bold text-gray-900">$320</div>
+              <div class="text-base font-weight-bold text-gray-900"><Rating rate={3} /></div>
             </div>
           </li>
           <li class="list-group-item py-3">
@@ -149,7 +150,7 @@ const Comments = () => {
              
                       
 
-              <div class="text-base font-weight-bold text-gray-900">$320</div>
+              <div class="text-base font-weight-bold text-gray-900"><Rating rate={2} /></div>
             </div>
           </li>
           <li class="list-group-item py-3">
@@ -189,7 +190,7 @@ const Comments = () => {
              
                       
 
-              <div class="text-base font-weight-bold text-gray-900">$320</div>
+              <div class="text-base font-weight-bold text-gray-900"><Rating rate={5} /></div>
             </div>
           </li>
           <li class="list-group-item py-3">
@@ -229,7 +230,7 @@ const Comments = () => {
              
                       
 
-              <div class="text-base font-weight-bold text-gray-900">$320</div>
+              <div class="text-base font-weight-bold text-gray-900"><Rating rate={4} /></div>
             </div>
           </li>
           <li class="list-group-item py-3">
@@ -269,7 +270,7 @@ const Comments = () => {
              
                       
 
-              <div class="text-base font-weight-bold text-gray-900">$320</div>
+              <div class="text-base font-weight-bold text-gray-900"><Rating rate={1} /></div>
             </div>
           </li>
           <li class="list-group-item py-3">
@@ -309,7 +310,7 @@ const Comments = () => {
              
                       
 
-              <div class="text-base font-weight-bold text-gray-900">$320</div>
+              <div class="text-base font-weight-bold text-gray-900"><Rating rate={3} /></div>
             </div>
           </li>
           
