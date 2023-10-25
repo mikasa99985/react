@@ -31,14 +31,14 @@ const Collection = () => {
       // console.log('search =', query.get('search'));
       let str = capitalize(query.get('search'));
 
-      query_db = db.collection("game_collection")
-          .orderBy('name')
-          .startAt("[a-zA-Z0-9]*")
-          .endAt(str + '\uf8ff');
-
       // query_db = db.collection("game_collection")
-      //         .where('name', '>=', query.get('search'))
-      //         .where('name', '<=', query.get('search') + '\uf8ff');
+      //     .orderBy('name')
+      //     .startAt("[a-zA-Z0-9]*")
+      //     .endAt(str + '\uf8ff');
+
+      query_db = db.collection("game_collection")
+              .where('name', '>=', query.get('search'))
+              .where('name', '<=', query.get('search') + '\uf8ff');
 
     }
 
