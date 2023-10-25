@@ -23,7 +23,7 @@ const Collection = () => {
   const limit = 10;
   const field = 'time';
 
-  useEffectOnce(async () => {
+  useEffectOnce(() => {
 
     // let query_db = db.collection("game_collection").orderBy(field).limit(limit);
     let query_db = db.collection("game_collection").orderBy('type').startAt('adventure').endAt('adventure' + '~').limit(4);
