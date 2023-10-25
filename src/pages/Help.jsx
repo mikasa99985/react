@@ -10,6 +10,7 @@ const Help = () => {
     return (
         <>
             <Nav help={true} />
+            <Link to='/shop/Counter_Strike:_Global_Offensive'>test</Link>
 
             <Banner height='480px' img='https://images-wixmp-ed30a86b8c4ca887773594c2.wixmp.com/f/f208a0b1-b95d-4e18-9279-dc040bc0300c/d778x6r-345e30be-d542-4b5a-808d-bd226fed3773.jpg/v1/fill/w_1024,h_326,q_75,strp/games_collage_for_group_banner__3_by_thinkstoomuch_d778x6r-fullview.jpg?token=eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJ1cm46YXBwOjdlMGQxODg5ODIyNjQzNzNhNWYwZDQxNWVhMGQyNmUwIiwiaXNzIjoidXJuOmFwcDo3ZTBkMTg4OTgyMjY0MzczYTVmMGQ0MTVlYTBkMjZlMCIsIm9iaiI6W1t7ImhlaWdodCI6Ijw9MzI2IiwicGF0aCI6IlwvZlwvZjIwOGEwYjEtYjk1ZC00ZTE4LTkyNzktZGMwNDBiYzAzMDBjXC9kNzc4eDZyLTM0NWUzMGJlLWQ1NDItNGI1YS04MDhkLWJkMjI2ZmVkMzc3My5qcGciLCJ3aWR0aCI6Ijw9MTAyNCJ9XV0sImF1ZCI6WyJ1cm46c2VydmljZTppbWFnZS5vcGVyYXRpb25zIl19.nN56ttfrcrhUcBk7OqIGPMEWCCIWfmS_u1xd7O5F0L0'>
                 <h1 className="fw-bolder">Welcome to Vibrant Game Help</h1>
