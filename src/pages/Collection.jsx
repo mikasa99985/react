@@ -45,8 +45,8 @@ const Collection = () => {
     query_db.get().then((querySnapshot) => {
       // console.log(querySnapshot);
       if (!querySnapshot.empty) {
-        setfastVisible(querySnapshot.docs[0]);
-        setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+        // setfastVisible(querySnapshot.docs[0]);
+        // setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
       } else {
         setLoading(false);
       }
