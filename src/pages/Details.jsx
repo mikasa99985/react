@@ -56,7 +56,7 @@ const Details = () => {
           database.ref(`game_collection/${doc.id}/ratings`).once('value', function (snapshot) {
             setComments([]);
             snapshot.forEach(element => {
-              console.log(element.key);
+              // console.log(element.key);
               db.collection('users').doc(element.key).get().then((doc) => {
                 // console.log('Document data:', doc.data());
                 setComments(oldArray => [...oldArray, { comment: element.val(), user: doc.data() }]);

@@ -6,7 +6,7 @@ import Rating from "../Rating";
 const Comments = (props) => {
   return (
     <>
-    {console.log(props.comments)}
+    {/* {console.log(props.comments)} */}
       <div className="commentcontainer">
         <div className="cardcustom border-bottom">
           <div className="card-header">
