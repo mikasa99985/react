@@ -27,20 +27,20 @@ const Collection = () => {
 
     let query_db = db.collection("game_collection").orderBy(field).limit(limit);
 
-    if (query.get('search') != null) {
-      // console.log('search =', query.get('search'));
-      let str = capitalize(query.get('search'));
+    // if (query.get('search') != null) {
+    //   // console.log('search =', query.get('search'));
+    //   let str = capitalize(query.get('search'));
 
-      // query_db = db.collection("game_collection")
-      //     .orderBy('name')
-      //     .startAt("[a-zA-Z0-9]*")
-      //     .endAt(str + '\uf8ff');
+    //   // query_db = db.collection("game_collection")
+    //   //     .orderBy('name')
+    //   //     .startAt("[a-zA-Z0-9]*")
+    //   //     .endAt(str + '\uf8ff');
 
-      query_db = db.collection("game_collection")
-              .where('name', '>=', query.get('search'))
-              .where('name', '<=', query.get('search') + '\uf8ff');
+    //   query_db = db.collection("game_collection")
+    //           .where('name', '>=', query.get('search'))
+    //           .where('name', '<=', query.get('search') + '\uf8ff');
 
-    }
+    // }
 
     query_db.get().then((querySnapshot) => {
       // console.log(querySnapshot);
