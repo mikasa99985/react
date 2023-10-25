@@ -24,7 +24,7 @@ export default function Footer() {
 
   const scrollToBottom = () => {
     messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
-    console.log('s');
+    // console.log('s');
   }
 
   function scrollToBottomOn(){

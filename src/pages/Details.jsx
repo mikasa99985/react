@@ -8,15 +8,18 @@ import Footer from '../components/Footer'
 import Imgslider from '../components/details/Imgslider'
 import Specification from '../components/details/Specification'
 import Rating from '../components/details/Rating'
+import Ratings from "../components/Rating";
 import Comments from '../components/details/Comments'
+import Niel from "../assets/Niel.png";
 
 
 const Details = () => {
-  window.scrollTo(0, 0)
+  // window.scrollTo(0, 0)
   const params = useParams();
 
   const [data, setData] = useState(false);
   const [slider_img, setImg] = useState([]);
+  const [comments, setComments] = useState([]);
   const [isLogin, setLogin] = useState(false);
   const [rateing, setRate] = useState({
     rate: '0',
@@ -39,6 +42,7 @@ const Details = () => {
       if (!querySnapshot.empty) {
         querySnapshot.forEach((doc) => {
           setData({ id: doc.id, data: doc.data() });
+
           let arr = [];
           database.ref(`game_collection/${doc.id}/img`).once('value', (snapshot) => {
             snapshot.forEach(element => {
@@ -46,6 +50,23 @@ const Details = () => {
             });
           }).then(() => {
             setImg(arr);
+          });
+
+          let arr1 = [];
+          database.ref(`game_collection/${doc.id}/ratings`).once('value', function (snapshot) {
+            setComments([]);
+            snapshot.forEach(element => {
+              console.log(element.key);
+              db.collection('users').doc(element.key).get().then((doc) => {
+                // console.log('Document data:', doc.data());
+                setComments(oldArray => [...oldArray, { comment: element.val(), user: doc.data() }]);
+              }).catch((error) => {
+                console.log('Error getting document:', error);
+              });
+              // arr1.push(element.val());
+            });
+          }).then(() => {
+            // setComments(arr1);
           });
 
         });
@@ -157,7 +178,7 @@ const Details = () => {
                   <button className='btn btn-info'>Add favorites</button>
                   <div className="game-comm">
                     {/* Game Comments */}
-                    <Comments/>
+                    <Comments comments={comments.slice(0,3)} />
                   </div>
                 </div>
               </div>
@@ -173,8 +194,54 @@ const Details = () => {
             <div className="container my-5">
               <div className="game-a-c-r">
                 <div className="game-all-comm">
-                  {/* All comments */}
                   <h4>All comments</h4>
+                  <ul className="list-group list-group-flush comm-scroll border" style={{ height: '368px' }}>
+                    {
+                      comments.map((element, index) =>
+                        <li key={index} className="list-group-item py-3">
+                          <div className="d-flex ">
+                            <img
+                              src={element.user.img}
+                              style={{
+                                height: "45px",
+                                width: "45px",
+                                borderRadius: "30px",
+                                overflow: "hidden",
+                              }}
+                              alt=""
+                            />
+                            <div className="flex-grow-1 align-items-center commentname">
+                              <p
+                                className="font-weight-medium text-gray-900"
+                                style={{ fontWeight: "450" }}
+                              >
+                                {element.user.name}
+                              </p>
+                              <p
+                                className="text-gray-500"
+                                style={{
+                                  fontWeight: "300",
+
+                                  marginTop: "-22px",
+
+                                  color: "grey",
+                                  fontSize: "small",
+                                  fontStyle: "italic",
+                                }}
+                              >
+                                {element.comment.comment}
+                              </p>
+                            </div>
+
+
+
+                            <div className="text-base font-weight-bold text-gray-900"><Ratings rate={parseInt(element.comment.rate)} /></div>
+                          </div>
+                        </li>
+                      )
+                    }
+
+                  </ul>
                 </div>
                 <div className="game-rate">
                   {/* Game Rating */}

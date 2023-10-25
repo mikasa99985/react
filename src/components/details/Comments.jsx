@@ -3,37 +3,74 @@ import "../../utility/css/CommentContainer.css";
 import Niel from "../../assets/Niel.png";
 import Rating from "../Rating";
 
-const Comments = () => {
+const Comments = (props) => {
   return (
     <>
-
-
-
-      <div class="commentcontainer">
-        <div class="cardcustom">
-          <div class="card-header">
-            <div class="d-flex justify-content-between align-items-center">
+    {console.log(props.comments)}
+      <div className="commentcontainer">
+        <div className="cardcustom border-bottom">
+          <div className="card-header">
+            <div className="d-flex justify-content-between align-items-center">
               <h6
                 className="card-title text-xl font-weight-bold text-gray-900 testsec"
                 style={{ overflow: "hidden" }}
               >
-                <b>Latest Customers</b>
+                <b>Latest Comments</b>
               </h6>
-              <a
-                href="#"
-                class="text-sm font-weight-medium text-primary viewallcustom"
-                style={{ overflow: "hidden", fontWeight:"325" }}
-                >
-                View all
-              </a>
             </div>
           </div>
         </div>
-              
 
-        <ul class="list-group list-group-flush">
-          <li class="list-group-item py-3">
-            <div class="d-flex ">
+
+        <ul className="list-group list-group-flush comm-scroll">
+          {
+            props.comments.map((element, index) =>
+              <li key={index} className="list-group-item py-3">
+                <div className="d-flex ">
+                  <img
+                    src={element.user.img}
+                    style={{
+                      height: "45px",
+                      width: "45px",
+                      borderRadius: "30px",
+                      overflow: "hidden",
+                    }}
+                    alt=""
+                  />
+                  <div className="flex-grow-1 align-items-center commentname">
+                    <p
+                      className="font-weight-medium text-gray-900"
+                      style={{ fontWeight: "450" }}
+                    >
+                      {element.user.name}
+                    </p>
+                    <p
+                      className="text-gray-500"
+                      style={{
+                        fontWeight: "300",
+
+                        marginTop: "-22px",
+
+                        color: "grey",
+                        fontSize: "small",
+                        fontStyle: "italic",
+                      }}
+                    >
+                      {element.comment.comment}
+                    </p>
+                  </div>
+
+
+
+                  <div className="text-base font-weight-bold text-gray-900"><Rating rate={parseInt(element.comment.rate)} /></div>
+                </div>
+              </li>
+            )
+          }
+
+
+          {/* <li className="list-group-item py-3">
+            <div className="d-flex ">
               <img
                 src={Niel}
                 style={{
@@ -43,21 +80,21 @@ const Comments = () => {
                   overflow: "hidden",
                 }}
                 alt=""
-                />
-              <div class="flex-grow-1 align-items-center commentname">
+              />
+              <div className="flex-grow-1 align-items-center commentname">
                 <p
-                  class="font-weight-medium text-gray-900"
+                  className="font-weight-medium text-gray-900"
                   style={{ fontWeight: "450" }}
-                  >
+                >
                   Neil Sims
                 </p>
                 <p
-                  class="text-gray-500"
+                  className="text-gray-500"
                   style={{
                     fontWeight: "300",
-                    
+
                     marginTop: "-22px",
-                    
+
                     color: "grey",
                     fontSize: "small",
                     fontStyle: "italic",
@@ -66,15 +103,14 @@ const Comments = () => {
                   email@windster.com
                 </p>
               </div>
-             
-                      
 
-              <div class="text-base font-weight-bold text-gray-900"><Rating rate={2} /></div>
+
+
+              <div className="text-base font-weight-bold text-gray-900"><Rating rate={3} /></div>
             </div>
           </li>
-
-          <li class="list-group-item py-3">
-            <div class="d-flex ">
+          <li className="list-group-item py-3">
+            <div className="d-flex ">
               <img
                 src={Niel}
                 style={{
@@ -84,21 +120,21 @@ const Comments = () => {
                   overflow: "hidden",
                 }}
                 alt=""
-                />
-              <div class="flex-grow-1 align-items-center commentname">
+              />
+              <div className="flex-grow-1 align-items-center commentname">
                 <p
-                  class="font-weight-medium text-gray-900"
+                  className="font-weight-medium text-gray-900"
                   style={{ fontWeight: "450" }}
-                  >
+                >
                   Neil Sims
                 </p>
                 <p
-                  class="text-gray-500"
+                  className="text-gray-500"
                   style={{
                     fontWeight: "300",
-                    
+
                     marginTop: "-22px",
-                    
+
                     color: "grey",
                     fontSize: "small",
                     fontStyle: "italic",
@@ -107,14 +143,14 @@ const Comments = () => {
                   email@windster.com
                 </p>
               </div>
-             
-                      
 
-              <div class="text-base font-weight-bold text-gray-900"><Rating rate={3} /></div>
+
+
+              <div className="text-base font-weight-bold text-gray-900"><Rating rate={2} /></div>
             </div>
           </li>
-          <li class="list-group-item py-3">
-            <div class="d-flex ">
+          <li className="list-group-item py-3">
+            <div className="d-flex ">
               <img
                 src={Niel}
                 style={{
@@ -124,21 +160,21 @@ const Comments = () => {
                   overflow: "hidden",
                 }}
                 alt=""
-                />
-              <div class="flex-grow-1 align-items-center commentname">
+              />
+              <div className="flex-grow-1 align-items-center commentname">
                 <p
-                  class="font-weight-medium text-gray-900"
+                  className="font-weight-medium text-gray-900"
                   style={{ fontWeight: "450" }}
-                  >
+                >
                   Neil Sims
                 </p>
                 <p
-                  class="text-gray-500"
+                  className="text-gray-500"
                   style={{
                     fontWeight: "300",
-                    
+
                     marginTop: "-22px",
-                    
+
                     color: "grey",
                     fontSize: "small",
                     fontStyle: "italic",
@@ -147,14 +183,14 @@ const Comments = () => {
                   email@windster.com
                 </p>
               </div>
-             
-                      
 
-              <div class="text-base font-weight-bold text-gray-900"><Rating rate={2} /></div>
+
+
+              <div className="text-base font-weight-bold text-gray-900"><Rating rate={5} /></div>
             </div>
           </li>
-          <li class="list-group-item py-3">
-            <div class="d-flex ">
+          <li className="list-group-item py-3">
+            <div className="d-flex ">
               <img
                 src={Niel}
                 style={{
@@ -164,21 +200,21 @@ const Comments = () => {
                   overflow: "hidden",
                 }}
                 alt=""
-                />
-              <div class="flex-grow-1 align-items-center commentname">
+              />
+              <div className="flex-grow-1 align-items-center commentname">
                 <p
-                  class="font-weight-medium text-gray-900"
+                  className="font-weight-medium text-gray-900"
                   style={{ fontWeight: "450" }}
-                  >
+                >
                   Neil Sims
                 </p>
                 <p
-                  class="text-gray-500"
+                  className="text-gray-500"
                   style={{
                     fontWeight: "300",
-                    
+
                     marginTop: "-22px",
-                    
+
                     color: "grey",
                     fontSize: "small",
                     fontStyle: "italic",
@@ -187,14 +223,14 @@ const Comments = () => {
                   email@windster.com
                 </p>
               </div>
-             
-                      
 
-              <div class="text-base font-weight-bold text-gray-900"><Rating rate={5} /></div>
+
+
+              <div className="text-base font-weight-bold text-gray-900"><Rating rate={4} /></div>
             </div>
           </li>
-          <li class="list-group-item py-3">
-            <div class="d-flex ">
+          <li className="list-group-item py-3">
+            <div className="d-flex ">
               <img
                 src={Niel}
                 style={{
@@ -204,21 +240,21 @@ const Comments = () => {
                   overflow: "hidden",
                 }}
                 alt=""
-                />
-              <div class="flex-grow-1 align-items-center commentname">
+              />
+              <div className="flex-grow-1 align-items-center commentname">
                 <p
-                  class="font-weight-medium text-gray-900"
+                  className="font-weight-medium text-gray-900"
                   style={{ fontWeight: "450" }}
-                  >
+                >
                   Neil Sims
                 </p>
                 <p
-                  class="text-gray-500"
+                  className="text-gray-500"
                   style={{
                     fontWeight: "300",
-                    
+
                     marginTop: "-22px",
-                    
+
                     color: "grey",
                     fontSize: "small",
                     fontStyle: "italic",
@@ -227,14 +263,14 @@ const Comments = () => {
                   email@windster.com
                 </p>
               </div>
-             
-                      
 
-              <div class="text-base font-weight-bold text-gray-900"><Rating rate={4} /></div>
+
+
+              <div className="text-base font-weight-bold text-gray-900"><Rating rate={1} /></div>
             </div>
           </li>
-          <li class="list-group-item py-3">
-            <div class="d-flex ">
+          <li className="list-group-item py-3">
+            <div className="d-flex ">
               <img
                 src={Niel}
                 style={{
@@ -244,21 +280,21 @@ const Comments = () => {
                   overflow: "hidden",
                 }}
                 alt=""
-                />
-              <div class="flex-grow-1 align-items-center commentname">
+              />
+              <div className="flex-grow-1 align-items-center commentname">
                 <p
-                  class="font-weight-medium text-gray-900"
+                  className="font-weight-medium text-gray-900"
                   style={{ fontWeight: "450" }}
-                  >
+                >
                   Neil Sims
                 </p>
                 <p
-                  class="text-gray-500"
+                  className="text-gray-500"
                   style={{
                     fontWeight: "300",
-                    
+
                     marginTop: "-22px",
-                    
+
                     color: "grey",
                     fontSize: "small",
                     fontStyle: "italic",
@@ -267,55 +303,15 @@ const Comments = () => {
                   email@windster.com
                 </p>
               </div>
-             
-                      
 
-              <div class="text-base font-weight-bold text-gray-900"><Rating rate={1} /></div>
-            </div>
-          </li>
-          <li class="list-group-item py-3">
-            <div class="d-flex ">
-              <img
-                src={Niel}
-                style={{
-                  height: "45px",
-                  width: "45px",
-                  borderRadius: "30px",
-                  overflow: "hidden",
-                }}
-                alt=""
-                />
-              <div class="flex-grow-1 align-items-center commentname">
-                <p
-                  class="font-weight-medium text-gray-900"
-                  style={{ fontWeight: "450" }}
-                  >
-                  Neil Sims
-                </p>
-                <p
-                  class="text-gray-500"
-                  style={{
-                    fontWeight: "300",
-                    
-                    marginTop: "-22px",
-                    
-                    color: "grey",
-                    fontSize: "small",
-                    fontStyle: "italic",
-                  }}
-                >
-                  email@windster.com
-                </p>
-              </div>
-             
-                      
 
-              <div class="text-base font-weight-bold text-gray-900"><Rating rate={3} /></div>
+
+              <div className="text-base font-weight-bold text-gray-900"><Rating rate={3} /></div>
             </div>
-          </li>
-          
-          
-       
+          </li> */}
+
+
+
         </ul>
       </div>
     </>

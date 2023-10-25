@@ -6,10 +6,15 @@
     border-style:solid;
     border-width: 0.1px;
     border-radius: 2px;
+    
+}
+
+.comm-scroll{
+    height: calc(391px - 60.19px);
     overflow-y: scroll;
 }
 
-.game-comm::-webkit-scrollbar{
+.comm-scroll::-webkit-scrollbar{
     display: none;
 }
 
