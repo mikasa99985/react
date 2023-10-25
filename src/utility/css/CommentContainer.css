@@ -5,9 +5,11 @@
     border-style:solid;
     border-width: 0.1px;
     border-radius: 2px;
-    
-  
-    
+    overflow-y: scroll;
+}
+
+.game-comm::-webkit-scrollbar{
+    display: none;
 }
 
 

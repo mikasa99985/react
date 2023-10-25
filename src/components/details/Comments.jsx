@@ -1,11 +1,11 @@
 import React from "react";
-// import "../../utility/css/commentcontainer.css";
+import "../../utility/css/commentcontainer.css";
 import Niel from "../../assets/Niel.png";
 
 const Comments = () => {
   return (
     <>
-      <div className="commentcontainer">
+    <div className="commentcontainer">
         <div className="cardcustom">
           <div className="card-header">
             <div className="d-flex justify-content-between align-items-center">
@@ -71,10 +71,8 @@ const Comments = () => {
             </div>
           </li>
 
-
-
-          <li class="list-group-item py-3">
-            <div class="d-flex commentsection">
+          <li className="list-group-item py-3">
+            <div className="d-flex commentsection">
               <div class="customdiv">
                 <img
                   src={Niel}
@@ -87,15 +85,15 @@ const Comments = () => {
                   }}
                   alt=""
                 />
-                <div class="commentname">
+                <div className="commentname">
                   <p
-                    class="font-weight-medium text-gray-900"
+                    className="font-weight-medium text-gray-900"
                     style={{ fontWeight: "450", fontSize: "smaller" }}
                   >
                     Neil Sims
                   </p>
                   <p
-                    class="text-gray-500"
+                    className="text-gray-500"
                     style={{
                       fontWeight: "300",
 
@@ -109,198 +107,190 @@ const Comments = () => {
                     email@windster.com
                   </p>
                 </div>
-              </div>
-
-              <div class="text-base font-weight-bold text-gray-900 commentprice">
-                $320
-          <li className="list-group-item py-3">
-            <div className="d-flex align-items-center">
-              <img
-                className="w-8 h-8 rounded-circle"
-                src="/docs/images/people/profile-picture-3.jpg"
-                alt="Bonnie image"
-                ></img>
-              <div className="flex-grow-1">
-                <p className="font-weight-medium text-gray-900">Bonnie Green</p>
-                <p className="text-gray-500">email@windster.com</p>
-              </div>
-              <div className="text-base font-weight-bold text-gray-900">$3467</div>
-            </div>
-          </li>
-
-
-
-          <li class="list-group-item py-3">
-            <div class="d-flex commentsection">
-              <div class="customdiv">
-                <img
-                  src={Niel}
-                  style={{
-                    paddingRight: "2px",
-                    height: "40px",
-                    width: "40px",
-                    borderRadius: "30px",
-                    overflow: "hidden",
-                  }}
-                  alt=""
-                />
-                <div class="commentname">
-                  <p
-                    class="font-weight-medium text-gray-900"
-                    style={{ fontWeight: "450", fontSize: "smaller" }}
-                  >
-                    Neil Sims
-                  </p>
-                  <p
-                    class="text-gray-500"
-                    style={{
-                      fontWeight: "300",
-
-                      marginTop: "-22px",
-
-                      color: "grey",
-                      fontSize: "small",
-                      fontStyle: "italic",
-                    }}
-                  >
-                    email@windster.com
-                  </p>
-                </div>
-              </div>
-              <div class="text-base font-weight-bold text-gray-900 commentprice">
-                $320
-          <li className="list-group-item py-3">
-            <div className="d-flex align-items-center">
-              <img
-                className="w-8 h-8 rounded-circle"
-                src="/docs/images/people/profile-picture-2.jpg"
-                alt="Michael image"
-              ></img>
-              <div className="flex-grow-1">
-                <p className="font-weight-medium text-gray-900">Michael Gough</p>
-                <p className="text-gray-500">email@windster.com</p>
-              </div>
-              <div className="text-base font-weight-bold text-gray-900">$67</div>
-            </div>
-          </li>
-
-
-
-          <li class="list-group-item py-3">
-            <div class="d-flex commentsection">
-              <div class="customdiv">
-                <img
-                  src={Niel}
-                  style={{
-                    paddingRight: "2px",
-                    height: "40px",
-                    width: "40px",
-                    borderRadius: "30px",
-                    overflow: "hidden",
-                  }}
-                  alt=""
-                />
-                <div class="commentname">
-                  <p
-                    class="font-weight-medium text-gray-900"
-                    style={{ fontWeight: "450", fontSize: "smaller" }}
-                  >
-                    Neil Sims
-                  </p>
-                  <p
-                    class="text-gray-500"
-                    style={{
-                      fontWeight: "300",
-
-                      marginTop: "-22px",
-
-                      color: "grey",
-                      fontSize: "small",
-                      fontStyle: "italic",
-                    }}
-                  >
-                    email@windster.com
-                  </p>
-                </div>
-          <li className="list-group-item py-3">
-            <div className="d-flex align-items-center">
-              <img
-                className="w-8 h-8 rounded-circle"
-                src="/docs/images/people/profile-picture-4.jpg"
-                alt="Lana image"
-              ></img>
-              <div className="flex-grow-1">
-                <p className="font-weight-medium text-gray-900">Lana Byrd</p>
-                <p className="text-gray-500">email@windster.com</p>
-              </div>
-
-              <div class="text-base font-weight-bold text-gray-900 commentprice">
-                $320
-              </div>
-              
-              <div className="text-base font-weight-bold text-gray-900">$367</div>
-            </div>
-          </li>
-
-
-
-          {/* <li class="list-group-item py-3">
-            <div class="d-flex commentsection">
-              <div class="customdiv">
-                <img
-                  src={Niel}
-                  style={{
-                    paddingRight: "2px",
-                    height: "40px",
-                    width: "40px",
-                    borderRadius: "30px",
-                    overflow: "hidden",
-                  }}
-                  alt=""
-                />
-                <div class="commentname">
-                  <p
-                    class="font-weight-medium text-gray-900"
-                    style={{ fontWeight: "450", fontSize: "smaller" }}
-                  >
-                    Neil Sims
-                  </p>
-                  <p
-                    class="text-gray-500"
-                    style={{
-                      fontWeight: "300",
-
-                      marginTop: "-22px",
-
-                      color: "grey",
-                      fontSize: "small",
-                      fontStyle: "italic",
-                    }}
-                  >
-                    email@windster.com
-                  </p>
-                </div>
-          <li className="list-group-item py-3">
-            <div className="d-flex align-items-center">
-              <img
-                className="w-8 h-8 rounded-circle"
-                src="/docs/images/people/profile-picture-5.jpg"
-                alt="Thomas image"
-              ></img>
-              <div className="flex-grow-1">
-                <p className="font-weight-medium text-gray-900">Thomes Lean</p>
-                <p className="text-gray-500">email@windster.com</p>
               </div>
 
               <div className="text-base font-weight-bold text-gray-900 commentprice">
                 $320
               </div>
             </div>
-          </li> */}
+          </li>
+
+          <li className="list-group-item py-3">
+            <div className="d-flex commentsection">
+              <div class="customdiv">
+                <img
+                  src={Niel}
+                  style={{
+                    paddingRight: "2px",
+                    height: "40px",
+                    width: "40px",
+                    borderRadius: "30px",
+                    overflow: "hidden",
+                  }}
+                  alt=""
+                />
+                <div className="commentname">
+                  <p
+                    className="font-weight-medium text-gray-900"
+                    style={{ fontWeight: "450", fontSize: "smaller" }}
+                  >
+                    Neil Sims
+                  </p>
+                  <p
+                    className="text-gray-500"
+                    style={{
+                      fontWeight: "300",
+
+                      marginTop: "-22px",
+
+                      color: "grey",
+                      fontSize: "small",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    email@windster.com
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-base font-weight-bold text-gray-900 commentprice">
+                $320
+              </div>
+            </div>
+          </li>
 
 
+          <li className="list-group-item py-3">
+            <div className="d-flex commentsection">
+              <div class="customdiv">
+                <img
+                  src={Niel}
+                  style={{
+                    paddingRight: "2px",
+                    height: "40px",
+                    width: "40px",
+                    borderRadius: "30px",
+                    overflow: "hidden",
+                  }}
+                  alt=""
+                />
+                <div className="commentname">
+                  <p
+                    className="font-weight-medium text-gray-900"
+                    style={{ fontWeight: "450", fontSize: "smaller" }}
+                  >
+                    Neil Sims
+                  </p>
+                  <p
+                    className="text-gray-500"
+                    style={{
+                      fontWeight: "300",
 
+                      marginTop: "-22px",
+
+                      color: "grey",
+                      fontSize: "small",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    email@windster.com
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-base font-weight-bold text-gray-900 commentprice">
+                $320
+              </div>
+            </div>
+          </li>
+          <li className="list-group-item py-3">
+            <div className="d-flex commentsection">
+              <div class="customdiv">
+                <img
+                  src={Niel}
+                  style={{
+                    paddingRight: "2px",
+                    height: "40px",
+                    width: "40px",
+                    borderRadius: "30px",
+                    overflow: "hidden",
+                  }}
+                  alt=""
+                />
+                <div className="commentname">
+                  <p
+                    className="font-weight-medium text-gray-900"
+                    style={{ fontWeight: "450", fontSize: "smaller" }}
+                  >
+                    Neil Sims
+                  </p>
+                  <p
+                    className="text-gray-500"
+                    style={{
+                      fontWeight: "300",
+
+                      marginTop: "-22px",
+
+                      color: "grey",
+                      fontSize: "small",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    email@windster.com
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-base font-weight-bold text-gray-900 commentprice">
+                $320
+              </div>
+            </div>
+          </li>
+          <li className="list-group-item py-3">
+            <div className="d-flex commentsection">
+              <div class="customdiv">
+                <img
+                  src={Niel}
+                  style={{
+                    paddingRight: "2px",
+                    height: "40px",
+                    width: "40px",
+                    borderRadius: "30px",
+                    overflow: "hidden",
+                  }}
+                  alt=""
+                />
+                <div className="commentname">
+                  <p
+                    className="font-weight-medium text-gray-900"
+                    style={{ fontWeight: "450", fontSize: "smaller" }}
+                  >
+                    Neil Sims
+                  </p>
+                  <p
+                    className="text-gray-500"
+                    style={{
+                      fontWeight: "300",
+
+                      marginTop: "-22px",
+
+                      color: "grey",
+                      fontSize: "small",
+                      fontStyle: "italic",
+                    }}
+                  >
+                    email@windster.com
+                  </p>
+                </div>
+              </div>
+
+              <div className="text-base font-weight-bold text-gray-900 commentprice">
+                $320
+              </div>
+            </div>
+          </li>
           
+       
         </ul>
       </div>
     </>
