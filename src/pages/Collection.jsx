@@ -6,7 +6,7 @@ import { urlEncode, useQuery, useEffectOnce, calculateMean, capitalize, calculat
 import ShopCard from '../components/ShopCard';
 import '../utility/css/TempCard.css';
 import { db, database, auth } from '../../firebase.config'
-import {Link} from 'react-router-dom'
+import {Link, useHistory} from 'react-router-dom';
 
 const Collection = () => {
   window.scrollTo(0, 0);
@@ -16,164 +16,164 @@ const Collection = () => {
 
   const [isLogin, setLogin] = useState(false);
   const [loading, setLoading] = useState(true);
-  const [loadingface, setLoadingface] = useState(true);
+  // const [loadingface, setLoadingface] = useState(true);
   const [lastVisible, setlastVisible] = useState();
   const [fastVisible, setfastVisible] = useState();
 
   const limit = 10;
   const field = 'time';
 
-  useEffectOnce(async () => {
+  // useEffectOnce(async () => {
 
-    let query_db = db.collection("game_collection").orderBy(field).limit(limit);
+  //   let query_db = db.collection("game_collection").orderBy(field).limit(limit);
 
-    if (query.get('search') != null) {
-      // console.log('search =', query.get('search'));
-      let str = capitalize(query.get('search'));
+  //   if (query.get('search') != null) {
+  //     // console.log('search =', query.get('search'));
+  //     let str = capitalize(query.get('search'));
 
-      query_db = db.collection("game_collection")
-          .orderBy('name')
-          .startAt("[a-zA-Z0-9]*")
-          .endAt(str + '\uf8ff');
+  //     query_db = db.collection("game_collection")
+  //         .orderBy('name')
+  //         .startAt("[a-zA-Z0-9]*")
+  //         .endAt(str + '\uf8ff');
 
-      // query_db = db.collection("game_collection")
-      //         .where('name', '>=', query.get('search'))
-      //         .where('name', '<=', query.get('search') + '\uf8ff');
+  //     // query_db = db.collection("game_collection")
+  //     //         .where('name', '>=', query.get('search'))
+  //     //         .where('name', '<=', query.get('search') + '\uf8ff');
 
-    }
+  //   }
 
-    query_db.get().then((querySnapshot) => {
-      // console.log(querySnapshot);
-      if (!querySnapshot.empty) {
-        setfastVisible(querySnapshot.docs[0]);
-        setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
-      } else {
-        setLoading(false);
-      }
+  //   query_db.get().then((querySnapshot) => {
+  //     // console.log(querySnapshot);
+  //     if (!querySnapshot.empty) {
+  //       setfastVisible(querySnapshot.docs[0]);
+  //       setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+  //     } else {
+  //       setLoading(false);
+  //     }
 
-      querySnapshot.forEach(async (doc) => {
-        // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
-        // rate.forEach(element => {
-        //     console.log(element.val().rate);
-        // });
-        let arr = [];
-        database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
-          // setLoading(false);
+  //     querySnapshot.forEach(async (doc) => {
+  //       // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
+  //       // rate.forEach(element => {
+  //       //     console.log(element.val().rate);
+  //       // });
+  //       let arr = [];
+  //       database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
+  //         // setLoading(false);
 
-          snapshot.forEach(
-            function (Childsnapshot) {
-              arr.push(parseInt(Childsnapshot.val().rate));
-            });
-        }).then(() => {
-          // setLoadingface(false);
-          setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
-          setLoading(false);
-        });
+  //         snapshot.forEach(
+  //           function (Childsnapshot) {
+  //             arr.push(parseInt(Childsnapshot.val().rate));
+  //           });
+  //       }).then(() => {
+  //         // setLoadingface(false);
+  //         setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
+  //         setLoading(false);
+  //       });
 
-      });
-      // setLoading(false);
-    }).then(() => {
+  //     });
+  //     // setLoading(false);
+  //   }).then(() => {
 
-    }).catch((error) => {
-      console.log("Error getting documents: ", error);
-    });
+  //   }).catch((error) => {
+  //     console.log("Error getting documents: ", error);
+  //   });
 
-  }, [])
+  // }, [])
 
-  function next() {
-    setLoading(true);
-    setList([]);
-    let query_db = db.collection("game_collection").orderBy(field).startAfter(lastVisible).limit(limit);
-    query_db.get().then((querySnapshot) => {
-      // console.log(querySnapshot);
+  // function next() {
+  //   setLoading(true);
+  //   setList([]);
+  //   let query_db = db.collection("game_collection").orderBy(field).startAfter(lastVisible).limit(limit);
+  //   query_db.get().then((querySnapshot) => {
+  //     // console.log(querySnapshot);
 
-      if (!querySnapshot.empty) {
-        setfastVisible(querySnapshot.docs[0]);
-        setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
-      } else {
-        setLoading(false);
-      }
+  //     if (!querySnapshot.empty) {
+  //       setfastVisible(querySnapshot.docs[0]);
+  //       setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+  //     } else {
+  //       setLoading(false);
+  //     }
 
-      querySnapshot.forEach(async (doc) => {
-        // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
-        // rate.forEach(element => {
-        //     console.log(element.val().rate);
-        // });
-        let arr = [];
-        database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
-          // setLoading(false);
+  //     querySnapshot.forEach(async (doc) => {
+  //       // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
+  //       // rate.forEach(element => {
+  //       //     console.log(element.val().rate);
+  //       // });
+  //       let arr = [];
+  //       database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
+  //         // setLoading(false);
 
-          snapshot.forEach(
-            function (Childsnapshot) {
-              arr.push(parseInt(Childsnapshot.val().rate));
-            });
-        }).then(() => {
-          // setLoadingface(false);
-          setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
-          setLoading(false);
-        });
+  //         snapshot.forEach(
+  //           function (Childsnapshot) {
+  //             arr.push(parseInt(Childsnapshot.val().rate));
+  //           });
+  //       }).then(() => {
+  //         // setLoadingface(false);
+  //         setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
+  //         setLoading(false);
+  //       });
 
-      });
-      // setLoading(false);
-    }).then(() => {
-      // setLoading(false);
-    }).catch((error) => {
-      console.log("Error getting documents: ", error);
-    });
-  }
+  //     });
+  //     // setLoading(false);
+  //   }).then(() => {
+  //     // setLoading(false);
+  //   }).catch((error) => {
+  //     console.log("Error getting documents: ", error);
+  //   });
+  // }
 
-  function previous() {
-    setLoading(true);
-    setList([]);
-    let query_db = db.collection("game_collection").orderBy(field).endBefore(fastVisible).limitToLast(limit);
-    query_db.get().then((querySnapshot) => {
-      // console.log(querySnapshot);
+  // function previous() {
+  //   setLoading(true);
+  //   setList([]);
+  //   let query_db = db.collection("game_collection").orderBy(field).endBefore(fastVisible).limitToLast(limit);
+  //   query_db.get().then((querySnapshot) => {
+  //     // console.log(querySnapshot);
 
-      if (!querySnapshot.empty) {
-        setfastVisible(querySnapshot.docs[0]);
-        setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
-      } else {
-        setLoading(false);
-      }
+  //     if (!querySnapshot.empty) {
+  //       setfastVisible(querySnapshot.docs[0]);
+  //       setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+  //     } else {
+  //       setLoading(false);
+  //     }
 
-      querySnapshot.forEach(async (doc) => {
-        // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
-        // rate.forEach(element => {
-        //     console.log(element.val().rate);
-        // });
-        let arr = [];
-        database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
-          // setLoading(false);
+  //     querySnapshot.forEach(async (doc) => {
+  //       // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
+  //       // rate.forEach(element => {
+  //       //     console.log(element.val().rate);
+  //       // });
+  //       let arr = [];
+  //       database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
+  //         // setLoading(false);
 
-          snapshot.forEach(
-            function (Childsnapshot) {
-              arr.push(parseInt(Childsnapshot.val().rate));
-            });
-        }).then(() => {
-          // setLoadingface(false);
-          setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
-          setLoading(false);
+  //         snapshot.forEach(
+  //           function (Childsnapshot) {
+  //             arr.push(parseInt(Childsnapshot.val().rate));
+  //           });
+  //       }).then(() => {
+  //         // setLoadingface(false);
+  //         setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
+  //         setLoading(false);
 
-        });
+  //       });
 
-      });
-      // setLoading(false);
-    }).then(() => {
-      // setLoading(false);
-    }).catch((error) => {
-      console.log("Error getting documents: ", error);
-    });
-  }
+  //     });
+  //     // setLoading(false);
+  //   }).then(() => {
+  //     // setLoading(false);
+  //   }).catch((error) => {
+  //     console.log("Error getting documents: ", error);
+  //   });
+  // }
 
-  useEffect(() => {
-    auth.onAuthStateChanged((user) => {
-      if (user) {
-        setLogin(true);
-      } else {
-        setLogin(false);
-      }
-    });
-  }, []);
+  // useEffect(() => {
+  //   auth.onAuthStateChanged((user) => {
+  //     if (user) {
+  //       setLogin(true);
+  //     } else {
+  //       setLogin(false);
+  //     }
+  //   });
+  // }, []);
 
   async function addCard(key, name, price, img, offers) {
     if (isLogin) {
@@ -187,7 +187,6 @@ const Collection = () => {
   return (
     <>
       <Nav />
-      <Link to='/shop/Counter_Strike:_Global_Offensive'>test</Link>
 
       <Banner height='400px' img='https://pbs.twimg.com/media/FQQb65fXwAcfKnw?format=jpg&name=4096x4096'>
         <div className="s-text">
@@ -200,7 +199,7 @@ const Collection = () => {
         </div>
       </Banner>
 
-      <div className="d-flex flex-wrap justify-content-center mx-auto w-res my-3">
+      {/* <div className="d-flex flex-wrap justify-content-center mx-auto w-res my-3">
         {
           !loading ?
             List.length != 0 ?
@@ -217,7 +216,6 @@ const Collection = () => {
                     offers={element.doc.data().offers}
                     key={index}
                     link={`/shop/${urlEncode(element.doc.data().name)}`}
-                    // addCard={()=>{addCard(element.doc.id, element.doc.data().name, element.doc.data().img)}}
                     addCard={addCard}
                   />
                 )
@@ -246,7 +244,7 @@ const Collection = () => {
             <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
           </svg>
         </button>
-      </div>
+      </div> */}
 
       <Footer />
     </>
