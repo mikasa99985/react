@@ -25,7 +25,8 @@ const Collection = () => {
 
   useEffectOnce(async () => {
 
-    let query_db = db.collection("game_collection").orderBy(field).limit(limit);
+    // let query_db = db.collection("game_collection").orderBy(field).limit(limit);
+    let query_db = db.collection("game_collection").orderBy('type').startAt('adventure').endAt('adventure' + '~').limit(4);
 
     // if (query.get('search') != null) {
     //   // console.log('search =', query.get('search'));
