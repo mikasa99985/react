@@ -6,6 +6,7 @@ import { urlEncode, useQuery, useEffectOnce, calculateMean, capitalize, calculat
 import ShopCard from '../components/ShopCard';
 import '../utility/css/TempCard.css';
 import { db, database, auth } from '../../firebase.config'
+import {Link} from 'react-router-dom'
 
 const Collection = () => {
   window.scrollTo(0, 0);
@@ -186,6 +187,7 @@ const Collection = () => {
   return (
     <>
       <Nav />
+      <Link to='/shop/Counter_Strike:_Global_Offensive'>test</Link>
 
       <Banner height='400px' img='https://pbs.twimg.com/media/FQQb65fXwAcfKnw?format=jpg&name=4096x4096'>
         <div className="s-text">
