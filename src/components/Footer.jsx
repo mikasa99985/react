@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useRef, useState } from "react";
 import { Link } from "react-router-dom";
 import icon from "../assets/fav_icon.png";
 import { auth, database } from "../../firebase.config";
@@ -17,7 +17,22 @@ export default function Footer() {
 
   const [feedback, setFeedback] = useState("");
   const [isLogin, setLogin] = useState(false);
+  const [Input, setInput] = useState('');
+  const [chats, setChats] = useState([]);
 
+  const messagesEndRef = useRef(null)
+
+  const scrollToBottom = () => {
+    messagesEndRef.current?.scrollIntoView({ behavior: "smooth" })
+    console.log('s');
+  }
+
+  function scrollToBottomOn(){
+    setTimeout(() => {
+      scrollToBottom();
+    }, 200);
+  }
+  
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -27,6 +42,21 @@ export default function Footer() {
       }
     });
   }, []);
+
+  useEffect(()=>{
+    if (isLogin) {
+      database.ref(`reports/livechat/chats/admin-${auth.currentUser.uid}`).on('value', function(snapshot) {
+        setChats([]);
+        snapshot.forEach(element => {
+          setChats(oldArray => [...oldArray, element.val()]);
+        });
+      });
+    }
+  },[isLogin])
+  
+  useEffect(() => {
+    scrollToBottom()
+  }, [chats]);
 
   function submit(e) {
     e.preventDefault();
@@ -48,6 +78,24 @@ export default function Footer() {
     } else {
       console.log("You are not login");
     }
+  }
+
+  function send(e){
+    e.preventDefault();
+    // console.log(Input);
+
+    let data = {
+      message: Input,
+      time: Date.now(),
+      type: 'user'
+    };
+
+    database.ref(`reports/livechat/chats/admin-${auth.currentUser.uid}`).push().set(data).then(() => {
+      // console.log('Data successfully written!');
+      setInput('');
+    }).catch((error) => {
+      console.error('Error writing document: ', error);
+    });
   }
 
   return (
@@ -133,6 +181,7 @@ export default function Footer() {
                     data-bs-toggle="modal"
                     data-bs-target="#exampleModal"
                     className="nav-link p-0 text-body-secondary"
+                    onClick={scrollToBottomOn}
                   >
                     Live chat report
                   </button>
@@ -273,20 +322,29 @@ export default function Footer() {
               ></button>
             </div>
             <div className="modal-body botmodalbody">
-              <div className="chats">
-                <LeftMessage/>
-                <RightMessage/>
-                
-              </div>
+                <div className="chats">
+                  {
+                    chats.map((element, index)=>{
+                      if (element.type == 'admin') {
+                        return <LeftMessage key={index} text={element.message}/>
+                      }else{
+                        return <RightMessage key={index} text={element.message}/>
+                      }
+                    })
+                  }
+                  {/* <LeftMessage text='hi'/>
+                  <RightMessage text='hi'/> */}
+                  <div ref={messagesEndRef} />
+                </div>
             </div>
 
-            <div className="chatfooter botfooter">
+            <form onSubmit={send} className="chatfooter botfooter">
               <input
-                className="botbox"
+                className="botbox" id="textBox" name="textBox" value={Input} onChange={e=>setInput(e.target.value)}
                 placeholder="Type your message..."
               ></input>
 
-              <button type="button" className="btn btn-primary rgbbutton1">
+              <button type="submit" className="btn btn-primary rgbbutton1">
                 <svg
                   xmlns="http://www.w3.org/2000/svg"
                   style={{ scale: "0.5" }}
@@ -304,7 +362,7 @@ export default function Footer() {
                   <polygon points="22 2 15 22 11 13 2 9 22 2"></polygon>
                 </svg>
               </button>
-            </div>
+            </form>
           </div>
         </div>
       </div>

@@ -1,13 +1,13 @@
 import React from "react";
 
-const RightMessage = () => {
+const RightMessage = (props) => {
   return (
     <>
       <div className="message-outer-containerright">
         <div className="message-containerright">
           <div className="messageright">
             <p>
-              Vendetta! 
+              {props.text}
             </p>
           </div>
           <div className="bottom-containerright">

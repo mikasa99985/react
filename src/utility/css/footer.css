@@ -151,6 +151,7 @@
   height: 273px;
   width: 100%;
   overflow-y: scroll;
+  
 }
 
 .chats::-webkit-scrollbar {
@@ -175,7 +176,7 @@
     margin: 10px;
     display: flex;
     position: relative;
-    top: 62%;
+    /* top: 62%; */
     /* left: 0%; */
     /* border: 2px solid black; */
     justify-content: flex-start;
@@ -190,13 +191,13 @@
    display: flex;
    width: fit-content;
    margin-right: 8px;  */
-   top : 63% ;
+   /* top : 63% ; */
   }
 }
 
 .message-container {
   min-height: 50px;
-  max-height: 300px;
+  /* max-height: 300px; */
   /* width: 120px; */
   min-width: 120px;
   max-width: 220px;
@@ -240,7 +241,7 @@
   margin: 10px;
     display: flex;
     position: relative;
-    top: 62%;
+    /* top: 62%; */
     /* left: 0%; */
     /* border: 2px solid black; */
     justify-content: flex-end;
@@ -254,13 +255,13 @@
    display: flex;
    width: fit-content;
    margin-right: 8px;  */
-   top : 63% ;
+   /* top : 63% ; */
   }
 }
 
 .message-containerright {
   min-height: 50px;
-  max-height: 300px;
+  /* max-height: 300px; */
   /* width: 120px; */
   min-width: 120px;
   max-width: 220px;
