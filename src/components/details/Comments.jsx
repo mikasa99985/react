@@ -1,5 +1,5 @@
 import React from "react";
-import "../../utility/css/commentcontainer.css";
+import "../../utility/css/CommentContainer.css";
 import Niel from "../../assets/Niel.png";
 import Rating from "../Rating";
 
