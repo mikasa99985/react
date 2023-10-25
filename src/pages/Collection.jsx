@@ -67,11 +67,11 @@ const Collection = () => {
         }).then(() => {
           // setLoadingface(false);
           setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
-          setLoading(false);
+          // setLoading(false);
         });
 
       });
-      // setLoading(false);
+      setLoading(false);
     }).then(() => {
 
     }).catch((error) => {
