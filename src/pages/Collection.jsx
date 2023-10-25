@@ -25,23 +25,23 @@ const Collection = () => {
 
   useEffectOnce(() => {
 
-    // let query_db = db.collection("game_collection").orderBy(field).limit(limit);
-    let query_db = db.collection("game_collection").orderBy('type').startAt('adventure').endAt('adventure' + '~').limit(4);
+    let query_db = db.collection("game_collection").orderBy(field).limit(limit);
+    // let query_db = db.collection("game_collection").orderBy('type').startAt('adventure').endAt('adventure' + '~').limit(4);
 
-    // if (query.get('search') != null) {
-    //   // console.log('search =', query.get('search'));
-    //   let str = capitalize(query.get('search'));
+    if (query.get('search') != null) {
+      // console.log('search =', query.get('search'));
+      let str = capitalize(query.get('search'));
 
-    //   // query_db = db.collection("game_collection")
-    //   //     .orderBy('name')
-    //   //     .startAt("[a-zA-Z0-9]*")
-    //   //     .endAt(str + '\uf8ff');
+      // query_db = db.collection("game_collection")
+      //     .orderBy('name')
+      //     .startAt("[a-zA-Z0-9]*")
+      //     .endAt(str + '\uf8ff');
 
-    //   query_db = db.collection("game_collection")
-    //           .where('name', '>=', query.get('search'))
-    //           .where('name', '<=', query.get('search') + '\uf8ff');
+      query_db = db.collection("game_collection")
+              .where('name', '>=', query.get('search'))
+              .where('name', '<=', query.get('search') + '\uf8ff');
 
-    // }
+    }
 
     query_db.get().then((querySnapshot) => {
       // console.log(querySnapshot);
@@ -68,11 +68,11 @@ const Collection = () => {
         }).then(() => {
           // setLoadingface(false);
           setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
-          // setLoading(false);
+          setLoading(false);
         });
 
       });
-      setLoading(false);
+      // setLoading(false);
     }).then(() => {
 
     }).catch((error) => {
@@ -81,100 +81,100 @@ const Collection = () => {
 
   }, [])
 
-  // function next() {
-  //   setLoading(true);
-  //   setList([]);
-  //   let query_db = db.collection("game_collection").orderBy(field).startAfter(lastVisible).limit(limit);
-  //   query_db.get().then((querySnapshot) => {
-  //     // console.log(querySnapshot);
+  function next() {
+    setLoading(true);
+    setList([]);
+    let query_db = db.collection("game_collection").orderBy(field).startAfter(lastVisible).limit(limit);
+    query_db.get().then((querySnapshot) => {
+      // console.log(querySnapshot);
 
-  //     if (!querySnapshot.empty) {
-  //       setfastVisible(querySnapshot.docs[0]);
-  //       setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
-  //     } else {
-  //       setLoading(false);
-  //     }
+      if (!querySnapshot.empty) {
+        setfastVisible(querySnapshot.docs[0]);
+        setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+      } else {
+        setLoading(false);
+      }
 
-  //     querySnapshot.forEach(async (doc) => {
-  //       // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
-  //       // rate.forEach(element => {
-  //       //     console.log(element.val().rate);
-  //       // });
-  //       let arr = [];
-  //       database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
-  //         // setLoading(false);
+      querySnapshot.forEach(async (doc) => {
+        // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
+        // rate.forEach(element => {
+        //     console.log(element.val().rate);
+        // });
+        let arr = [];
+        database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
+          // setLoading(false);
 
-  //         snapshot.forEach(
-  //           function (Childsnapshot) {
-  //             arr.push(parseInt(Childsnapshot.val().rate));
-  //           });
-  //       }).then(() => {
-  //         // setLoadingface(false);
-  //         setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
-  //         setLoading(false);
-  //       });
+          snapshot.forEach(
+            function (Childsnapshot) {
+              arr.push(parseInt(Childsnapshot.val().rate));
+            });
+        }).then(() => {
+          // setLoadingface(false);
+          setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
+          setLoading(false);
+        });
 
-  //     });
-  //     // setLoading(false);
-  //   }).then(() => {
-  //     // setLoading(false);
-  //   }).catch((error) => {
-  //     console.log("Error getting documents: ", error);
-  //   });
-  // }
+      });
+      // setLoading(false);
+    }).then(() => {
+      // setLoading(false);
+    }).catch((error) => {
+      console.log("Error getting documents: ", error);
+    });
+  }
 
-  // function previous() {
-  //   setLoading(true);
-  //   setList([]);
-  //   let query_db = db.collection("game_collection").orderBy(field).endBefore(fastVisible).limitToLast(limit);
-  //   query_db.get().then((querySnapshot) => {
-  //     // console.log(querySnapshot);
+  function previous() {
+    setLoading(true);
+    setList([]);
+    let query_db = db.collection("game_collection").orderBy(field).endBefore(fastVisible).limitToLast(limit);
+    query_db.get().then((querySnapshot) => {
+      // console.log(querySnapshot);
 
-  //     if (!querySnapshot.empty) {
-  //       setfastVisible(querySnapshot.docs[0]);
-  //       setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
-  //     } else {
-  //       setLoading(false);
-  //     }
+      if (!querySnapshot.empty) {
+        setfastVisible(querySnapshot.docs[0]);
+        setlastVisible(querySnapshot.docs[querySnapshot.docs.length - 1]);
+      } else {
+        setLoading(false);
+      }
 
-  //     querySnapshot.forEach(async (doc) => {
-  //       // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
-  //       // rate.forEach(element => {
-  //       //     console.log(element.val().rate);
-  //       // });
-  //       let arr = [];
-  //       database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
-  //         // setLoading(false);
+      querySnapshot.forEach(async (doc) => {
+        // let rate = await database.ref(`game_collection/${doc.id}/ratings`).once("value");
+        // rate.forEach(element => {
+        //     console.log(element.val().rate);
+        // });
+        let arr = [];
+        database.ref(`game_collection/${doc.id}/ratings`).once('value', (snapshot) => {
+          // setLoading(false);
 
-  //         snapshot.forEach(
-  //           function (Childsnapshot) {
-  //             arr.push(parseInt(Childsnapshot.val().rate));
-  //           });
-  //       }).then(() => {
-  //         // setLoadingface(false);
-  //         setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
-  //         setLoading(false);
+          snapshot.forEach(
+            function (Childsnapshot) {
+              arr.push(parseInt(Childsnapshot.val().rate));
+            });
+        }).then(() => {
+          // setLoadingface(false);
+          setList(oldArray => [...oldArray, { doc: doc, rate: arr }]);
+          setLoading(false);
 
-  //       });
+        });
 
-  //     });
-  //     // setLoading(false);
-  //   }).then(() => {
-  //     // setLoading(false);
-  //   }).catch((error) => {
-  //     console.log("Error getting documents: ", error);
-  //   });
-  // }
+      });
+      // setLoading(false);
+    }).then(() => {
+      // setLoading(false);
+    }).catch((error) => {
+      console.log("Error getting documents: ", error);
+    });
+  }
 
-  // useEffect(() => {
-  //   auth.onAuthStateChanged((user) => {
-  //     if (user) {
-  //       setLogin(true);
-  //     } else {
-  //       setLogin(false);
-  //     }
-  //   });
-  // }, []);
+  useEffect(() => {
+    auth.onAuthStateChanged((user) => {
+      if (user) {
+        setLogin(true);
+      } else {
+        setLogin(false);
+      }
+    });
+  }, []);
 
   async function addCard(key, name, price, img, offers) {
     if (isLogin) {
@@ -234,7 +234,7 @@ const Collection = () => {
         }
       </div>
 
-      {/* <div className="d-flex justify-content-between my-5">
+      <div className="d-flex justify-content-between my-5">
         <button onClick={previous} className='btn'>
           <svg xmlns="http://www.w3.org/2000/svg" width="60" height="60" fill="currentColor" className="bi bi-arrow-left-circle" viewBox="0 0 16 16">
             <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zm-4.5-.5a.5.5 0 0 1 0 1H5.707l2.147 2.146a.5.5 0 0 1-.708.708l-3-3a.5.5 0 0 1 0-.708l3-3a.5.5 0 1 1 .708.708L5.707 7.5H11.5z" />
@@ -245,7 +245,7 @@ const Collection = () => {
             <path fillRule="evenodd" d="M1 8a7 7 0 1 0 14 0A7 7 0 0 0 1 8zm15 0A8 8 0 1 1 0 8a8 8 0 0 1 16 0zM4.5 7.5a.5.5 0 0 0 0 1h5.793l-2.147 2.146a.5.5 0 0 0 .708.708l3-3a.5.5 0 0 0 0-.708l-3-3a.5.5 0 1 0-.708.708L10.293 7.5H4.5z" />
           </svg>
         </button>
-      </div> */}
+      </div>
 
       <Footer />
     </>
