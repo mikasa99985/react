@@ -9,6 +9,7 @@ import Chatbanner from "../assets/Chatbanner.png";
 import Chatbody from "../assets/Chatbody.png";
 import LeftMessage from "../components/message/LeftMessage";
 import RightMessage from "../components/message/RightMessage";
+import {parseTime} from '../utility/js/util';
 
 
 export default function Footer() {
@@ -351,9 +352,9 @@ export default function Footer() {
                 {
                   chats.map((element, index) => {
                     if (element.type == 'user') {
-                      return <RightMessage key={index} text={element.message} user='user' time={element.time} />
+                      return <RightMessage key={index} text={element.message} user='user' time={parseTime(element.time, "chats")} />
                     } else {
-                      return <LeftMessage key={index} text={element.message} />
+                      return <LeftMessage key={index} text={element.message} user='admin' time={parseTime(element.time, "chats")} />
                     }
                   })
                 }
