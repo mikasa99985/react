@@ -11,8 +11,8 @@ const RightMessage = (props) => {
             </p>
           </div>
           <div className="bottom-containerright">
-            <p>admin</p>
-            <p>1234567890</p>
+            <p>{props.user}</p>
+            <p>{props.time}</p>
           </div>
         </div>
       </div>

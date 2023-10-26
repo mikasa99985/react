@@ -27,12 +27,12 @@ export default function Footer() {
     // console.log('s');
   }
 
-  function scrollToBottomOn(){
+  function scrollToBottomOn() {
     setTimeout(() => {
       scrollToBottom();
     }, 200);
   }
-  
+
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
       if (user) {
@@ -43,17 +43,17 @@ export default function Footer() {
     });
   }, []);
 
-  useEffect(()=>{
+  useEffect(() => {
     if (isLogin) {
-      database.ref(`reports/livechat/chats/admin-${auth.currentUser.uid}`).on('value', function(snapshot) {
+      database.ref(`reports/livechat/chats/admin-${auth.currentUser.uid}`).on('value', function (snapshot) {
         setChats([]);
         snapshot.forEach(element => {
           setChats(oldArray => [...oldArray, element.val()]);
         });
       });
     }
-  },[isLogin])
-  
+  }, [isLogin])
+
   useEffect(() => {
     scrollToBottom()
   }, [chats]);
@@ -80,9 +80,33 @@ export default function Footer() {
     }
   }
 
-  function send(e){
+  function send(e) {
     e.preventDefault();
     // console.log(Input);
+
+    database.ref('reports/livechat/status').once('value', function (snapshot) {
+      if (!snapshot.val()) {
+        setTimeout(() => {
+          fetch(`https://chatbot-eight-ruby.vercel.app/chat/api?query=${Input}`).then(res => res.json()).then(data => {
+            // console.log(data.res)
+  
+            let bot = {
+              message: data.res,
+              time: Date.now(),
+              type: 'bot'
+            };
+        
+            database.ref(`reports/livechat/chats/admin-${auth.currentUser.uid}`).push().set(bot).then(() => {
+              // console.log('Data successfully written!');
+              // setInput('');
+            }).catch((error) => {
+              console.error('Error writing document: ', error);
+            });
+  
+          });
+        }, 2000);
+      }
+    });
 
     let data = {
       message: Input,
@@ -96,6 +120,7 @@ export default function Footer() {
     }).catch((error) => {
       console.error('Error writing document: ', error);
     });
+
   }
 
   return (
@@ -322,25 +347,25 @@ export default function Footer() {
               ></button>
             </div>
             <div className="modal-body botmodalbody">
-                <div className="chats">
-                  {
-                    chats.map((element, index)=>{
-                      if (element.type == 'admin') {
-                        return <LeftMessage key={index} text={element.message}/>
-                      }else{
-                        return <RightMessage key={index} text={element.message}/>
-                      }
-                    })
-                  }
-                  {/* <LeftMessage text='hi'/>
+              <div className="chats">
+                {
+                  chats.map((element, index) => {
+                    if (element.type == 'user') {
+                      return <RightMessage key={index} text={element.message} user='user' time={element.time} />
+                    } else {
+                      return <LeftMessage key={index} text={element.message} />
+                    }
+                  })
+                }
+                {/* <LeftMessage text='hi'/>
                   <RightMessage text='hi'/> */}
-                  <div ref={messagesEndRef} />
-                </div>
+                <div ref={messagesEndRef} />
+              </div>
             </div>
 
             <form onSubmit={send} className="chatfooter botfooter">
               <input
-                className="botbox" id="textBox" name="textBox" value={Input} onChange={e=>setInput(e.target.value)}
+                className="botbox" id="textBox" name="textBox" value={Input} onChange={e => setInput(e.target.value)}
                 placeholder="Type your message..."
               ></input>
 
