@@ -6,9 +6,6 @@
 
 ###
 
-<h2 align="left">I code with</h2>
-
-###
 ## Authors
 
 [Soubhik2](https://github.com/Soubhik2/CORE-PHP)
@@ -16,6 +13,9 @@
 ## Live Demo
 
 ### [https://main.d6kgc4hsp71s9.amplifyapp.com/](https://main.d6kgc4hsp71s9.amplifyapp.com/)
+<h2 align="left">I code with</h2>
+
+###
 
 
 <div align="left">
