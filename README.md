@@ -8,7 +8,10 @@
 
 ## Authors
 
-[Soubhik2](https://github.com/Soubhik2/CORE-PHP)
+- [Soubhik2](https://github.com/Soubhik2)
+- [mikasa99985](https://github.com/mikasa99985)
+- [Realme11x](https://github.com/Realme11x)
+- [Soumyadipta025](https://github.com/Soumyadipta025)
 
 ## Live Demo
 
