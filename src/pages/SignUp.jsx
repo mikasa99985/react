@@ -39,11 +39,14 @@ const SignUp = () => {
     setLoading(true);
     auth.createUserWithEmailAndPassword(user.email, user.password)
       .then((userCredential) => {
-        db.collection("users").doc(auth.currentUser.uid).set(user).then(() => {
-          history.push('/');
-          setLoading(false);
-        }).catch((error) => {
-          setAlert('Network ERROR!')
+        let users = userCredential.user;
+        users.sendEmailVerification().then(()=>{
+          db.collection("users").doc(auth.currentUser.uid).set(user).then(() => {
+            history.push('/verify');
+            setLoading(false);
+          }).catch((error) => {
+            setAlert('Network ERROR!')
+          });
         });
       })
       .catch((error) => {

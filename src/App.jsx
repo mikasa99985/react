@@ -19,11 +19,12 @@ import Favorites from './pages/Favorites';
 import OurTeam from './pages/OurTeam';
 import About from './pages/About';
 import Collection from './pages/Collection';
+import VerifyEmail from './pages/VerifyEmail';
 
 function App() {
   const appStyle = {
-      background: 'rgba(255, 187, 0, 0.999)', // Yellow with 50% transparency
-      minHeight: '100vh', // Ensure the background color covers the whole viewport height
+    background: 'rgba(255, 187, 0, 0.999)', // Yellow with 50% transparency
+    minHeight: '100vh', // Ensure the background color covers the whole viewport height
   };
 
   return (
@@ -38,7 +39,7 @@ function App() {
           <Route exact path="/sign_up">
             <SignUp />
           </Route>
-          
+
           <Route exact path="/sign_in">
             <SignIn />
           </Route>
@@ -66,7 +67,7 @@ function App() {
           <Route exact path="/my_cards">
             <MyCards />
           </Route>
-          
+
           <Route exact path="/report">
             <EmailReport />
           </Route>
@@ -74,7 +75,7 @@ function App() {
           <Route exact path="/payment">
             <Payment />
           </Route>
-          
+
           <Route exact path="/library">
             <Library />
           </Route>
@@ -92,11 +93,15 @@ function App() {
           </Route>
 
           <Route exact path="/ourteam">
-            <OurTeam /> 
-  </Route> 
+            <OurTeam />
+          </Route>
 
           <Route exact path="/about">
-            < About/>
+            < About />
+          </Route>
+
+          <Route exact path="/verify">
+            < VerifyEmail />
           </Route>
 
           {/* 404 ERROR PAGE THIS REQUIRED THE END OF THE ALL ROUTERS */}
