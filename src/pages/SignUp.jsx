@@ -15,7 +15,7 @@ const SignUp = () => {
 
   const [loading, setLoading] = useState(false);
   const [alert, setAlert] = useState('');
-  const [user, setUser] = useState({
+  let [user, setUser] = useState({
     name: '',
     email: '',
     password: '',
@@ -41,6 +41,7 @@ const SignUp = () => {
       .then((userCredential) => {
         let users = userCredential.user;
         users.sendEmailVerification().then(()=>{
+          user.password = null;
           db.collection("users").doc(auth.currentUser.uid).set(user).then(() => {
             history.push('/verify');
             setLoading(false);

@@ -37,8 +37,14 @@ const SignIn = () => {
     setLoading(true);
     auth.signInWithEmailAndPassword(user.email, user.password)
       .then((userCredential) => {
+        var users = userCredential.user;
+        if (users.emailVerified) {
+          history.push('/');
+        }else{
+          history.push('/verify');
+        }
         setLoading(false);
-        history.push('/');
+        
       })
       .catch((error) => {
         var errorCode = error.code;

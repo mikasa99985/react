@@ -19,7 +19,7 @@ const Nav = (props) => {
 
   useEffect(() => {
     auth.onAuthStateChanged((user) => {
-      console.log(user);
+      // console.log(user);
       if (user) {
         db.collection("users").doc(user.uid).get().then((doc) => {
           if (doc.exists) {
@@ -30,7 +30,8 @@ const Nav = (props) => {
                 if (user.emailVerified) {
                   setImageUrl(doc.data().img);
                 }else{
-                  history.push('/verify');
+                  // history.push('/verify');
+                  SignOut();
                 }
               } else {
                 setImageUrl(user.photoURL)

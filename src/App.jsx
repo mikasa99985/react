@@ -44,10 +44,6 @@ function App() {
             <SignIn />
           </Route>
 
-          <Route exact path="/google_sign_in">
-            <Google />
-          </Route>
-
           <Route exact path="/shop/:name">
             <Details />
           </Route>
@@ -102,6 +98,10 @@ function App() {
 
           <Route exact path="/verify">
             < VerifyEmail />
+          </Route>
+
+          <Route exact path="/google_sign_in">
+            <Google />
           </Route>
 
           {/* 404 ERROR PAGE THIS REQUIRED THE END OF THE ALL ROUTERS */}
